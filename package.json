@@ -1,0 +1,23 @@
+{
+  "name": "grupo_6_tripactive",
+  "version": "1.0.0",
+  "description": "- Oh My Apple!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maticagnin/grupo_6_tripactive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maticagnin/grupo_6_tripactive/issues"
+  },
+  "homepage": "https://github.com/maticagnin/grupo_6_tripactive#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
