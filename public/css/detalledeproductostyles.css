@@ -1,0 +1,36 @@
+/* General Styles  */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ebebee;
+}
+/* Header Styles  */
+
+.home-barraSuperior {
+    display: flex;
+    justify-content:space-evenly;
+    font-size: 30px;
+    align-items: center;
+}
+
+.home-logo {
+    align-self: flex-start;
+}
+
+.home-busqueda {
+    width: 300px;
+    font-size: 30px;
+}
+
+.home-barraLateral {
+    display: none;
+
+}
+
+
+
+/* Main Styles  */
+
