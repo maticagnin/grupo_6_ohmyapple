@@ -20,11 +20,6 @@ body {
     font-size: 50px;
 }
 
-.home-userbar {
-    display: flex;
-    flex-direction: column;
-}
-
 .home-navbar {
     display: flex;
     justify-content: flex-start;
@@ -48,10 +43,7 @@ body {
 }
 
 .home-barraLateral {
-   display: none;
-   flex-direction: column; 
-   border: 1px solid rgb(231, 14, 14);
-   align-items: flex-start;
+    display: none;
 }
 
 ul {
@@ -81,14 +73,22 @@ ul {
 }
 /* Media Queries 769px Desktop */
 @media (min-width: 769px){
-    .home-navbar {
-        flex-direction: column;
-        align-items: flex-end;
-
+    .home-barraSuperior{
+        display: flex;
+        justify-content: space-around;
     }
-
+    .home-logo {
+        font-size: 30px;
+    }
+    .home-barraSuperior{
+        margin-top: 0;
+    }
     .home-barraLateral {
         display: flex;
+        flex-direction: column; 
+        border: 1px solid rgb(231, 14, 14);
+        align-items: flex-start;
+        width: 20%;
 
     }
  
