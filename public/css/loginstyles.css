@@ -1,35 +1,252 @@
+/* Paleta de colores
+
+Beige: 210, 208, 199
+Azul Oscuro: 30, 40, 53 --> Para bordes es muy oscuro
+Azul Claro: 35, 38, 76
+Celeste Oscuro: 90, 105, 148
+Celeste Claro: 139, 154, 187
+Gris: 193, 199, 200 --> Fondo
+
+*/
+
 /* General Styles  */
 
 * {
     box-sizing: border-box;
+    font-family: "Roboto";
 }
 
 body {
-    background-color: #ebebee;
+    background-color: rgb(193, 199, 200);
+}
+
+a, .fas {
+    text-decoration: none;
+    color: rgb(139, 154, 187);
+
 }
 /* Header Styles  */
 
+
+/* Barra Superior Uno */
+
+h3 {
+    color: rgb(139, 154, 187);
+}
+
 .home-barraSuperior {
     display: flex;
-    justify-content:space-evenly;
-    font-size: 30px;
+    justify-content: space-around;
+    font-size: 46px;
     align-items: center;
+    background-color: rgb(30, 40, 53);
+    margin-bottom: 20px;
+    height: 50%;   
+    border-radius: 20px;
+ 
 }
 
 .home-logo {
+    
     align-self: flex-start;
+    width: 40%;
+}
+
+.home-userBar {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    font-size: 60px;
+}
+
+
+/* Barra Superior Dos */
+
+
+.home-barraSuperior2 {
+    display: flex;
+    justify-content: space-around;
+    font-size: 70px;
+    padding: 40px;
+    align-items: center;
+    background-color: rgb(30, 40, 53);
+    border-radius: 20px;
+}
+
+.home-navBar {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(139, 154, 187);
+    border: white;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    font-size: 70px;
 }
 
 .home-busqueda {
-    width: 300px;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 88%;
+    height: 90%;
+    background-color: rgb(193, 199, 200);
+    display: flex;
+    justify-content: space-between;
+    border: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.home-navBar i {
+    display: flex;
+    width: 10%;
+    color: rgb(30, 40, 53);
     font-size: 30px;
 }
 
-.home-barraLateral {
-    display: none;
+/* Barra Lateral */
 
+
+.home-barraLateral {
+    display: flex;
+    width: 16%;
+    height: 100%;
+    padding-left: 20px;
+    justify-content: center;
+    background-color: rgb(139, 154, 187);
+    border: 2px double #666;
+    border-right: 3px double #666;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
 }
 
+.home-barraLateral ul {
+    display: inline;   
+    list-style: none;
+    margin: 0;
+    padding: 0;    
+}
+
+.home-barraLateral li {
+    line-height: 50px;
+    padding-left: 1px;
+}
+
+.home-barraLateral a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.home-barraLateral i {
+    padding-right: 20px;
+}
 
 /* Main Styles  */
 
+.home-barraLateral {
+    display:none;
+    
+}
+.master-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+    
+}
+.form-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+
+   width: 300px;
+   padding: 40px;
+   background-color: rgb(90, 105,148);
+   text-align: center;
+   border-radius: 40px;
+}
+
+.form-tittle {
+
+    color: #ffff;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box button[type="submit"]
+{
+    border: 0;
+    background-color: #ffff;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid rgb(139, 154, 187);
+    width: 200px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.50s;
+}
+
+.form-box input[type="text"]:focus,
+.form-box input[type="password"]:focus
+{
+    width: 900px;
+    border-color: rgb(91, 195, 243);
+}
+.form-box input[type="password"]:focus
+
+.form-box button[type= "submit"]
+{
+border: 0;
+background-color:rgb(139, 154, 187);
+
+border: solid 2px rgb(91, 195, 243);
+
+}
+
+.form-box button[type="submit"]:hover
+{
+    background: none;
+    cursor: pointer;
+    
+
+}
+
+.form-remember {
+    
+    
+    font-size: small;
+    color: black;
+    text-align: center;
+    
+    
+    ;
+}
+
+/* medias queries form */
+
+
+    @media (max-width:950px) {
+    .master-form{
+        margin-top: 10rem; 
+    }
+ 
+    }
+    @media (max-width: 600px) {
+       .master-form{
+        margin-top: 20rem;
+    }
+}
