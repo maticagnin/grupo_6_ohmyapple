@@ -7,6 +7,7 @@
     <META name="viewport" content=""widht=device-width, inicitial-scal="1.0">
         <link href = "https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel = "stylesheet"/>
         <script src="https://kit.fontawesome.com/2f3c4114c6.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/carritostyles.css">
         <link rel="stylesheet" href="/css/homestyles.css">
         <title>Oh My Apple</title>
         
@@ -19,38 +20,165 @@
                     <h3><i class="fa-brands fa-apple"></i> Oh My Apple!</h3>
                 </div>
 
-                <div class="home-navBar">
-                    <input class="home-busqueda" type="text" placeholder="Buscar productos...">
-                </div>            
                 <div class="home-userBar">   
 <!-- Agregar nombre al carrito y al perfil -->
-                    <a href="#carrito"><i id="carrito" class="fa-solid fa-cart-arrow-down"></i></a>
-                    <a href="login"><i id="perfil" class="fa-solid fa-user"></i></a>
-                    <i id = "burger" class="fas fa-bars"></i>
+                    <a href="#carrito"><i class="fa-solid fa-cart-arrow-down"></i></a>
+                    <a href="login"><i class="fa-solid fa-user"></i></a>
                 </div>
             </div>
-            
-            <div class="home-barraLateral">   
-                <ul>
-                    <li><a href="#iPhone"><i id="iconBarraLateral" class="fa-solid fa-mobile-screen-button"></i>iPhone</a></li>
-                    <li><a href="#mac"><i id="iconBarraLateral" class="fa-solid fa-laptop"></i>Mac</a> </li>
-                    <li><a href="#airpods"><i id="iconBarraLateral" class="fa-sharp fa-solid fa-headphones-simple"></i>Airpods</a></li>
-                    <li><a href="#ipad"><i id="iconBarraLateral" class="fa-solid fa-tablet-screen-button"></i>Ipad</a></li>
-                    <li><a href="#watch"><i id="iconBarraLateral" class="fa-solid fa-clock"></i>Watch</a></li>
-                    <li><a href="#TV"><i id="iconBarraLateral" class="fa-solid fa-tv"></i>TV</a></li>
-                    <li><a href="#accesorios"><i id="iconBarraLateral" class="fa-solid fa-grip"></i>Accesorios</a></li>
-                </ul>
-            </div>   
+            <div class="home-barraSuperior2">
+                <div class="home-burger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="home-navBar">
+                        <input class="home-busqueda" type="text" placeholder="Buscar productos...">
+                        <i class="fas fa-search"></i>
+                </div>
+            </div>
         </nav>
-
     </header>
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+    <main class="carrito-main">
+        <section class="carrito-seccion1">
+            <div class="carrito-resumen">
+                <button class="carrito-desplegable-resumen"><h4 class="carrito-etiqueta-resumen">RESUMEN DEL PEDIDO</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                    <!-- <div>
+                        <p>Producto</p>
+                        <p>Cantidad</p>
+                        <p>Sub-total</p>
+                        <p>Total</p>
+                    </div>
+                    <div>
+                        <img src="#" alt="Imagen de producto X">
+                        <p>Nombre</p>
+                        <p>Cantidad</p>
+                        <p>Sub-total</p>
+                        <p>Total</p>
+                    </div>
+                    <div>
+                        <h5>Total</h5>
+                    </div>            
+            </div> -->
+        </section>
 
-    <main>
 
+        <section class="carrito-seccion2">
+            <div class="carrito-facturacion">
+                <button class="carrito-desplegable-facturacion"><h4 class="carrito-etiqueta-facturacion">DIRECCIÓN DE FACTURACIÓN</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <!-- <form action="#" method="#"></form>
+                    <label for="nombre">Nombre y apellido:</label>
+                    <input class="nombre" type="text" name="nombre" id="nombre">
+
+                    <label for="dni">DNI:</label>
+                    <input class="" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
+
+                    <label for="nacimiento">Fecha de nacimiento:</label>
+                    <input class="" type="date" name="nacimiento" id="nacimiento">
+
+                    <label for="domicilio">Domicilio:</label>
+                    <input class="" type="text" name="domicilio" id="domicilio">
+
+                    <label for="cp">Código postal</label>
+                    <input class="" type="number" name="cp" id="cp">
+
+                    <label for="email">Correo electrónico:</label>
+                    <input class="" type="email" name="email" id="email">
+<----------------ACA PODRIA SER UN DESPLEGABLE PARA LA PROVINCIA------------->
+                    <!-- <label for="provincia">Provincia:</label>
+                    <input class="" type="text" name="provincia" id="provincia"> -->
+<!------------------ACA PODRIA SER UN DESPLEGABLE PARA LA PROVINCIA------------->
+                    <!-- <label for="localidad">Localidad:</label>
+                    <input class="" type="text" name="localidad" id="localidad">
+
+                    <label for="telefono">Teléfono:</label>
+                    <input class="" type="tel" name="telefono" id="telefono" minlength="10">
+
+                    <input type="checkbox" name="coincidencia" value="autocompletar-envio">Mis datos de envío con los de facturación
+            </div> -->
+        </section>
+
+
+        <section class="carrito-seccion3">          
+            <div class="carrito-envio">
+                <button class="carrito-desplegable-envio"><h4 class="carrito-etiqueta-envio">DIRECCIÓN DEL ENVÍO</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <!-- <form action="#" method="#"></form>
+                    <label for="provincia2">Provincia:</label>
+                    <input class="" type="text" name="provincia2" id="provincia2">
+
+                    <label for="localidad2">Localidad:</label>
+                    <input class="" type="text" name="localidad2" id="localidad2">
+
+                    <label for="calleyaltura">Calle y Altura:</label>
+                    <input class="" type="text" name="calleyaltura" id="calleyaltura">
+
+                    <label for="pisodpto">Piso/Dpto:</label>
+                    <input class="" type="text" name="pisodpto" id="pisodpto">
+
+                    <label for="codigo">Código postal:</label>
+                    <input class="" type="text" name="codigo" id="codigo">
+
+                    <label for="referencia">Datos de referencia:</label>
+                    <input class="" type="text" name="referencia" id="referencia">
+            </div> -->
+    
+        </section>
+
+
+        <section class="carrito-seccion4">          
+            <div class="carrito-pago">
+                <button class="carrito-desplegable-pago"><h4 class="carrito-etiqueta-pago">DATOS DE PAGO</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <div class="carrito-formulario-pago">
+                    <form action="#" method="#"></form>
+                        <label for="numerotarjeta">Número de tarjeta</label>
+                        <input class="carrito-numerotarjeta" type="number" name="numerotarjeta" id="numerotarjeta" minlength="16">
+
+                        <label for="tarjeta">Tarjeta</label>
+                           <div class="carrito-mediosdepago">
+                                <label>
+                                    <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta" checked><i class="fa-brands fa-cc-visa"></i>
+                                    </label>
+                                <label>
+                                    <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-mastercard"></i>
+                                    </label>
+                                <label>
+                                    <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-amex"></i>
+                                    </label>
+                                <label>
+                                    <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-paypal"></i>
+                                    </label>
+                                <label>
+                                    <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-apple-pay"></i>
+                                    </label>
+                                <label>  
+                                    <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-bitcoin"></i>
+                                    </label>
+                            </div> 
+
+                        <label for="nombretarjeta">Nombre en la tarjeta</label>
+                        <input class="" type="text" name="nombretarjeta" id="nombretarjeta" minlength="3">
+
+                        <label for="vencimiento">Fecha de vencimiento</label>
+                        <input class="" type="number" name="vencimiento" id="vencimiento" maxlength="4" placeholder="MM/AA">
+
+                        <label for="codigoseguridad">Código de seguridad</label>
+                        <input class="" type="number" name="codigoseguridad" id="codigoseguridad" maxlength="3" placeholder="CVV">
+
+                        <button class="carrito-boton-comprar"><h3>COMPRAR</h3></button>
+                </div>
+            </div>
+        </section>
     </main>    
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
     <footer>
-
+        <h4 class="terminos">Términos y condiciones - Políticas de privacidad. Copyright 2022</h4>
+        <a href="https://www.instagram.com/"><img src="logo instagram" alt="Logo de Instagram"></a>
+        <a href="https://www.facebook.com/"><img src="logo Facebook" alt="Logo de Facebook"></a>
     </footer>
 </body>
-
 </html>

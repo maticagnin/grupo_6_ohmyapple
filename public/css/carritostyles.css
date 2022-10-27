@@ -2,35 +2,158 @@
 
 * {
     box-sizing: border-box;
+    font-family: "Roboto";
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: #ebebee;
+    background-color: rgb(193, 199, 200);
+    margin: 0;
+    padding: 0;
 }
-/* Header Styles  */
 
-.home-barraSuperior {
+a, .fas {
+    text-decoration: none;
+    color: rgb(139, 154, 187);
+}
+
+/* Carrito Seccion1  */
+/* Carrito Seccion1  */
+.carrito-desplegable-resumen, .carrito-desplegable-facturacion, .carrito-desplegable-envio, .carrito-desplegable-pago{
+    background-color: rgb(139, 154, 187);
+    color: black;
+    border: 2px solid rgb(30, 40, 53);
+    font-size: 25px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
     display: flex;
-    justify-content:space-evenly;
-    font-size: 30px;
+    justify-content: space-between;
+    animation-timing-function: ;
+}
+
+
+/* Carrito Seccion1  */
+.carrito-seccion1{
+    display: flex;
+}
+/* .carrito-etiqueta-resumen{
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    justify-content: space-between;
+} */
+.carrito-resumen{
+    
+    width: 100%;
+    margin: 10px;
+}
+
+
+/* Carrito Seccion2  */
+/* Carrito Seccion2  */
+/* Carrito Seccion2  */
+
+.carrito-seccion2{
+    
+    display: flex;
+}
+.carrito-facturacion{
+    
+    width: 100%;
+    margin: 10px;
+}
+
+
+
+
+/* Carrito Seccion3  */
+/* Carrito Seccion3  */
+/* Carrito Seccion3  */
+.carrito-seccion3{
+    
+    display: flex;
+}
+.carrito-envio{
+    
+    width: 100%;
+    margin: 10px;
+}
+
+
+/* Carrito Seccion4  */
+/* Carrito Seccion4  */
+/* Carrito Seccion4  */
+.carrito-seccion4{
+    display: flex;
+}
+.carrito-pago{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    margin: 10px;
+    justify-content: center;
     align-items: center;
 }
-
-.home-logo {
-    align-self: flex-start;
+.carrito-formulario-pago{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px 100px;
+    margin: 70px 0px;
+    width: 80%;
+    border: 8px solid black;
+    border-radius: 20%;
 }
-
-.home-busqueda {
-    width: 300px;
+.carrito-formulario-pago label{
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}    
+.carrito-formulario-pago input{
+    width: 100%;
     font-size: 30px;
 }
-
-.home-barraLateral {
-    display: none;
-
+.carrito-mediosdepago{
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 70%;
+    justify-content: space-evenly;
+}
+.carrito-opcion{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 33%;
+    border: 8px solid black;
+    border-radius: 5px;
+}
+.carrito-mediosdepago i{
+    font-size: 40px;
+}
+.carrito-boton-comprar{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    height: 60px;
+    width: 30%;   
+}
+.carrito-boton-comprar h3{
+    font-size: 20px;
 }
 
-
-
-/* Main Styles  */
-
+/* Footer Styles */
+/* Footer Styles */
+/* Footer Styles */
