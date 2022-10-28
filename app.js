@@ -19,8 +19,8 @@ app.get('/carrito', (req,res)=> {
 
 })
 
-app.get('/detalleDeProd', (req,res)=> {
-    res.sendFile(path.resolve(__dirname,'./views/detalledeprod.html'));
+app.get('/detalledelproducto', (req,res)=> {
+    res.sendFile(path.resolve(__dirname,'./views/detalledeproducto.html'));
 
 })
 
