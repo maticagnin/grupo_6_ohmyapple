@@ -7,7 +7,7 @@
     <META name="viewport" content=""widht=device-width, inicitial-scal="1.0">
         <link href = "https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel = "stylesheet"/>
         <script src="https://kit.fontawesome.com/2f3c4114c6.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/homestyles.css">
+        <link rel="stylesheet" href="/css/detalledeproductostyles.css">
         <title>Oh My Apple</title>
         
 </head>
@@ -19,37 +19,88 @@
                     <h3><i class="fa-brands fa-apple"></i> Oh My Apple!</h3>
                 </div>
 
-                <div class="home-navBar">
-                    <input class="home-busqueda" type="text" placeholder="Buscar productos...">
-                </div>            
                 <div class="home-userBar">   
 <!-- Agregar nombre al carrito y al perfil -->
-                    <a href="#carrito"><i id="carrito" class="fa-solid fa-cart-arrow-down"></i></a>
-                    <a href="login"><i id="perfil" class="fa-solid fa-user"></i></a>
-                    <i id = "burger" class="fas fa-bars"></i>
+                    <a href="#carrito"><i class="fa-solid fa-cart-arrow-down"></i></a>
+                    <a href="login"><i class="fa-solid fa-user"></i></a>
                 </div>
             </div>
-            
-            <div class="home-barraLateral">   
-                <ul>
-                    <li><a href="#iPhone"><i id="iconBarraLateral" class="fa-solid fa-mobile-screen-button"></i>iPhone</a></li>
-                    <li><a href="#mac"><i id="iconBarraLateral" class="fa-solid fa-laptop"></i>Mac</a> </li>
-                    <li><a href="#airpods"><i id="iconBarraLateral" class="fa-sharp fa-solid fa-headphones-simple"></i>Airpods</a></li>
-                    <li><a href="#ipad"><i id="iconBarraLateral" class="fa-solid fa-tablet-screen-button"></i>Ipad</a></li>
-                    <li><a href="#watch"><i id="iconBarraLateral" class="fa-solid fa-clock"></i>Watch</a></li>
-                    <li><a href="#TV"><i id="iconBarraLateral" class="fa-solid fa-tv"></i>TV</a></li>
-                    <li><a href="#accesorios"><i id="iconBarraLateral" class="fa-solid fa-grip"></i>Accesorios</a></li>
-                </ul>
-            </div>   
+            <div class="home-barraSuperior2">
+                <div class="home-burger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="home-navBar">
+                        <input class="home-busqueda" type="text" placeholder="Buscar productos...">
+                        <i class="fas fa-search"></i>
+                </div>
+            </div>
         </nav>
 
     </header>
 
     <main>
 
+        <nav class="home-barraLateral">   
+            <ul>
+                <li><a href="#iPhone"><i id="iconBarraLateral" class="fa-solid fa-mobile-screen-button"></i>iPhone</a></li>
+                <li><a href="#mac"><i id="iconBarraLateral" class="fa-solid fa-laptop"></i>Mac</a> </li>
+                <li><a href="#airpods"><i id="iconBarraLateral" class="fa-sharp fa-solid fa-headphones-simple"></i>Airpods</a></li>
+                <li><a href="#ipad"><i id="iconBarraLateral" class="fa-solid fa-tablet-screen-button"></i>Ipad</a></li>
+                <li><a href="#watch"><i id="iconBarraLateral" class="fa-solid fa-clock"></i>Watch</a></li>
+                <li><a href="#TV"><i id="iconBarraLateral" class="fa-solid fa-tv"></i>TV</a></li>
+                <li><a href="#accesorios"><i id="iconBarraLateral" class="fa-solid fa-grip"></i>Accesorios</a></li>
+            </ul>
+        </nav>
+
+        <div class="producto1">
+        <img class="iphone14" src="/images/iphone14.jpg">
+        <div class="descripcion">
+        <h2>IPHONE 14</h2>
+        <div class="selectores">
+            <form action="/" method="GET">            
+                <select name="select">
+                    <option class="opcion" value="pro">PRO</option>
+                    <option class="opcion" value="max">PRO MAX</option>
+                    <option class="opcion" value="no">-</option>
+                </select>
+                <select name="select">
+                    <option class="opcion" value="125">128 GB</option>
+                    <option class="opcion" value="256">256 GB</option>
+                    <option class="opcion" value="512">512 GB</option>
+                </select>
+                <select name="select">
+                    <option class="opcion" value="P">PURPLE</option>
+                    <option class="opcion" value="M">MIDNIGTH</option>
+                    <option class="opcion" value="S">STARLIGTH</option>
+                    <option class="opcion" value="B">BLUE</option>
+                    <option class="opcion" value="R">RED</option>
+                </select>
+        </form>
+        </div>
+        <div class="precio">
+            <h3>$499.000 <i id="carrito" class="fa-solid fa-cart-arrow-down"></i></h3>
+        </div>
+        <div class="informacion">
+            <p class="info">
+                Diseñado para resistir tu día a día.
+                <br>
+                Frente de Ceramic Shield, más resistente que cualquier vidrio de smartphone. 
+                Resistencia al agua. Acero inoxidable de calidad quirúrgica. Disponible en 6.1 
+                y 6.7 pulgadas y cuatro colores que le dan un look muy Pro.
+            </p>
+        </div>
+        </div>
+        </div>
+        <div class="recomendados">
+            <img class="reco" src="/images/funda.jpg">
+            <img class="reco" src="/images/cargador.jpg">
+            <img class="reco" src="/images/watch.jpg">
+        </div>
+
+       
     </main>    
     <footer>
-
+        
     </footer>
 </body>
 

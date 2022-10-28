@@ -2,35 +2,208 @@
 
 * {
     box-sizing: border-box;
+    font-family: Roboto;
 }
 
 body {
-    background-color: #ebebee;
+    background-color: rgb(193, 199, 200);
 }
 /* Header Styles  */
 
+
+/* Barra Superior Uno */
+
+h3 {
+    color: rgb(139, 154, 187);
+}
+
 .home-barraSuperior {
     display: flex;
-    justify-content:space-evenly;
-    font-size: 30px;
+    justify-content: space-around;
+    font-size: 46px;
     align-items: center;
+    background-color: rgb(30, 40, 53);
+    margin-bottom: 20px;
+    height: 50%;   
+    border-radius: 20px;
+ 
 }
 
 .home-logo {
+    
     align-self: flex-start;
+    width: 40%;
+}
+
+.home-userBar {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    font-size: 60px;
+}
+
+
+/* Barra Superior Dos */
+
+
+.home-barraSuperior2 {
+    display: flex;
+    justify-content: space-around;
+    font-size: 70px;
+    padding: 40px;
+    align-items: center;
+    background-color: rgb(30, 40, 53);
+    border-radius: 20px;
+}
+
+.home-navBar {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(139, 154, 187);
+    border: white;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    font-size: 70px;
 }
 
 .home-busqueda {
-    width: 300px;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 88%;
+    height: 90%;
+    background-color: rgb(193, 199, 200);
+    display: flex;
+    justify-content: space-between;
+    border: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.home-navBar i {
+    display: flex;
+    width: 10%;
+    color: rgb(30, 40, 53);
     font-size: 30px;
 }
 
-.home-barraLateral {
-    display: none;
+/* Barra Lateral */
 
+
+.home-barraLateral {
+    display: flex;
+    width: 16%;
+    height: 100%;
+    padding-left: 20px;
+    justify-content: center;
+    background-color: rgb(139, 154, 187);
+    border: 2px double #666;
+    border-right: 3px double #666;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+
+.home-barraLateral ul {
+    display: inline;   
+    list-style: none;
+    margin: 0;
+    padding: 0;    
+}
+
+.home-barraLateral li {
+    line-height: 50px;
+    padding-left: 1px;
+}
+
+.home-barraLateral a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.home-barraLateral i {
+    padding-right: 20px;
 }
 
 
 
 /* Main Styles  */
+
+.home-barraLateral{
+    display: none;
+}
+.iphone14{
+    display: flex;
+    align-self: center;
+    width: 40%;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+h2{
+    font-size: 55px;
+    margin-top: 65px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+.producto1{
+    display: flex;
+    justify-content: space-around;
+    
+    border-radius: 20px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+}
+.selectores{
+    display: flex;
+    justify-content: space-around;
+}
+select{
+    font-size: 23px;
+    border-radius: 20px;
+    padding-left: 5px;
+}
+.opcion{
+    font-size: 10px;
+}
+.descripcion{
+    width: 60%;
+}
+h3{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 27px;
+    margin-top: 27px;
+    color: #666;
+}
+.info{
+    font-size: 20px;
+    line-height: 40px;
+    background-color: rgb(139, 154, 187, 0.5);
+    border-radius: 20px;
+    width: 90%;
+    padding: 10px;
+    margin: 0px;
+}
+.informacion{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.recomendados{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(30, 40, 53);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 30px 0px;
+}
+.reco{
+    width: 30%;
+}
 
