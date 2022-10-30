@@ -1,15 +1,40 @@
+/* Paleta de colores
+
+Beige: 210, 208, 199
+Azul Oscuro: 30, 40, 53 --> Para bordes es muy oscuro
+Azul Claro: 35, 38, 76
+Celeste Oscuro: 90, 105, 148
+Celeste Claro: 139, 154, 187
+Gris: 193, 199, 200 --> Fondo
+
+*/
+
 /* General Styles  */
 
 * {
     box-sizing: border-box;
-    font-family: Roboto;
+    font-family: "Roboto";
 }
 
 body {
     background-color: rgb(193, 199, 200);
+    margin: 0;
+    padding: 0;
+}
+
+a, .fas {
+    text-decoration: none;
+    color: rgb(139, 154, 187);
 }
 /* Header Styles  */
 
+header{
+    background-color: black;
+}
+
+.home-mainHeader{
+    margin: 30px 0;
+}
 
 /* Barra Superior Uno */
 
@@ -22,15 +47,11 @@ h3 {
     justify-content: space-around;
     font-size: 46px;
     align-items: center;
-    background-color: rgb(30, 40, 53);
-    margin-bottom: 20px;
-    height: 50%;   
-    border-radius: 20px;
- 
+    background-color: black;
+    height: 50%;
 }
 
 .home-logo {
-    
     align-self: flex-start;
     width: 40%;
 }
@@ -52,8 +73,7 @@ h3 {
     font-size: 70px;
     padding: 40px;
     align-items: center;
-    background-color: rgb(30, 40, 53);
-    border-radius: 20px;
+    background-color: black;
 }
 
 .home-navBar {
@@ -96,7 +116,7 @@ h3 {
 
 
 .home-barraLateral {
-    display: flex;
+    display: none;
     width: 16%;
     height: 100%;
     padding-left: 20px;
@@ -129,9 +149,23 @@ h3 {
     padding-right: 20px;
 }
 
+/* Footer Styles */
 
+.home-footer {
+    display: flex;
+    justify-content: space-around;
+    font-size: 46px;
+    align-items: center;
+    background-color: black;
+    margin-bottom: 20px;
+    height: 50%;   
+    margin-top: 20px;
+}
 
-/* Main Styles  */
+.home-footer h4 {
+    font-size: 20px;
+    color: rgb(139, 154, 187);
+}
 
 .home-barraLateral{
     display: none;
@@ -142,31 +176,37 @@ h3 {
     width: 40%;
     margin-top: 30px;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
-h2{
+.detalle-nombreProd{
     font-size: 55px;
     margin-top: 65px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     padding: 0px;
 }
 .producto1{
     display: flex;
     justify-content: space-around;
-    
-    border-radius: 20px;
+    background-color: #ffffff;
     padding-bottom: 30px;
-    margin-top: 20px;
 }
 .selectores{
     display: flex;
     justify-content: space-around;
+    height: 20%;
+    align-items: center;
 }
+.detalle-form{
+    width: 150%;
+    text-align: center;
+}
+
 select{
-    font-size: 23px;
+    font-size: 30px;
     border-radius: 20px;
     padding-left: 5px;
+    width: 30%;
+ 
 }
 .opcion{
     font-size: 10px;
@@ -174,17 +214,17 @@ select{
 .descripcion{
     width: 60%;
 }
-h3{
-    font-size: 35px;
+.detalle-valor{
+    font-size: 45px;
     text-align: center;
-    margin-bottom: 27px;
-    margin-top: 27px;
-    color: #666;
+    margin-bottom: 0px;
+    margin-top: 12px;
+    color: #009ddf;
 }
 .info{
-    font-size: 20px;
+    font-family: "Helvetica";
+    font-size: 30px;
     line-height: 40px;
-    background-color: rgb(139, 154, 187, 0.5);
     border-radius: 20px;
     width: 90%;
     padding: 10px;
@@ -195,15 +235,59 @@ h3{
     justify-content: center;
     margin-top: 40px;
 }
+.detalle-caract{
+    background-color: #ffffff;
+    margin-bottom: 0;
+}
+.detalle-caracteristicas{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.detalle-especific{
+    font-family: "Helvetica";
+    font-size: 13px;
+    margin-left: 20px;
+    margin-right: 30px;
+    padding-bottom: 40px;
+    text-align: start;
+}
 .recomendados{
     display: flex;
-    justify-content: space-around;
-    background-color: rgb(30, 40, 53);
-    border-radius: 20px;
-    margin-top: 20px;
+    justify-content: center;
+    background-color: black;
     padding: 30px 0px;
+    margin-top: 0;
 }
 .reco{
-    width: 30%;
+    width: 90%;
 }
+.divreco{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+#mas{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 105px;
+    background-color: #ffffff;
+    font-size: 70px;
+    padding: 7px;
+    border-radius: 50%;
+}
+.descreco{
+    display: none;
+    color: #ffffff;
+    background-color: black;
+    font-size: 25px;
+    padding: 5px;
+    position: absolute;
+}
+
+
 

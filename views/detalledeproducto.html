@@ -8,6 +8,7 @@
         <link href = "https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel = "stylesheet"/>
         <script src="https://kit.fontawesome.com/2f3c4114c6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/detalledeproductostyles.css">
+        
         <title>Oh My Apple</title>
         
 </head>
@@ -52,12 +53,12 @@
             </ul>
         </nav>
 
-        <div class="producto1">
+    <div class="producto1">
         <img class="iphone14" src="/images/iphone14.jpg">
         <div class="descripcion">
-        <h2>IPHONE 14</h2>
+        <h2 class="detalle-nombreProd">IPHONE 14</h2>
         <div class="selectores">
-            <form action="/" method="GET">            
+            <form class="detalle-form" action="/" method="GET">            
                 <select name="select">
                     <option class="opcion" value="pro">PRO</option>
                     <option class="opcion" value="max">PRO MAX</option>
@@ -78,29 +79,60 @@
         </form>
         </div>
         <div class="precio">
-            <h3>$499.000 <i id="carrito" class="fa-solid fa-cart-arrow-down"></i></h3>
+            <h3 class="detalle-valor">$499.000 <i id="carrito" class="fa-solid fa-cart-arrow-down"></i></h3>
         </div>
         <div class="informacion">
             <p class="info">
                 Diseñado para resistir tu día a día.
                 <br>
                 Frente de Ceramic Shield, más resistente que cualquier vidrio de smartphone. 
-                Resistencia al agua. Acero inoxidable de calidad quirúrgica. Disponible en 6.1 
-                y 6.7 pulgadas y cuatro colores que le dan un look muy Pro.
+                Resistencia al agua.
             </p>
         </div>
+       
         </div>
+        </div>
+        <div class="detalle-caract">
+            <p class="detalle-caracteristicas">
+                + CARACTERÍSTICAS
+            </p>
+            <ul class="detalle-especific">
+                <li>Dimensiones y peso: Ancho: 7,15 cm, Alto: 14,67 cm, Grosor: 0,76 cm, Peso: 203 g</li>
+                <li>Pantalla Super Retina XDR con ProMotion</li>
+                <li>Resolución de 2.532 por 1.170 píxeles a 460 p/p</li>
+                <li>Pantalla HDR</li>
+                <li>Sistema de cámaras Pro de 12 Mpx con teleobjetivo, gran angular y ultra gran angular</li>
+                <li>Teleobjetivo: apertura de ƒ/2,8</li>
+                <li>Reconoci­miento facial mediante la cámara TrueDepth</li>
+            </ul>
         </div>
         <div class="recomendados">
-            <img class="reco" src="/images/funda.jpg">
-            <img class="reco" src="/images/cargador.jpg">
-            <img class="reco" src="/images/watch.jpg">
+            <div class="divreco">
+                <img class="reco" src="/images/funda.jpg">
+                <i id= "mas" class="fa-solid fa-circle-plus"></i>
+                <p class="descreco">FUNDAS</p>
+            </div>
+            <div class="divreco">
+                <img class="reco" src="/images/cargador.jpg">
+                <i id= "mas" class="fa-solid fa-circle-plus"></i>
+                <p class="descreco">CARGADORES</p>
+            </div>
+            <div class="divreco">
+                <img class="reco" src="/images/watch.jpg">
+                <i id= "mas" class="fa-solid fa-circle-plus"></i>
+                <p class="descreco">WATCHES</p>
+            </div>
+            
         </div>
-
+        
+      
+        
        
     </main>    
-    <footer>
-        
+    <footer class="home-footer">
+        <h4>Términos y condiciones - Políticas de privacidad. Copyright 2022</h4>
+        <img src="/images/logos/facebook.png" alt="logo-Facebook">
+        <img src="/images/logos/instagram.png" alt="logo-Instagram">
     </footer>
 </body>
 
