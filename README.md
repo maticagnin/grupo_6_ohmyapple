@@ -20,3 +20,7 @@ Listado de al menos 5 referentes:
 * Matías: Mi nombre es Mati, y elegí realizar el curso de desarrollo web para comenzar a entender y trabajar en el mundo de la programación. Anteriormente realicé un curso básico (bastante básico) de programación, que me hizo dar ganas de meterme más en profundidad al tema.
 * Marcelo: Mi nombre es Marcelo, tengo 28 años, y soy de Buenos Aires. Llegué a DH a través de una amiga que realizó el curso de full stack. Actualmente diseño y construyo muebles. No tengo experiencia previa en programación, pero el tema siempre me interesó y con ayuda de un amigo decidí dar el paso de arrancar. En mi tiempo libre me gusta tocar la guitarra y grabar contenido.
 * Mario: Soy Marplatense y tengo 28 años. Actualmente trabajo en Atención al Cliente Telefónica en OSDE. Me gusta mucho la fotografía, el Filmmaking, los deportes y VIAJAR. No tengo conocimiento en programación pero me atrae mucho la posibilidad de trabajar desde cualquier lugar del mundo.
+
+
+TABLERO DE TRABAJO EN TRELLO
+https://trello.com/invite/b/baalS1hr/ATTIe53cfea52abbb1f76ee16d7559d7e85954F8ABC6/oh-my-apple

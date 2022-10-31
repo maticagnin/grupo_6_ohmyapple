@@ -44,92 +44,144 @@
     <main class="carrito-main">
         <section class="carrito-seccion1">
             <div class="carrito-resumen">
-                <button class="carrito-desplegable-resumen"><h4 class="carrito-etiqueta-resumen">RESUMEN DEL PEDIDO</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
-                    <!-- <div>
-                        <p>Producto</p>
-                        <p>Cantidad</p>
-                        <p>Sub-total</p>
-                        <p>Total</p>
-                    </div>
-                    <div>
-                        <img src="#" alt="Imagen de producto X">
-                        <p>Nombre</p>
-                        <p>Cantidad</p>
-                        <p>Sub-total</p>
-                        <p>Total</p>
-                    </div>
-                    <div>
-                        <h5>Total</h5>
-                    </div>            
-            </div> -->
+                <button class="carrito-desplegable-resumen"><h4 class="carrito-etiqueta-resumen">Este es el resumen de tu pedido</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                    <div class="carrito-columnas">
+                        <!-- <div class="carrito-columna-imagen">
+                            <img class="carrito-titulo-columna2" src="#" alt="Imagen">
+                            <img class="carrito-titulo-columna2" src="#" alt="Imagen">
+                        </div> -->
+                        <div class="carrito-columna-producto">
+                          <p>Producto</p>               
+                          <p>iPhone 14</p>               
+                          <p>Airpods</p>               
+                        </div>
+                        <div class="carrito-columna-cantidad">
+                            <p>Cantidad</p>
+                            <p>
+                            <select class="carrito-select">
+                            <option class="carrito-opcion" value="1">1 Unidad</option>
+                            <option class="carrito-opcion" value="2">2 Unidades</option>
+                            <option class="carrito-opcion" value="3">3 Unidades</option>
+                            <option class="carrito-opcion" value="4">4 Unidades</option>
+                            <option class="carrito-opcion" value="5">5 Unidades</option>
+                            </select>
+                            </p>
+                            <p><select class="carrito-select">
+                                <option class="carrito-opcion" value="1">1 Unidad</option>
+                                <option class="carrito-opcion" value="2">2 Unidades</option>
+                                <option class="carrito-opcion" value="3">3 Unidades</option>
+                                <option class="carrito-opcion" value="4">4 Unidades</option>
+                                <option class="carrito-opcion" value="5">5 Unidades</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="carrito-columna-subtotal">
+                            <p>Sub-total</p>
+                            <p>$350.000</p>
+                            <p>$50.000</p>
+                        </div>
+                        <div class="carrito-columna-total">
+                            <p>Total</p>
+                            <p>$350.000</p>
+                            <p>$50.000</p>
+                        </div>
+                        <div>
+                            <p class="carrito-totales">TOTALES</p>
+                            <p>$400.000</p>
+                        </div>
+                    </div>       
+            </div>
+            
         </section>
 
 
         <section class="carrito-seccion2">
             <div class="carrito-facturacion">
-                <button class="carrito-desplegable-facturacion"><h4 class="carrito-etiqueta-facturacion">DIRECCIÓN DE FACTURACIÓN</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
-                <!-- <form action="#" method="#"></form>
-                    <label for="nombre">Nombre y apellido:</label>
-                    <input class="nombre" type="text" name="nombre" id="nombre">
-
-                    <label for="dni">DNI:</label>
-                    <input class="" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
-
-                    <label for="nacimiento">Fecha de nacimiento:</label>
-                    <input class="" type="date" name="nacimiento" id="nacimiento">
-
-                    <label for="domicilio">Domicilio:</label>
-                    <input class="" type="text" name="domicilio" id="domicilio">
-
-                    <label for="cp">Código postal</label>
-                    <input class="" type="number" name="cp" id="cp">
-
-                    <label for="email">Correo electrónico:</label>
-                    <input class="" type="email" name="email" id="email">
-<----------------ACA PODRIA SER UN DESPLEGABLE PARA LA PROVINCIA------------->
-                    <!-- <label for="provincia">Provincia:</label>
-                    <input class="" type="text" name="provincia" id="provincia"> -->
-<!------------------ACA PODRIA SER UN DESPLEGABLE PARA LA PROVINCIA------------->
-                    <!-- <label for="localidad">Localidad:</label>
-                    <input class="" type="text" name="localidad" id="localidad">
-
-                    <label for="telefono">Teléfono:</label>
-                    <input class="" type="tel" name="telefono" id="telefono" minlength="10">
-
-                    <input type="checkbox" name="coincidencia" value="autocompletar-envio">Mis datos de envío con los de facturación
-            </div> -->
+                <button class="carrito-desplegable-facturacion"><h4 class="carrito-etiqueta-facturacion">¿A quién se lo facturamos?</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <form action="#" method="#"></form>
+                    <div class="carrito-datos-facturacion">
+                        <div>
+                        <label for="nombre">Nombre y apellido:</label>
+                        <input class="carrito-dato" type="text" name="nombre" id="nombre" placeholder="Ej: Pablo García">
+                        </div>
+                        <div>
+                        <label for="dni">DNI:</label>
+                        <input class="carrito-dato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
+                        </div>
+                        <div>
+                        <label for="nacimiento">Fecha de nacimiento:</label>
+                        <input class="carrito-dato" type="date" name="nacimiento" id="nacimiento">
+                        </div>
+                        <div>
+                        <label for="provincia">Provincia:</label>
+                        <input class="carrito-dato" type="text" name="provincia" id="provincia" placeholder="Ej: Buenos Aires">
+                        </div>
+                        <div>
+                        <label for="localidad">Localidad:</label>
+                        <input class="carrito-dato" type="text" name="localidad" id="localidad" placeholder="Ej: Mar del Plata">
+                        </div>
+                        <div>
+                        <label for="domicilio">Domicilio:</label>
+                        <input class="carrito-dato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número">
+                        </div>
+                        <div>
+                        <label for="cp">Código postal</label>
+                        <input class="carrito-dato" type="number" name="cp" id="cp" placeholder="Ej: 7600">
+                        </div>
+                        <div>
+                        <label for="email">Correo electrónico:</label>
+                        <input class="carrito-dato" type="email" name="email" id="email" placeholder="nombre@dominio.com.ar">
+                        </div>
+                        <div>
+                        <label for="telefono">Teléfono:</label>
+                        <input class="carrito-dato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330">
+                        </div>
+                        <div>
+                            <input type="checkbox" name="coincidencia" value="autocompletar-envio">Enviar a esta misma dirección
+                        </div>
+                    </div>
+            </div>
         </section>
 
 
         <section class="carrito-seccion3">          
             <div class="carrito-envio">
-                <button class="carrito-desplegable-envio"><h4 class="carrito-etiqueta-envio">DIRECCIÓN DEL ENVÍO</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
-                <!-- <form action="#" method="#"></form>
-                    <label for="provincia2">Provincia:</label>
-                    <input class="" type="text" name="provincia2" id="provincia2">
-
-                    <label for="localidad2">Localidad:</label>
-                    <input class="" type="text" name="localidad2" id="localidad2">
-
-                    <label for="calleyaltura">Calle y Altura:</label>
-                    <input class="" type="text" name="calleyaltura" id="calleyaltura">
-
-                    <label for="pisodpto">Piso/Dpto:</label>
-                    <input class="" type="text" name="pisodpto" id="pisodpto">
-
-                    <label for="codigo">Código postal:</label>
-                    <input class="" type="text" name="codigo" id="codigo">
-
-                    <label for="referencia">Datos de referencia:</label>
-                    <input class="" type="text" name="referencia" id="referencia">
-            </div> -->
+                <button class="carrito-desplegable-envio"><h4 class="carrito-etiqueta-envio">¿A dónde te lo enviamos?</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <form action="#" method="#"></form>
+                    <div class="carrito-datos-envio">
+                        <div>
+                        <label for="provincia2">Provincia:</label>
+                        <input class="carrito-dato" type="text" name="provincia2" id="provincia2" placeholder="Ej: Buenos Aires">
+                        </div>
+                        <div>
+                        <label for="localidad2">Localidad:</label>
+                        <input class="carrito-dato" type="text" name="localidad2" id="localidad2" placeholder="Ej: Mar del Plata">
+                        </div>
+                        <div>
+                        <label for="calleyaltura">Domicilio:</label>
+                        <input class="carrito-dato" type="text" name="calleyaltura" id="calleyaltura" placeholder="Calle y Número">
+                        </div>
+                        <div>
+                        <label for="pisodpto">Piso/Dpto:</label>
+                        <input class="carrito-dato" type="text" name="pisodpto" id="pisodpto" placeholder="Ej: 5 D">
+                        </div>
+                        <div>
+                        <label for="codigo">Código postal:</label>
+                        <input class="carrito-dato" type="text" name="codigo" id="codigo" placeholder="Ej: 7600">
+                        </div>
+                        <div>
+                        <label for="referencia">Datos de referencia:</label>
+                        <input class="carrito-dato" type="text" name="referencia" id="referencia" placeholder="Casa blanca, puerta roja">
+                        </div>
+                    </div>
+            </div>
     
         </section>
 
 
         <section class="carrito-seccion4">          
             <div class="carrito-pago">
-                <button class="carrito-desplegable-pago"><h4 class="carrito-etiqueta-pago">DATOS DE PAGO</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <button class="carrito-desplegable-pago"><h4 class="carrito-etiqueta-pago">¿Cómo querés pagar?</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
                 <div class="carrito-formulario-pago">
                     <form action="#" method="#"></form>
                         <label for="numerotarjeta">Número de tarjeta</label>
@@ -158,7 +210,7 @@
                             </div> 
 
                         <label for="nombretarjeta">Nombre en la tarjeta</label>
-                        <input class="" type="text" name="nombretarjeta" id="nombretarjeta" minlength="3">
+                        <input class="" type="text" name="nombretarjeta" id="nombretarjeta" minlength="5">
 
                         <label for="vencimiento">Fecha de vencimiento</label>
                         <input class="" type="number" name="vencimiento" id="vencimiento" maxlength="4" placeholder="MM/AA">
@@ -175,10 +227,10 @@
 <!------------------------------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------------------->
-    <footer>
-        <h4 class="terminos">Términos y condiciones - Políticas de privacidad. Copyright 2022</h4>
-        <a href="https://www.instagram.com/"><img src="logo instagram" alt="Logo de Instagram"></a>
-        <a href="https://www.facebook.com/"><img src="logo Facebook" alt="Logo de Facebook"></a>
-    </footer>
+<footer class="home-footer">
+    <h4>Términos y condiciones - Políticas de privacidad. Copyright 2022</h4>
+    <img src="/images/logos/facebook.png" alt="logo-Facebook">
+    <img src="/images/logos/instagram.png" alt="logo-Instagram">
+</footer>   
 </body>
 </html>
