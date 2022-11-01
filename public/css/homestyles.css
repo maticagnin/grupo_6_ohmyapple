@@ -58,7 +58,7 @@ h3 {
 .home-logo img{
     display: flex;
     align-self: center;
-    width: 70%;
+    width: 40%;
 }
 
 .home-userBar {
@@ -377,6 +377,12 @@ h3 {
 
 /* Media Queries Desktop Styles */
 @media (min-width: 1200px ) {
+    .home-logo {
+        width: 30%;
+    }
+    .home-logo img{
+        width: 70%;
+    }
     .home-barraSuperior2 {
         display: none;
     }
@@ -506,7 +512,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    margin-bottom: 10px;
+    margin: 10px 0;
     padding: 0 10px;
 }
 .home-footer-terms {
