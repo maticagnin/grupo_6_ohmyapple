@@ -242,13 +242,13 @@ border: solid 2px rgb(91, 195, 243);
 /* medias queries form */
 
 
-    @media (max-width:950px) {
+    @media (max-width:1200px) {
     .register-master-form{
         margin-top: 10rem; 
     }
  
     }
-    @media (max-width: 600px) {
+    @media (max-width: 720px) {
        .register-master-form{
         margin-top: 20rem;
     }
