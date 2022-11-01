@@ -29,7 +29,7 @@ a, .fas {
 /* Header Styles  */
 
 .home-mainHeader{
-    margin: 10px 0 30px;
+    margin: 10px 0 5px;
     background-color: black;
 }
 
@@ -112,19 +112,22 @@ h3 {
     font-size: 20px;
 }
 /* Barra Lateral */
-
+.home-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
 
 .home-barraLateral {
     display: none;
-    width: 16%;
-    height: 100%;
-    padding-left: 20px;
-    justify-content: center;
-    background-color: rgb(139, 154, 187);
+    width: 20%;
+    justify-content: space-evenly;
+    background-color: rgb(109, 124, 146);
     border: 2px double #666;
     border-right: 3px double #666;
-    border-top-right-radius: 20%;
-    border-bottom-right-radius: 20%;
+    border-radius: 5px;
 }
 
 .home-barraLateral ul {
@@ -135,13 +138,14 @@ h3 {
 }
 
 .home-barraLateral li {
-    line-height: 50px;
+    font-size: 20px;
+    line-height: 80px;
     padding-left: 1px;
 }
 
 .home-barraLateral a {
     text-decoration: none;
-    color: #222222;
+    color: black;
 }
 
 .home-barraLateral i {
@@ -153,11 +157,12 @@ h3 {
 .home-sectionBanner {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 .home-banner {
     display: flex;
     position: relative;
-    width: 90%;
+    width: 95%;
     height: 200px;
     animation: banner 10s infinite linear alternate;
     background-size: 100% 100%;
@@ -205,7 +210,7 @@ h3 {
 }
 
 .home-mediosDePago img {
-    width: 10%;
+    width: 8%;
 }
 
 .home-envios {
@@ -252,14 +257,24 @@ h3 {
   .home-CategProductos p {
     display: none;
     align-self: flex-start;
-    padding: 0px;
-    margin: 5px;
+    padding: 10px;
+    margin: 0px;
     color: white;
-    font-size: 50px;  
-    background-color: black;
-    opacity: 0.7;
+    font-size: 30px;  
+    background-color: rgb(1, 1, 1, 0.3);
 }
-
+.home-CategProductos .home-Mac p {
+    color: white;
+    background-color: rgb(255,255,255, 0.1);
+}
+.home-CategProductos .home-iPhone p {
+    color: white;
+    background-color: rgb(255,255,255, 0.1);
+}
+.home-CategProductos .home-Ipad p {
+    color: white;
+    background-color: rgb(255,255,255, 0.1);
+}
   .home-Mac {
     grid-column: 1 / span 3;
     grid-row: 1;
@@ -306,96 +321,62 @@ h3 {
     background-repeat: no-repeat;
     }
 /* Media Queries Tablet Styles */
-@media (min-width: 720px ) {
-
-}
-
-/* Media Queries Desktop Styles */
-@media (min-width: 1200px ) {
-    .home-CategProductos :hover p {
-        display: flex;
-    }
-    .home-CategProductos :hover {
-        filter: opacity(0.9);
-        transform: scale(1.01,1.01);
-    }
+@media (min-width: 720px) {
     .home-banner {
-        display: flex;
-        position: relative;
-        align-items: center;
-        width: 95%;
-        height: 400px;
-        text-align: center;
-    }
-    .home-informacion {
-        flex-direction: row;
-        justify-content: space-around;
-        width: auto;
-        border: 2px solid rgb(30, 40, 53);
-        background-color: black;
-        border-radius: 20px;
+        height: 300px;
     }
     .home-informacion h3 {
-        color: rgb(193, 199, 200);
-        margin: 0;
-        padding: 0;
-        font-size: 30px;
+        font-size: 18px;
     }
-    .home-informacion img {
-        margin: 0;
-        padding: 0;
-        width: 50px;
-}
-    .home-mediosDePago {
+    .home-CategProductos {
+        padding: 5px;
+        margin: 5px 70px;
+        background-color: #666;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+        grid-auto-rows: minmax(130px, auto);
+    }
+    .home-Mac {
+        background-size: 350px;
+    }
+    .home-iPhone {
+    background-size: 250px;
+    }
+    .home-Ipad {
+        background-size: 250px;
+        background-position: left;
+    }
+    .home-Airpods {
+        background-size: 150px;
+        background-position: center;
+    }
+    .home-Watch {
+        background-size: 150px;
+        background-position: center;
+    }
+    /* Media Queries Footer */
+    .home-footer {
+        padding: 0 50px;
+    }
+    .home-footer-terms {
+        font-size: 15px;
+    }
+    .home-footer-logos {
         display: flex;
         flex-wrap: nowrap;
+        width: 80px;
         justify-content: space-around;
-        align-items: center;
-        border: none;
     }
-    
-    .home-envios {
+    .home-footer img {
         display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        border: none;
-    }
-    .home-envios i {
-        padding: 20px;
-        font-size: 30px;
-    }
-    @keyframes mymove {
-        0%   {left: 0px;}
-        50%  {left: 50px;}
-        75%  {left: 25px}
-        100% {left: 0px;}
+        align-self: center;
+        width: 25px;
+        border-radius: 4px;
     }
 }
-/* Footer Styles */
 
-.home-footer {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: black;
-    margin-bottom: 10px;
-}
-
-.home-footer h4 {
-    font-size: 8px;
-    color: rgb(139, 154, 187);
-}
-.home-footer img{
-    display: flex;
-    align-self: center;
-    width: 5%;
-}
-
-
-/* media queries header */
 /* Media Queries Desktop Styles */
 @media (min-width: 1200px ) {
-
     .home-barraSuperior2 {
         display: none;
     }
@@ -418,4 +399,131 @@ h3 {
         color: rgb(30, 40, 53);
         font-size: 30px;
     }
+    .home-mainSection {
+        width: 80%;
+    }
+    .home-barraLateral {
+        display: flex;
+    }
+    .home-CategProductos {
+        padding: 5px;
+        margin: 5px 10px;
+        background-color: #666;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+        grid-auto-rows: minmax(300px, auto);
+    }
+    .home-Mac {
+        grid-column: 1;
+        grid-row: 1;
+        background-size: 300px;
+        background-position: center;
+      }
+      .home-iPhone {
+        grid-column: 3;
+        grid-row: 1;
+        background-size: 400px;
+        background-position: bottom;
+      }
+      .home-Ipad {
+        grid-column: 5;
+        grid-row: 1;
+        background-size: 250px;
+        background-position: center;
+      }
+      .home-Airpods {
+        grid-column: 4;
+        grid-row: 1;
+        background-size: 250px;
+        background-position: center;
+      }
+      .home-Watch {
+        grid-column: 2;
+        grid-row: 1;
+        background-size: 250px;
+        background-position: center;
+        }
+    /*  */
+    .home-CategProductos :hover p {
+        display: flex;
+    }
+    .home-CategProductos :hover {
+        filter: opacity(0.9);
+        transform: scale(1.1,1.1);
+    }
+    .home-banner {
+        height: 400px;
+    }
+    .home-informacion {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 40px 20px 15px;
+        width: auto;
+        border: 2px solid rgb(30, 40, 53);
+        background-color: black;
+        border-radius: 20px;
+    }
+    .home-informacion h3 {
+        color: rgb(193, 199, 200);
+        margin: 0;
+        padding: 0;
+        font-size: 30px;
+    }
+    .home-informacion img {
+        margin: 0;
+        padding: 0;
+        width: 50px;
+    }
+    .home-mediosDePago {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        border: none;
+    }
+    .home-envios {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        border: none;
+    }
+    .home-envios i {
+        padding: 20px;
+        font-size: 30px;
+    }
+    @keyframes mymove {
+        0%   {left: 0px;}
+        50%  {left: 50px;}
+        75%  {left: 25px}
+        100% {left: 0px;}
+    }
 }
+/* Footer Styles */
+
+.home-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.home-footer-terms {
+    font-size: 8px;
+    color: rgb(139, 154, 187);
+}
+.home-footer-logos {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80px;
+    justify-content: space-around;
+}
+.home-footer img {
+    display: flex;
+    align-self: center;
+    width: 25px;
+    border-radius: 4px;
+}
+
+/* Prueba Barra Lateral */
