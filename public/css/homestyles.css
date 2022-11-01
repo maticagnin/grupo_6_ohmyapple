@@ -54,9 +54,14 @@ h3 {
 }
 
 .home-logo {
-    padding-left: 20px ;
-    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
     width: 40%;
+}
+.home-logo img{
+    width: 60%;
 }
 
 .home-userBar {
@@ -322,7 +327,10 @@ h3 {
     .home-CategProductos :hover p {
         display: flex;
     }
-   
+    .home-CategProductos :hover {
+        filter: opacity(0.9);
+        transform: scale(1.01,1.01);
+    }
     .home-banner {
         display: flex;
         position: relative;
