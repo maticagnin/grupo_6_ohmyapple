@@ -26,146 +26,8 @@ a, .fas {
     text-decoration: none;
     color: rgb(139, 154, 187);
 }
-/* Header Styles  */
 
-header{
-    background-color: black;
-}
-
-.home-mainHeader{
-    margin: 30px 0;
-}
-
-/* Barra Superior Uno */
-
-h3 {
-    color: rgb(139, 154, 187);
-}
-
-.home-barraSuperior {
-    display: flex;
-    justify-content: space-around;
-    font-size: 46px;
-    align-items: center;
-    background-color: black;
-    height: 50%;
-}
-
-.home-logo {
-    align-self: flex-start;
-    width: 40%;
-}
-
-.home-userBar {
-    display: flex;
-    justify-content: space-around;
-    width: 30%;
-    font-size: 60px;
-}
-
-
-/* Barra Superior Dos */
-
-
-.home-barraSuperior2 {
-    display: flex;
-    justify-content: space-around;
-    font-size: 70px;
-    padding: 40px;
-    align-items: center;
-    background-color: black;
-}
-
-.home-navBar {
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 1px;
-    width: 50%;
-    height: 50%;
-    background-color: rgb(139, 154, 187);
-    border: white;
-    border-radius: 10px;
-    padding: 5px;
-    align-items: center;
-    font-size: 70px;
-}
-
-.home-busqueda {
-    font-size: 30px;
-    border: 1px solid black;
-    border-radius: 1px;
-    width: 88%;
-    height: 90%;
-    background-color: rgb(193, 199, 200);
-    display: flex;
-    justify-content: space-between;
-    border: white;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-.home-navBar i {
-    display: flex;
-    width: 10%;
-    color: rgb(30, 40, 53);
-    font-size: 30px;
-}
-
-/* Barra Lateral */
-
-
-.home-barraLateral {
-    display: none;
-    width: 16%;
-    height: 100%;
-    padding-left: 20px;
-    justify-content: center;
-    background-color: rgb(139, 154, 187);
-    border: 2px double #666;
-    border-right: 3px double #666;
-    border-top-right-radius: 20%;
-    border-bottom-right-radius: 20%;
-}
-
-.home-barraLateral ul {
-    display: inline;   
-    list-style: none;
-    margin: 0;
-    padding: 0;    
-}
-
-.home-barraLateral li {
-    line-height: 50px;
-    padding-left: 1px;
-}
-
-.home-barraLateral a {
-    text-decoration: none;
-    color: #222222;
-}
-
-.home-barraLateral i {
-    padding-right: 20px;
-}
-
-/* Footer Styles */
-
-.home-footer {
-    display: flex;
-    justify-content: space-around;
-    font-size: 46px;
-    align-items: center;
-    background-color: black;
-    margin-bottom: 20px;
-    height: 50%;   
-    margin-top: 20px;
-}
-
-.home-footer h4 {
-    font-size: 20px;
-    color: rgb(139, 154, 187);
-}
+/* Main Styles */
 
 .home-barraLateral{
     display: none;
@@ -175,7 +37,9 @@ h3 {
     align-self: center;
     width: 40%;
     margin-top: 30px;
-    border-radius: 15px;
+    margin-left: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(100, 100, 100);
 }
 .detalle-nombreProd{
     font-size: 55px;
@@ -187,7 +51,7 @@ h3 {
 .producto1{
     display: flex;
     justify-content: space-around;
-    background-color: #ffffff;
+   
     padding-bottom: 30px;
 }
 .selectores{
@@ -236,7 +100,7 @@ select{
     margin-top: 40px;
 }
 .detalle-caract{
-    background-color: #ffffff;
+   
     margin-bottom: 0;
 }
 .detalle-caracteristicas{
@@ -290,4 +154,67 @@ select{
 }
 
 
+
+
+@media (min-width: 720px){
+
+    .iphone14{
+        width: 25%;
+    }
+    .detalle-nombreProd{
+        font-size: 40px;
+        margin-top: 45px;
+    }
+    .producto1{
+        padding-bottom: 30px;
+        margin-top: 15px;
+    }
+    .selectores{
+        height: 15%;
+    }
+    select{
+        font-size: 25px;
+    }
+    .detalle-valor{
+        font-size: 35px;
+        margin-top: 10px;
+    }
+    .info{
+        font-family: "Helvetica";
+        font-size: 25px;
+        line-height: 30px;
+        width: 95%;
+        margin: 0px;
+    }
+    .informacion{
+        margin-top: 10px;
+    }
+    .reco{
+        width: 90%;
+    }
+    .divreco{
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    #mas{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: 105px;
+        background-color: #ffffff;
+        font-size: 70px;
+        padding: 7px;
+        border-radius: 50%;
+    }
+    .descreco{
+        display: none;
+        color: #ffffff;
+        background-color: black;
+        font-size: 25px;
+        padding: 5px;
+        position: absolute;
+    }
+}
 
