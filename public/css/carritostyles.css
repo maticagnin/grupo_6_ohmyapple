@@ -16,6 +16,22 @@ a, .fas {
     color: rgb(139, 154, 187);
 }
 
+.carrito-desplegable-resumen, .carrito-desplegable-facturacion, .carrito-desplegable-envio, .carrito-desplegable-pago{
+    background-color: black;
+    color: white;
+    border: 2px solid rgb(30, 40, 53);
+    font-size: 18px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main h4{
+    margin: 10px;
+    padding: 15px;
+}
 /* Carrito Seccion1  */
 /* Carrito Seccion1  */
 .carrito-seccion1{
@@ -26,108 +42,107 @@ a, .fas {
     width: 100%;
     margin: 10px;
 }
-.carrito-desplegable-resumen, .carrito-desplegable-facturacion, .carrito-desplegable-envio, .carrito-desplegable-pago{
-    background-color: black;
-    color: white;
-    border: 2px solid rgb(30, 40, 53);
-    font-size: 25px;
-    width: 100%;
-    border-radius: 5px;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.carrito-columnas{
-    display: flex;
-    flex-wrap: nowrap;
-    margin-top: 10px;
-    padding: 15px;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
-    box-shadow: 0px 0px 30px black;
-}
-.carrito-columna-imagen{
+
+.carrito-resumen-pedido{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-}
-.carrito-columna-imagen img{
-    height: 50px;
-    width: 50px;
-}
-.carrito-columna-producto{
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-}
-.carrito-columna-cantidad{
-    
-    align-items: flex-start;
-    width: 20%;
-}
-.carrito-columna-producto{
-    align-items: center;
-    width: 20%;
-}
-.carrito-columna-subtotal{
-    align-items: center;
-    width: 20%;
-}
-.carrito-columna-total{
-    align-items: center;
-    width: 20%;
-}
-.carrito-totales{
-    justify-content: center;
-    width: 20%;
-    padding: 15px;
+    margin-top: 10px;
+    padding: 10px 20px 10px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px black;
 }
 
+.carrito-resumen-encabezado{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 18px;
+}
+
+.carrito-resumen-items{
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+    font-size: 18px;
+}
+
+.carrito-resumen-items p{
+    display: flex;
+    align-self: flex-end;
+    font-weight: bold;
+}
+
+.carrito-resumen-producto{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.carrito-resumen-items-producto{
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+}
+
+.carrito-resumen-items-producto p{
+    display: flex;
+    align-self: flex-end;
+}
+
+.carrito-resumen-items-total{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.carrito-resumen-items-total p{
+    display: flex;
+    align-self: flex-end;
+    font-weight: bold;
+}
 /* Carrito Seccion2  */
 /* Carrito Seccion2  */
 /* Carrito Seccion2  */
 
 .carrito-seccion2{
-    
     display: flex;
 }
+
 .carrito-facturacion{
-    
-    width: 100%;
     margin: 10px;
 }
 
+.carrito-datos-facturacion{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding: 10px 20px 10px 10px;
+    box-shadow: 0px 0px 30px black;
+    border-radius: 5px;
+}
+.carrito-datos-facturacion label{
+    font-size: 18px;
+    font-weight: bold;
+}
 
+.carrito-datos-facturacion input{
+    font-size: 15px;
+}
 
-
+.carrito-checkbox{
+    padding-right: 9px;
+}
 /* Carrito Seccion3  */
 /* Carrito Seccion3  */
 /* Carrito Seccion3  */
 .carrito-seccion3{
     display: flex;
-    flex-wrap: wrap;
-}
-.carrito-datos-facturacion{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-top: 10px;
-    padding: 10px;
-    box-shadow: 0px 0px 30px black;
-    border-radius: 5px;
-}
-.carrito-datos-facturacion div{
-    padding: 5px;
 }
 
 .carrito-envio{
-    width: 100%;
     margin: 10px;
 }
 
@@ -135,14 +150,24 @@ a, .fas {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 10px;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   box-shadow: 0px 0px 30px black;
   border-radius: 5px;
 }
+
 .carrito-dato{
     margin: 10px;
+}
+
+.carrito-datos-envio label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.carrito-datos-envio input{
+    font-size: 15px;
 }
 
 /* Carrito Seccion4  */
@@ -151,42 +176,38 @@ a, .fas {
 .carrito-seccion4{
     display: flex;
 }
+
 .carrito-pago{
-    display: flex;
-    flex-direction: column;
-    
-    width: 100%;
     margin: 10px;
-    justify-content: center;
-    align-items: center;
 }
+
 .carrito-formulario-pago{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 20px 100px;
-    margin: 70px 0px;
-    width: 60%;
-    border: 2px solid black;
-    border-radius: 20%;
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
     box-shadow: 0px 0px 30px black;
 }
+
 .carrito-formulario-pago label{
     padding: 10px;
-    font-size: 30px;
+    font-size: 18px;
     font-weight: bold;
-}    
+}
+
 .carrito-formulario-pago input{
     width: 100%;
-    font-size: 30px;
+    margin: 5px 0px;
+    font-size: 18px;
 }
+
 .carrito-mediosdepago{
     display: flex;
     flex-wrap: wrap;
     align-self: center;
-    width: 70%;
-    justify-content: space-evenly;
+    width: 100%;
+    justify-content: center;
 }
+
 .carrito-opcion{
     display: flex;
     flex-wrap: nowrap;
@@ -195,7 +216,8 @@ a, .fas {
     width: 33%;
     border: 8px solid black;
     border-radius: 5px;
-}
+}   
+
 .carrito-mediosdepago i{
     font-size: 40px;
 }
@@ -205,18 +227,131 @@ input:invalid{
     border: 2px solid red;
 }
 
-.carrito-boton-comprar{
+.carrito-contenedor-boton{
     display: flex;
-    align-self: center;
-    align-items: center;
     justify-content: center;
-    margin: 30px;
+}
+
+.carrito-boton-comprar{
+    margin: 15px;
     background-color: black;
     border-radius: 5px;
-    height: 60px;
-    width: 30%;   
+    width: 30%;
 }
+
 .carrito-boton-comprar h3{
-    font-size: 20px;
+    font-size: 15px;
     color: white;
+    text-align: center;
+}
+
+/* Media Query 720  */
+/* Media Query 720  */
+/* Media Query 720  */
+@media (min-width:720px){
+    
+    .carrito-desplegable-resumen, .carrito-desplegable-facturacion, .carrito-desplegable-envio, .carrito-desplegable-pago{
+        justify-content: space-between;
+        font-size: 23px;
+    }
+
+    .carrito-resumen-pedido{
+        padding: 10px 70px 10px 10px;
+    }
+
+    .carrito-datos-facturacion{
+        padding: 10px 70px 10px 10px;
+    }
+
+    .carrito-datos-envio{
+        padding: 10px 70px 10px 10px;
+    }
+
+    .carrito-formulario-pago{
+        padding: 15px 70px
+    }
+}
+
+/* Media Query 1200  */
+/* Media Query 1200  */
+/* Media Query 1200  */
+@media (min-width:1200px){
+
+    .carrito-desplegable-resumen, .carrito-desplegable-facturacion, .carrito-desplegable-envio, .carrito-desplegable-pago{
+        justify-content: space-between;
+        font-size: 35px;
+    }
+
+    .carrito-resumen-pedido p{
+        font-size: 25px;
+    }
+
+    .carrito-select{
+        font-size: 25px;
+    }
+
+    .carrito-datos-facturacion{
+        padding: 10px 100px 10px 100px;
+        justify-content: space-between;
+    }
+
+    .carrito-datos-facturacion label{
+        font-size: 25px;
+    }
+
+    .carrito-datos-facturacion input{
+        font-size: 25px;
+    }
+
+    .carrito-checkbox{
+        font-size: 25px;
+    }
+
+    .carrito-datos-envio{
+        padding: 10px 100px 10px 100px;
+        justify-content: space-between;
+    }
+
+    .carrito-datos-envio label{
+        font-size: 25px;
+    }
+
+    .carrito-datos-envio input{
+        font-size: 25px;
+    }
+
+    .carrito-formulario-pago{
+        padding: 15px 100px;
+    }
+
+    .carrito-formulario-pago label{
+        font-size: 25px;
+    }
+
+    .carrito-formulario-pago input{
+        font-size: 25px;
+    }
+
+    .carrito-mediosdepago{
+        justify-content: space-evenly;
+    }
+
+    .carrito-boton-comprar{
+        background-color: rgb(1,1,1);
+        border-radius: 5px;
+        font-family: inherit;
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        transition: all 1s;
+    }
+
+    .carrito-boton-comprar:hover{
+        width: 100%;
+        background-color: rgb(1, 1, 1, 0.4);
+    }
+
+    .carrito-boton-comprar h3{
+        font-size: 20px;
+    }
 }

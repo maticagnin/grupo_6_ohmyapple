@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
 
-    <meta charset="UTF-8">
+    <meta charset = "UTF-8">
     <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
-    <META name="viewport" content=""widht=device-width, inicitial-scal="1.0">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <link href = "https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel = "stylesheet"/>
-        <script src="https://kit.fontawesome.com/2f3c4114c6.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/carritostyles.css">
-        <link rel="stylesheet" href="/css/homestyles.css">
+        <script src = "https://kit.fontawesome.com/2f3c4114c6.js" crossorigin = "anonymous"></script>
+        <link rel = "stylesheet" href = "/css/carritostyles.css">
+        <link rel = "stylesheet" href = "/css/homestyles.css">
         <title>Oh My Apple</title>
         
 </head>
@@ -17,7 +17,7 @@
         <nav>
             <div class="home-barraSuperior">
                 <div class="home-logo">
-                    <h3><i class="fa-brands fa-apple"></i> Oh My Apple!</h3>
+                    <a href="/"><img src="/images/logos/OhMyApple.png" alt="LogoOhMyApple"></a>
                 </div>
                 <div class="home-navBarHidden">
                     <input class="home-busqueda" type="text" placeholder="Buscar productos...">
@@ -49,52 +49,42 @@
     <main class="carrito-main">
         <section class="carrito-seccion1">
             <div class="carrito-resumen">
-                <button class="carrito-desplegable-resumen"><h4 class="carrito-etiqueta-resumen">Este es el resumen de tu pedido</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
-                    <div class="carrito-columnas">
-                        <!-- <div class="carrito-columna-imagen">
-                            <img class="carrito-titulo-columna2" src="#" alt="Imagen">
-                            <img class="carrito-titulo-columna2" src="#" alt="Imagen">
-                        </div> -->
-                        <div class="carrito-columna-producto">
-                          <p>Producto</p>               
-                          <p>iPhone 14</p>               
-                          <p>Airpods</p>               
+                <button class="carrito-desplegable-resumen"><h4>Este es el resumen de tu pedido</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                    <div class="carrito-resumen-pedido">
+                        <div class="carrito-resumen-encabezado">
+                            <div class="carrito-resumen-items"><p>Producto</p></div>
+                            <div class="carrito-resumen-items"><p>Cantidad</p></div>
+                            <div class="carrito-resumen-items"><p>Sub-total</p></div>
+                            <div class="carrito-resumen-items"><p>Total</p></div>
+                    </div>
+                    <!-- <div>
+                        <img class="carrito-resumen-imagen" src="#" alt="Imagen">
+                    </div> -->
+                    <div class="carrito-resumen-producto">
+                        <div class="carrito-resumen-items-producto">
+                            <p>iPhone 14</p>
                         </div>
-                        <div class="carrito-columna-cantidad">
-                            <p>Cantidad</p>
+                        <div class="carrito-resumen-items-producto">
                             <p>
-                            <select class="carrito-select">
-                            <option class="carrito-opcion" value="1">1 Unidad</option>
-                            <option class="carrito-opcion" value="2">2 Unidades</option>
-                            <option class="carrito-opcion" value="3">3 Unidades</option>
-                            <option class="carrito-opcion" value="4">4 Unidades</option>
-                            <option class="carrito-opcion" value="5">5 Unidades</option>
-                            </select>
-                            </p>
-                            <p><select class="carrito-select">
-                                <option class="carrito-opcion" value="1">1 Unidad</option>
-                                <option class="carrito-opcion" value="2">2 Unidades</option>
-                                <option class="carrito-opcion" value="3">3 Unidades</option>
-                                <option class="carrito-opcion" value="4">4 Unidades</option>
-                                <option class="carrito-opcion" value="5">5 Unidades</option>
+                                <select class="carrito-select">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                             </p>
                         </div>
-                        <div class="carrito-columna-subtotal">
-                            <p>Sub-total</p>
+                        <div class="carrito-resumen-items-producto">
                             <p>$350.000</p>
-                            <p>$50.000</p>
                         </div>
-                        <div class="carrito-columna-total">
-                            <p>Total</p>
+                        <div class="carrito-resumen-items-producto">
                             <p>$350.000</p>
-                            <p>$50.000</p>
                         </div>
-                        <div>
-                            <p class="carrito-totales">TOTALES</p>
-                            <p>$400.000</p>
-                        </div>
-                    </div>       
+                    </div>
+                    <div class="carrito-resumen-items-total">
+                        <p>$350.000</p>
+                    </div>  
             </div>
             
         </section>
@@ -106,15 +96,19 @@
                 <form action="#" method="#"></form>
                     <div class="carrito-datos-facturacion">
                         <div>
-                        <label for="nombre">Nombre y apellido:</label>
-                        <input class="carrito-dato" type="text" name="nombre" id="nombre" placeholder="Ej: Pablo García">
+                        <label for="nombres">Nombres:</label>
+                        <input class="carrito-dato" type="text" name="nombres" id="nombres" placeholder="Ej: Pablo Pablo">
                         </div>
                         <div>
-                        <label for="dni">DNI:</label>
+                        <label for="apellidos">Apellidos:</label>
+                        <input class="carrito-dato" type="text" name="apellidos" id="apellidos" placeholder="Ej: García Suarez">
+                        </div>
+                        <div>
+                        <label for="dni">N° Doc.:</label>
                         <input class="carrito-dato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
                         </div>
                         <div>
-                        <label for="nacimiento">Fecha de nacimiento:</label>
+                        <label for="nacimiento">Fecha de nac.:</label>
                         <input class="carrito-dato" type="date" name="nacimiento" id="nacimiento">
                         </div>
                         <div>
@@ -130,18 +124,18 @@
                         <input class="carrito-dato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número">
                         </div>
                         <div>
-                        <label for="cp">Código postal</label>
+                        <label for="cp">Cod. postal</label>
                         <input class="carrito-dato" type="number" name="cp" id="cp" placeholder="Ej: 7600">
                         </div>
                         <div>
-                        <label for="email">Correo electrónico:</label>
+                        <label for="email">E-mail:</label>
                         <input class="carrito-dato" type="email" name="email" id="email" placeholder="nombre@dominio.com.ar">
                         </div>
                         <div>
                         <label for="telefono">Teléfono:</label>
                         <input class="carrito-dato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330">
                         </div>
-                        <div>
+                        <div class="carrito-checkbox">
                             <input type="checkbox" name="coincidencia" value="autocompletar-envio">Enviar a esta misma dirección
                         </div>
                     </div>
@@ -171,11 +165,11 @@
                         <input class="carrito-dato" type="text" name="pisodpto" id="pisodpto" placeholder="Ej: 5 D">
                         </div>
                         <div>
-                        <label for="codigo">Código postal:</label>
+                        <label for="codigo">Cod. Postal:</label>
                         <input class="carrito-dato" type="text" name="codigo" id="codigo" placeholder="Ej: 7600">
                         </div>
                         <div>
-                        <label for="referencia">Datos de referencia:</label>
+                        <label for="referencia">Referencias:</label>
                         <input class="carrito-dato" type="text" name="referencia" id="referencia" placeholder="Casa blanca, puerta roja">
                         </div>
                     </div>
@@ -215,15 +209,16 @@
                             </div> 
 
                         <label for="nombretarjeta">Nombre en la tarjeta</label>
-                        <input class="" type="text" name="nombretarjeta" id="nombretarjeta" minlength="5">
+                        <input type="text" name="nombretarjeta" id="nombretarjeta" minlength="5">
 
                         <label for="vencimiento">Fecha de vencimiento</label>
-                        <input class="" type="number" name="vencimiento" id="vencimiento" maxlength="4" placeholder="MM/AA">
+                        <input type="number" name="vencimiento" id="vencimiento" maxlength="4" placeholder="MM/AA">
 
                         <label for="codigoseguridad">Código de seguridad</label>
-                        <input class="" type="number" name="codigoseguridad" id="codigoseguridad" maxlength="3" placeholder="CVV">
-
-                        <button class="carrito-boton-comprar"><h3>COMPRAR</h3></button>
+                        <input type="number" name="codigoseguridad" id="codigoseguridad" maxlength="3" placeholder="CVV">
+                        <div class="carrito-contenedor-boton">
+                            <a href="/"><button class="carrito-boton-comprar"><h3>COMPRAR</h3></button></a>
+                        </div>
                 </div>
             </div>
         </section>
