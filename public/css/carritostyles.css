@@ -32,6 +32,19 @@ main h4{
     margin: 10px;
     padding: 15px;
 }
+
+.carrito-main{
+    display: flex;
+    flex-direction: row;
+}
+
+.carrito-cuerpo-pagina{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
 /* Carrito Seccion1  */
 /* Carrito Seccion1  */
 .carrito-seccion1{
@@ -40,7 +53,7 @@ main h4{
 
 .carrito-resumen{
     width: 100%;
-    margin: 10px;
+    margin: 0px 10px 10px 10px;
 }
 
 .carrito-resumen-pedido{
@@ -236,7 +249,6 @@ input:invalid{
     margin: 15px;
     background-color: black;
     border-radius: 5px;
-    width: 30%;
 }
 
 .carrito-boton-comprar h3{
