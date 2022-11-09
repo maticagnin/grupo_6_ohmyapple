@@ -25,9 +25,7 @@ a, .fas {
     flex-wrap: wrap;
     justify-content: flex-start;
 }
-.home-barraLateral{
-    display: none;
-}
+
 .iphone14{
     display: flex;
     align-self: center;
@@ -65,7 +63,7 @@ a, .fas {
     text-align: center;
 }
 
-select{
+.detalle-selector{
     font-size: 10px;
     border-radius: 20px;
     padding-left: 5px;
@@ -178,7 +176,7 @@ select{
     .selectores{
         height: 15%;
     }
-    select{
+    .detalle-selector{
         font-size: 18px;
     }
     .detalle-valor{
