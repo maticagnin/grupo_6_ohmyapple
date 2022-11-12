@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('partials/head') %>
+<body>
+    <%- include ('partials/header') %>
+    <main class="detalle-main">
+        <%- include ('partials/sideBar') %>
+        
+        <form action="/" method="POST">
+            <label for="nombre"> Nombre del producto: </label><input id="nombre" type="text" name="nombre"><br>
+            <label for="descripcion"> Descripción: </label><input id="descripcion" type="text" name="descripcion"><br>
+            <label for="imagen"> Imagen: </label><input id="imagen" type="file" name="imagen"><br>
+            <label for="categoria"> Categoria: </label>
+                <select class="creacion-categoria">
+                    <option value="iphone">iPhone</option>
+                    <option value="mac">Mac</option>
+                    <option value="airpods">AirPods</option>
+                    <option value="ipad">iPad</option>
+                    <option value="watch">Watch</option>
+                    <option value="tv">TV</option>
+                    <option value="accesorios">Accesorios</option>
+                </select>
+                <label for="modelo"> Modelo: </label>
+                <select class="creacion-modelo">
+                    <option value="pro">PRO</option>
+                    <option value="max">PRO MAX</option>
+                    <option value="no">-</option>
+                </select>
+                <label for="color"> Color: </label>
+                <select class="creacion-color">
+                    <option value="iphone">iPhone</option>
+                    <option value="P">PURPLE</option>
+                    <option value="M">MIDNIGTH</option>
+                    <option value="S">STARLIGTH</option>
+                    <option value="B">BLUE</option>
+                    <option value="R">RED</option>
+                </select>
+                <label for="gb"> GB: </label>
+                <select class="creacion-gb">
+                    <option value="125">128 GB</option>
+                    <option value="256">256 GB</option>
+                    <option value="512">512 GB</option>
+                </select><br>
+                <label for="precio"> Precio: </label><input id="precio" type="text" name="precio"><br>
+                <button>EDITAR</button>
+                
+        </form>
+
+    </main>
+    <%- include ('partials/footer') %>
+</body>
+
+</html> 
