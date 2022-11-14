@@ -246,7 +246,7 @@ a, .fas {
     transform: scale(1.2);
 }
 .producto1{
-    width: 80%;
+    width: 60%;
     display: flex;
     justify-content: flex-start;
 }
