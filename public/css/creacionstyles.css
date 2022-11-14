@@ -1,0 +1,76 @@
+/* Formulario Styles */
+
+.creacion-div-formulario {
+    display:flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+
+.creacion-formulario {
+    padding: 20px;
+    border: 4px solid black;;
+    width: 75%;
+    border-radius: 20px;
+    font-size: 21px;
+    box-shadow: 0px 0px 30px black;
+
+}
+
+.creacion-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.creacion-width25 {
+    width: 35%;
+}
+
+.creacion-width75 {
+    width: 65%;
+}
+.creacion-formulario input, .creacion-formulario select, .creacion-formulario textarea {
+    width: 80%;
+    font-size: 16px;
+    padding: 8px;
+    align-items: center;
+}
+.creacion-formulario textarea, .creacion-formulario input[type=text], .creacion-formulario input[type=number], .creacion-formulario select {
+    resize: vertical;
+    border: none;
+    border-bottom: 2px solid #666;
+    border-radius: 8px;
+}
+
+.creacion-formulario select {
+    cursor: pointer;
+}
+
+.creacion-div-button-crear {
+    display: flex;
+    justify-content: center;
+
+}
+
+.creacion-button-crear {
+    background-color: rgb(109, 124, 146);
+    border-radius: 8px;
+    border: none;
+    border-bottom: 2px solid #666;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+
+.creacion-button-crear:hover {
+    background-color: rgb(109, 124, 146, 0.4);
+    box-shadow: 0 12px 16px 0 rgb(109, 124, 146, 0.4),0 17px 50px 0 rgb(109, 124, 146, 0.4);
+      
+}

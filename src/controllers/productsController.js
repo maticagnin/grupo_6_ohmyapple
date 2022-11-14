@@ -9,6 +9,9 @@ const productsController = {
     },
     edicion: (req, res) => {
         res.render('edicionDeProducto')
+    },
+    carrito: (req, res) => {
+        res.render('carrito')
     }
 
 };

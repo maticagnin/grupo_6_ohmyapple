@@ -123,6 +123,7 @@ h3 {
 .home-barraLateral {
     display: none;
     width: 20%;
+    height: fit-content;
     justify-content: space-evenly;
     background-color: rgb(109, 124, 146);
     border: 2px double #666;
