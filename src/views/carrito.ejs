@@ -7,9 +7,13 @@
     <main class="carrito-main">
         <%- include ('partials/sideBar') %>
         <div class="carrito-cuerpo-pagina">
-        <section class="carrito-seccion1">
+            <section class="carrito-seccion1">
             <div class="carrito-resumen">
-                <button class="carrito-desplegable-resumen"><h4>Este es el resumen de tu pedido</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <button class="carrito-desplegable-resumen">
+                    <h4>Este es el resumen de tu pedido</h4>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
+                    
                     <div class="carrito-resumen-pedido">
                         <div class="carrito-resumen-encabezado">
                             <div class="carrito-resumen-items"><p>Producto</p></div>
@@ -52,51 +56,107 @@
 
         <section class="carrito-seccion2">
             <div class="carrito-facturacion">
-                <button class="carrito-desplegable-facturacion"><h4 class="carrito-etiqueta-facturacion">¿A quién se lo facturamos?</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <button class="carrito-desplegable-facturacion">
+                    <h4 class="carrito-etiqueta-facturacion">¿A quién se lo facturamos?</h4>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
                 <form action="#" method="#"></form>
                     <div class="carrito-datos-facturacion">
-                        <div>
-                        <label for="nombres">Nombres:</label>
-                        <input class="carrito-dato" type="text" name="nombres" id="nombres" placeholder="Ej: Pablo Pablo">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="nombres">Nombres:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="nombres" id="nombres" placeholder="Ej: Pablo Pablo">
+                            </div>
                         </div>
-                        <div>
-                        <label for="apellidos">Apellidos:</label>
-                        <input class="carrito-dato" type="text" name="apellidos" id="apellidos" placeholder="Ej: García Suarez">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="apellidos">Apellidos:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="apellidos" id="apellidos" placeholder="Ej: García Suarez">
+                            </div>
                         </div>
-                        <div>
-                        <label for="dni">N° Doc.:</label>
-                        <input class="carrito-dato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
+
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="dni">N° Doc.:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
+                            </div>
                         </div>
-                        <div>
-                        <label for="nacimiento">Fecha de nac.:</label>
-                        <input class="carrito-dato" type="date" name="nacimiento" id="nacimiento">
+
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="nacimiento">Fecha de nac.:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="date" name="nacimiento" id="nacimiento">
+                            </div>
                         </div>
-                        <div>
-                        <label for="provincia">Provincia:</label>
-                        <input class="carrito-dato" type="text" name="provincia" id="provincia" placeholder="Ej: Buenos Aires">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="provincia">Provincia:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="provincia" id="provincia" placeholder="Ej: Buenos Aires">
+                            </div>
                         </div>
-                        <div>
-                        <label for="localidad">Localidad:</label>
-                        <input class="carrito-dato" type="text" name="localidad" id="localidad" placeholder="Ej: Mar del Plata">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="localidad">Localidad:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="localidad" id="localidad" placeholder="Ej: Mar del Plata">
+                            </div>
                         </div>
-                        <div>
-                        <label for="domicilio">Domicilio:</label>
-                        <input class="carrito-dato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="domicilio">Domicilio:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número">
+                            </div>
                         </div>
-                        <div>
-                        <label for="cp">Cod. postal</label>
-                        <input class="carrito-dato" type="number" name="cp" id="cp" placeholder="Ej: 7600">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="cp">Cod. postal</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="number" name="cp" id="cp" placeholder="Ej: 7600">
+                            </div>
                         </div>
-                        <div>
-                        <label for="email">E-mail:</label>
-                        <input class="carrito-dato" type="email" name="email" id="email" placeholder="nombre@dominio.com.ar">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="email">E-mail:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="email" name="email" id="email" placeholder="nombre@dominio.com.ar">
+                            </div>
                         </div>
-                        <div>
-                        <label for="telefono">Teléfono:</label>
-                        <input class="carrito-dato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="telefono">Teléfono:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330">
+                            </div>
                         </div>
-                        <div class="carrito-checkbox">
-                            <input type="checkbox" name="coincidencia" value="autocompletar-envio">Enviar a esta misma dirección
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-checkbox">
+                                <input class="checkbox2" type="checkbox" name="coincidencia" value="autocompletar-envio">Enviar a esta misma dirección
+                            </div>
                         </div>
                     </div>
             </div>
@@ -105,84 +165,142 @@
 
         <section class="carrito-seccion3">          
             <div class="carrito-envio">
-                <button class="carrito-desplegable-envio"><h4 class="carrito-etiqueta-envio">¿A dónde te lo enviamos?</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <button class="carrito-desplegable-envio">
+                    <h4 class="carrito-etiqueta-envio">¿A dónde te lo enviamos?</h4>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
                 <form action="#" method="#"></form>
                     <div class="carrito-datos-envio">
-                        <div>
-                        <label for="provincia2">Provincia:</label>
-                        <input class="carrito-dato" type="text" name="provincia2" id="provincia2" placeholder="Ej: Buenos Aires">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="provincia2">Provincia:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="provincia2" id="provincia2" placeholder="Ej: Buenos Aires">
+                            </div>
                         </div>
-                        <div>
-                        <label for="localidad2">Localidad:</label>
-                        <input class="carrito-dato" type="text" name="localidad2" id="localidad2" placeholder="Ej: Mar del Plata">
+
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="localidad2">Localidad:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="localidad2" id="localidad2" placeholder="Ej: Mar del Plata">
+                            </div>
                         </div>
-                        <div>
-                        <label for="calleyaltura">Domicilio:</label>
-                        <input class="carrito-dato" type="text" name="calleyaltura" id="calleyaltura" placeholder="Calle y Número">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="calleyaltura">Domicilio:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="calleyaltura" id="calleyaltura" placeholder="Calle y Número">
+                            </div>
                         </div>
-                        <div>
-                        <label for="pisodpto">Piso/Dpto:</label>
-                        <input class="carrito-dato" type="text" name="pisodpto" id="pisodpto" placeholder="Ej: 5 D">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="pisodpto">Piso/Dpto:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="pisodpto" id="pisodpto" placeholder="Ej: 5 D">
+                            </div>
                         </div>
-                        <div>
-                        <label for="codigo">Cod. Postal:</label>
-                        <input class="carrito-dato" type="text" name="codigo" id="codigo" placeholder="Ej: 7600">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="codigo">Cod. Postal:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="codigo" id="codigo" placeholder="Ej: 7600">
+                            </div>
                         </div>
-                        <div>
-                        <label for="referencia">Referencias:</label>
-                        <input class="carrito-dato" type="text" name="referencia" id="referencia" placeholder="Casa blanca, puerta roja">
+                        
+                        <div class="carrito-contenedor-formularios">
+                            <div class="carrito-contenedor-label">
+                                <label for="referencia">Referencias:</label>
+                            </div>
+                            <div class="carrito-contenedor-input">
+                                <input class="carrito-dato" type="text" name="referencia" id="referencia" placeholder="Casa blanca, puerta roja">
+                            </div>
                         </div>
                     </div>
             </div>
     
         </section>
 
-
         <section class="carrito-seccion4">          
             <div class="carrito-pago">
-                <button class="carrito-desplegable-pago"><h4 class="carrito-etiqueta-pago">¿Cómo querés pagar?</h4><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <button class="carrito-desplegable-pago">
+                    <h4 class="carrito-etiqueta-pago">¿Cómo querés pagar?</h4>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
                 <div class="carrito-formulario-pago">
-                    <form action="#" method="#"></form>
-                        <label for="numerotarjeta">Número de tarjeta</label>
-                        <input class="carrito-numerotarjeta" type="number" name="numerotarjeta" id="numerotarjeta" minlength="16">
+                    <form action="#" method="#">
+                        <div class="">
+                            <div>
+                                <label for="numerotarjeta">Número de tarjeta</label>
+                            </div>
+                            <div>
+                                <input class="carrito-numerotarjeta" type="number" name="numerotarjeta" id="numerotarjeta" minlength="16">
+                            </div>
+                        </div>
 
-                        <label for="tarjeta">Tarjeta</label>
-                           <div class="carrito-mediosdepago">
+                        <div>
+                            <label for="tarjeta">Tarjeta</label>
+                        </div> 
+                        <div class="carrito-mediosdepago">
                                 <label>
                                     <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta" checked><i class="fa-brands fa-cc-visa"></i>
-                                    </label>
+                                </label>
                                 <label>
                                     <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-mastercard"></i>
-                                    </label>
+                                </label>
                                 <label>
                                     <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-amex"></i>
-                                    </label>
+                                </label>
                                 <label>
                                     <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-paypal"></i>
-                                    </label>
+                                </label>
                                 <label>
                                     <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-cc-apple-pay"></i>
-                                    </label>
+                                </label>
                                 <label>  
                                     <input class="carrito-opcion" type="radio" name="tarjeta" value="tarjeta"><i class="fa-brands fa-bitcoin"></i>
-                                    </label>
-                            </div> 
-
-                        <label for="nombretarjeta">Nombre en la tarjeta</label>
-                        <input type="text" name="nombretarjeta" id="nombretarjeta" minlength="5">
-
-                        <label for="vencimiento">Fecha de vencimiento</label>
-                        <input type="number" name="vencimiento" id="vencimiento" maxlength="4" placeholder="MM/AA">
-
-                        <label for="codigoseguridad">Código de seguridad</label>
-                        <input type="number" name="codigoseguridad" id="codigoseguridad" maxlength="3" placeholder="CVV">
+                                </label>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="nombretarjeta">Nombre en la tarjeta</label>
+                            </div>
+                            <div>
+                                <input type="text" name="nombretarjeta" id="nombretarjeta" minlength="5">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="vencimiento">Fecha de vencimiento</label>
+                            </div>
+                            <div>
+                                <input type="number" name="vencimiento" id="vencimiento" maxlength="4" placeholder="MM/AA">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="codigoseguridad">Código de seguridad</label>
+                            </div>
+                            <div>
+                                <input type="number" name="codigoseguridad" id="codigoseguridad" maxlength="3" placeholder="CVV">
+                            </div>
+                        </div>
                         <div class="carrito-contenedor-boton">
                             <a href="/"><button class="carrito-boton-comprar"><h3>COMPRAR</h3></button></a>
                         </div>
+                    </form>    
                 </div>
             </div>
         </section>
-        </div>
     </main>    
 
 <%- include ('partials/footer') %>

@@ -1,3 +1,4 @@
+SPRINT 2
 1. Comenzar a hacer.
      - Setear una reunión semanal como mínimo para poner en común nuestro trabajo, pedirnos ayuda y alinear el proyecto.
      - Setear una reunión semanal diferente a la anterior pero de poca duración para hacer un push y un pull del proyecto para no acumular muchos cambios. Pudiendo tener de esa manera menos conflictos potenciales.
@@ -17,3 +18,25 @@
 5. Dejar de hacer.
      - Dejar para último momento las tareas de pusheo y pulleo.
      - Trabajar sobre la fecha del deadline. Esto hace que tener que codear bajo presión no nos permita pensar con tranquilidad acerca de lo que estamos haciendo.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+SPRINT 3
+1. Comenzar a hacer.
+     - Terminar de definir un día fijo para nuestra weekly.
+     - Acostumbrarnos a sentarnos a codear y pullear antes que cualquier otra cosa.
+     - Trabajar en bloques cortos de código para hacer modificaciones por día. De esta manera, sistemáticamente podremos ir avanzando e ir gestionando de a partes el código y no sentir que es demasiado.
+
+2. Hacer más.
+     - Codear todos los días.
+     - Continuar pidiendo ayuda a los profesores. Cuando pedimos ayuda en la aplicación práctica pudimos avanzar mucho con el proyecto.
+
+3. Continuar haciendo.
+     - Demostrarnos que es nuestra primer experiencia y que está muy bien. Alentarnos a que lo mejoraremos día a día.
+     - Escucharnos y trabajar por el grupo.
+
+4. Hacer menos.
+     - Citarnos a una reunión sin tener muy claro lo que nos juntamos a hacer. Que nos juntemos no quiere decir que trabajemos más ni mejor.
+
+5. Dejar de hacer.
+     - Dejar para último momento las modificaciones para concretar lo pendiente del Sprint.
+     - Codear a contrareloj.
