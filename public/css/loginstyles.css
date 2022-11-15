@@ -1,8 +1,6 @@
 /* Main Styles  */
 
-.home-barraLateral {
-  display: none;
-}
+
 
 .login-main {
   margin-top: 40px;
@@ -19,6 +17,7 @@
   background-color: rgb(139, 154, 187);
   text-align: center;
   border-radius: 20px;
+  
 }
 
 .form-tittle {
@@ -26,7 +25,7 @@
   text-transform: uppercase;
   font-family: Helvetica;
   font-size: 25px;
-  margin-bottom: 25%;
+  margin-bottom: 10%;
   text-decoration: dotted;
 }
 
@@ -55,7 +54,7 @@
   ;
 }
 .form-box input[type="password"]:focus .form-box button[type="submit"] {
-  border: 0;
+  border: 30%;
   background-color: rgb(139, 154, 187);
 
   border: solid 2px rgb(91, 195, 243);
@@ -64,35 +63,75 @@
 .form-box button[type="submit"]:hover {
   background: none;
   cursor: pointer;
+
 }
 
 .form-remember {
   font-size: small;
   color: black;
   text-align: center;
+  justify-content: center;
+  
 }
 
 .login-main {
   display: flex;
+  
   justify-content: center;
-  margin-bottom: 0%;
+  margin-bottom: 10%;
 }
 
 /* medias queries form */
 
-@media (min-width: 1200px) {
-  .login-main {
+@media  (min-width: 720px){
+  .login-main{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 2% 0%;
-  }
-  .master-form {
+    margin-left: 45%;
+    margin-right: 20%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    width: 40%;
+    }
+  .master-form{
     display: flex;
-    margin-left: 20%;
-
+    padding-top: 15%;
+    padding-bottom: 40%;
+   
+    
+    margin-left: -35%;
     align-items: center;
-    width: 20%;
-    justify-content: center;
-  }
-}
+    
+    justify-content: center;}}
+
+
+    @media (min-width: 1200px){
+      .login-main{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-left: 0%;
+       text-align: center;
+       
+    margin-right: 0%;
+    margin-top: 1%;
+    width: 80%;
+        
+       
+        
+      }
+      .master-form{
+        display: flex;
+       text-align: center;
+       margin-left: 35%;
+       
+        
+        align-items: center;
+        width: 20%;
+        justify-content: center;
+        padding: 15%;
+    
+       
+        
+      }}
