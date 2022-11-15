@@ -123,6 +123,7 @@ h3 {
 .home-barraLateral {
     display: none;
     width: 20%;
+    height: fit-content;
     justify-content: space-evenly;
     background-color: rgb(109, 124, 146);
     border: 2px double #666;
@@ -477,7 +478,7 @@ h3 {
     }
     .home-informacion img {
         margin: 0;
-        padding: 0;
+        padding: 5px;
         width: 50px;
     }
     .home-mediosDePago {
@@ -485,7 +486,9 @@ h3 {
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
+        margin-right: 0;
         border: none;
+        padding: 0;
     }
     .home-envios {
         display: flex;

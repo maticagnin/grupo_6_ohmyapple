@@ -247,7 +247,7 @@ input:invalid{
 
 .carrito-boton-comprar{
     margin: 15px;
-    background-color: black;
+    background-color: rgb(109, 124, 146);
     border-radius: 5px;
 }
 

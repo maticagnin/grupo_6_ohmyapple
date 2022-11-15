@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('partials/head') %>
+<body>
+    <%- include ('partials/header') %>
+    <main class="home-main">
+        <%- include ('partials/sideBar') %>
+        <section class="home-mainSection">
+            <article class="home-sectionBanner">
+                <div class="home-banner"></div>
+            </article>
+        
+            <article class="home-informacion">
+                <div class="home-mediosDePago">
+                    <h3>Medios de Pago</h3>
+                    <img src="/images/logos/efectivo.png" alt="logo-Efectivo">
+                    <img src="/images/logos/visa.png" alt="logo-Visa">
+                    <img src="/images/logos/masterCard.png" alt="logo-MasterCard">
+                    <img src="/images/logos/amex.png" alt="logo-Amex">
+                    <img class="home-mp" src="/images/logos/mercadopago.svg" alt="logo-MercadoPago">
+                </div>
+                <div class="home-envios">
+                    <h3>Envíos a todo el país</h3>
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+
+            </article>
+            
+            <article class="home-grid">
+                <div class="home-CategProductos">
+                    <div class="home-item home-Mac">
+                        <p>Mac</p>
+                    </div>
+                    <div class="home-item home-Ipad">
+                        <p>iPad</p>
+                    </div>
+                    <div class="home-item home-Watch">
+                        <p>Watch</p>
+                    </div>
+                    <div class="home-item home-iPhone">
+                        <p>iPhone</p>
+                    </div>
+                    <div class="home-item home-Airpods">
+                        <p>AirPods</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>    
+   <%- include ('partials/footer') %>
+</body>
+
+</html>
