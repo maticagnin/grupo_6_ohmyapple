@@ -8,40 +8,37 @@
     <div class="producto1">
         <div class="imgDetalle">
         <div class="detalle-divimg">
-        <img class="iphone14" src="/images/iphone14.jpg">
+        <img class="iphone14" src="/images/<%= producto.imagen %>" alt="<%= producto.nombre %>">
         </div>
         <div class="descripcion">
-        <h2 class="detalle-nombreProd">IPHONE 14</h2>
+                <h2 class="detalle-nombreProd"><%= producto.nombre %></h2>
         <div class="selectores">
             <form class="detalle-form" action="/" method="GET">            
                 <select class="detalle-selector" name="select">
-                    <option class="opcion" value="pro">PRO</option>
-                    <option class="opcion" value="max">PRO MAX</option>
-                    <option class="opcion" value="no">-</option>
+                    <option class="opcion" value="pro"><%= producto.modelo %></option>
+                    <!-- <option class="opcion" value="max">PRO MAX</option>
+                    <option class="opcion" value="no">-</option> -->
                 </select>
                 <select class="detalle-selector" name="select">
-                    <option class="opcion" value="125">128 GB</option>
-                    <option class="opcion" value="256">256 GB</option>
-                    <option class="opcion" value="512">512 GB</option>
+                    <option class="opcion" value="125"><%= producto.capacidad %></option>
+                    <!-- <option class="opcion" value="256">256 GB</option>
+                    <option class="opcion" value="512">512 GB</option> -->
                 </select>
                 <select class="detalle-selector" name="select">
-                    <option class="opcion" value="P">PURPLE</option>
-                    <option class="opcion" value="M">MIDNIGTH</option>
+                    <option class="opcion" value="P"><%= producto.color %></option>
+                    <!-- <option class="opcion" value="M">MIDNIGTH</option>
                     <option class="opcion" value="S">STARLIGTH</option>
                     <option class="opcion" value="B">BLUE</option>
-                    <option class="opcion" value="R">RED</option>
+                    <option class="opcion" value="R">RED</option> -->
                 </select>
         </form>
         </div>
         <div class="precio">
-            <h3 class="detalle-valor">$499.000 <i id="carrito" class="fa-solid fa-cart-arrow-down"></i></h3>
+            <h3 class="detalle-valor">$<%= toThousand(producto.precio) %><i id="carrito" class="fa-solid fa-cart-arrow-down"></i></h3>
         </div>
         <div class="informacion">
             <p class="info">
-                Diseñado para resistir tu día a día.
-                <br>
-                Frente de Ceramic Shield, más resistente que cualquier vidrio de smartphone. 
-                Resistencia al agua.
+                <%= producto.descripcion %>
             </p>
         </div>
         </div>
@@ -51,13 +48,14 @@
                 + CARACTERÍSTICAS
             </p>
             <ul class="detalle-especific">
-                <li>Dimensiones y peso: Ancho: 7,15 cm, Alto: 14,67 cm, Grosor: 0,76 cm, Peso: 203 g</li>
+                <%= producto.caracteristicas %>
+                <!-- <li>Dimensiones y peso: Ancho: 7,15 cm, Alto: 14,67 cm, Grosor: 0,76 cm, Peso: 203 g</li>
                 <li>Pantalla Super Retina XDR con ProMotion</li>
                 <li>Resolución de 2.532 por 1.170 píxeles a 460 p/p</li>
                 <li>Pantalla HDR</li>
                 <li>Sistema de cámaras Pro de 12 Mpx con teleobjetivo, gran angular y ultra gran angular</li>
                 <li>Teleobjetivo: apertura de ƒ/2,8</li>
-                <li>Reconoci­miento facial mediante la cámara TrueDepth</li>
+                <li>Reconoci­miento facial mediante la cámara TrueDepth</li> -->
             </ul>
         </div>
        
@@ -68,15 +66,15 @@
     
         <div class="recomendados">
             <div class="divreco">
-                <img class="reco" src="/images/funda.jpg">
+                <img class="reco" src="/images/<%= producto.recomendado1 %>">
                 <i id= "mas" class="fa-solid fa-circle-plus"></i>
             </div>
             <div class="divreco">
-                <img class="reco" src="/images/cargador.jpg">
+                <img class="reco" src="/images/<%= producto.recomendado2 %>">
                 <i id= "mas" class="fa-solid fa-circle-plus"></i>
             </div>
             <div class="divreco">
-                <img class="reco" src="/images/watch.jpg">
+                <img class="reco" src="/images/<%= producto.recomendado3 %>">
                 <i id= "mas" class="fa-solid fa-circle-plus"></i>
             </div>
         </div>

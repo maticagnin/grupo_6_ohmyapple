@@ -1,0 +1,17 @@
+[
+    {
+     "id": 1,
+     "nombre": "iPhone 14",
+     "precio": 499000,
+     "modelo": "PRO",
+     "capacidad": "128 GB",
+     "color": "Purple",
+     "categoria": "iPhone",
+     "descripcion": "Diseñado para resistir tu día a día. Frente de Ceramic Shield, más resistente que cualquier vidrio de smartphone. Resistencia al agua.",
+     "caracteristicas": "Dimensiones y peso: Ancho: 7,15 cm, Alto: 14,67 cm, Grosor: 0,76 cm, Peso: 203 g. Pantalla Super Retina XDR con ProMotion. Resolución de 2.532 por 1.170 píxeles a 460 p/p. Pantalla HDR. Sistema de cámaras Pro de 12 Mpx con teleobjetivo, gran angular y ultra gran angular. Teleobjetivo: apertura de ƒ/2,8. Reconoci­miento facial mediante la cámara TrueDepth",
+     "imagen": "/iphone/iphone14.jpg",
+     "recomendado1": "/accesorios/funda.jpg",
+     "recomendado2": "/accesorios/cargador.jpg",
+     "recomendado3": "/watch/watch.jpg"
+    }
+]
