@@ -2,21 +2,25 @@
     {   
     "id": 1,
     "usuario": "Rociocabeza",
-    "password": "marioeselmejor123"
+    "password": "marioeselmejor123",
+    "categoria": "admin"
     },
     {   
     "id": 2,
     "usuario": "Matiascagnin",
-    "password": "marioeselmejor123"
+    "password": "marioeselmejor123",
+    "categoria": "user"
     },
     {   
     "id": 3,
     "usuario": "Marcelodupuy",
-    "password": "marioeselmejor123"
+    "password": "marioeselmejor123",
+    "categoria": "admin"
     },
     {   
     "id": 4,
     "usuario": "Mariobastit",
-    "password": "marioeselmejor123"
+    "password": "marioeselmejor123",
+    "categoria": "user"
     }
 ]
