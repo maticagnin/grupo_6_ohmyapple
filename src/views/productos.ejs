@@ -13,39 +13,13 @@
             <div class="productosListaIphone">
                 <% for (let i = 0 ; i < catIphone.length ; i++) { %>
                     <div class="productos">
-                        <img class="productoimg" src="<%= i.imagen %>">
-                            <h2 class="productonombre"><%= i.nombre %></h2>
-                            <h3 class="productoprecio">$ <%= i.precio %></h3>
-                            <p class="productodescripcion"><%= i.descripcion %></p>
+                        <img class="productoimg" src="<%= catIphone[i].imagen %>">
+                            <h2 class="productonombre"><%= catIphone[i].nombre %></h2>
+                            <h3 class="productoprecio">$ <%= catIphone[i].precio %></h3>
+                            <p class="productodescripcion"><%= catIphone[i].descripcion %></p>
                     </div>
-                <% } %>
-                <!-- <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-           
-            </div> -->
+                <% } %>           
+            </div>
 
         </section>
 
@@ -54,31 +28,14 @@
             <p class="productoCategoria">Mac</p>
 
             <div class="productosListaIphone">
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
+                <% for (let i = 0 ; i < catMac.length ; i++) { %>
+                    <div class="productos">
+                        <img class="productoimg" src="<%= catMac[i].imagen %>">
+                            <h2 class="productonombre"><%= catMac[i].nombre %></h2>
+                            <h3 class="productoprecio">$ <%= catMac[i].precio %></h3>
+                            <p class="productodescripcion"><%= catMac[i].descripcion %></p>
+                    </div>
+                <% } %>           
             </div>
 
         </section>
@@ -88,31 +45,14 @@
             <p class="productoCategoria">AirPods</p>
 
             <div class="productosListaIphone">
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
+                <% for (let i = 0 ; i < catAirpods.length ; i++) { %>
+                    <div class="productos">
+                        <img class="productoimg" src="<%= catAirpods[i].imagen %>">
+                            <h2 class="productonombre"><%= catAirpods[i].nombre %></h2>
+                            <h3 class="productoprecio">$ <%= catAirpods[i].precio %></h3>
+                            <p class="productodescripcion"><%= catAirpods[i].descripcion %></p>
+                    </div>
+                <% } %>           
             </div>
 
         </section>
@@ -122,31 +62,14 @@
             <p class="productoCategoria">iPad</p>
 
             <div class="productosListaIphone">
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
+                <% for (let i = 0 ; i < catIpad.length ; i++) { %>
+                    <div class="productos">
+                        <img class="productoimg" src="<%= catIpad[i].imagen %>">
+                            <h2 class="productonombre"><%= catIpad[i].nombre %></h2>
+                            <h3 class="productoprecio">$ <%= catIpad[i].precio %></h3>
+                            <p class="productodescripcion"><%= catIpad[i].descripcion %></p>
+                    </div>
+                <% } %>           
             </div>
 
         </section>
@@ -156,65 +79,14 @@
             <p class="productoCategoria">Watch</p>
 
             <div class="productosListaIphone">
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="seciphone" id="tv">
-            
-            <p class="productoCategoria">TV</p>
-
-            <div class="productosListaIphone">
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
+                <% for (let i = 0 ; i < catWatch.length ; i++) { %>
+                    <div class="productos">
+                        <img class="productoimg" src="<%= catWatch[i].imagen %>">
+                            <h2 class="productonombre"><%= catWatch[i].nombre %></h2>
+                            <h3 class="productoprecio">$ <%= catWatch[i].precio %></h3>
+                            <p class="productodescripcion"><%= catWatch[i].descripcion %></p>
+                    </div>
+                <% } %>           
             </div>
 
         </section>
@@ -224,31 +96,14 @@
             <p class="productoCategoria">Accesorios</p>
 
             <div class="productosListaIphone">
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
-                <div class="productos">
-                    <img class="productoimg" src="/images/iphone/iphone14.jpg">
-                        <h2 class="productonombre">Nombre Prod</h2>
-                        <h3 class="productoprecio">$999.999</h3>
-                        <p class="productodescripcion">Descripción producto</p>
-                </div>
+                <% for (let i = 0 ; i < catAccesorios.length ; i++) { %>
+                    <div class="productos">
+                        <img class="productoimg" src="<%= catAccesorios[i].imagen %>">
+                            <h2 class="productonombre"><%= catAccesorios[i].nombre %></h2>
+                            <h3 class="productoprecio">$ <%= catAccesorios[i].precio %></h3>
+                            <p class="productodescripcion"><%= catAccesorios[i].descripcion %></p>
+                    </div>
+                <% } %>           
             </div>
 
         </section>
