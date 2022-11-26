@@ -24,8 +24,7 @@ const productsController = {
     productos: (req, res) => {
         res.render('productos')
     },
-
-
+    
 };
 
 module.exports = productsController

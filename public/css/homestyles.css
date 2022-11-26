@@ -14,10 +14,12 @@ Gris: 193, 199, 200 --> Fondo
 * {
     box-sizing: border-box;
     font-family: "Roboto";
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: rgb(193, 199, 200);
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -284,6 +286,7 @@ h3 {
     background-size: 250px;
     background-position: top;
     background-repeat: no-repeat;
+    
   }
   .home-iPhone {
     grid-column: 1 / span 2;
