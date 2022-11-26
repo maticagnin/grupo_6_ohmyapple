@@ -11,11 +11,15 @@
             <p class="productoCategoria">iPhone</p>
 
             <div class="productosListaIphone">
-                <% for (let = i; i < productos.length; i++) { %>
-                    
-
+                <% for (let i = 0 ; i < catIphone.length ; i++) { %>
+                    <div class="productos">
+                        <img class="productoimg" src="<%= i.imagen %>">
+                            <h2 class="productonombre"><%= i.nombre %></h2>
+                            <h3 class="productoprecio">$ <%= i.precio %></h3>
+                            <p class="productodescripcion"><%= i.descripcion %></p>
+                    </div>
                 <% } %>
-                <div class="productos">
+                <!-- <div class="productos">
                     <img class="productoimg" src="/images/iphone/iphone14.jpg">
                         <h2 class="productonombre">Nombre Prod</h2>
                         <h3 class="productoprecio">$999.999</h3>
@@ -41,7 +45,7 @@
                         <p class="productodescripcion">Descripción producto</p>
                 </div>
            
-            </div>
+            </div> -->
 
         </section>
 

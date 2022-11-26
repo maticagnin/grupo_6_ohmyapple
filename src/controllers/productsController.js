@@ -22,7 +22,9 @@ const productsController = {
         res.render('carrito')
     },
     productos: (req, res) => {
-        res.render('productos')
+        let catIphone = productos.filter( producto => producto.categoria == 'iPhone')
+        res.render('productos', {catIphone: catIphone})
+
     },
     
 };
