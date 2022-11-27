@@ -40,3 +40,24 @@ SPRINT 3
 5. Dejar de hacer.
      - Dejar para último momento las modificaciones para concretar lo pendiente del Sprint.
      - Codear a contrareloj.
+     ------------------------------------------------------------------------------------------------------------------------------------------------------
+SPRINT 4
+1. Comenzar a hacer.
+     - Ponernos al día con el Playground.
+     - Aprovechar las clases para practicar con los ejercicios propuestos y eso luego aplicarlo en nuestro proyecto.
+     - Enlistar todo lo que hay que realizar y dividirnoslo para trabajar desde el primer día del sprint.
+
+2. Hacer más.
+     - Codear al menos una hora todos los días.
+     - Pedir ayuda a los profesores.
+
+3. Continuar haciendo.
+     - Querer mejorar nuestro proyecto y aprender.
+     - Seguir trabajando por el equipo.
+
+4. Hacer menos.
+     - Citarnos a una reunión sin tener muy claro lo que nos juntamos a hacer. Que nos juntemos no quiere decir que trabajemos más ni mejor.
+
+5. Dejar de hacer.
+     - Comenzar con el sprint tarde para poder aprovechar desde el día uno.
+     - Faltar a clase.
