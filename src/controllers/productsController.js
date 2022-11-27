@@ -29,7 +29,7 @@ const productsController = {
         let catWatch = productos.filter( prodWatch => prodWatch.categoria == 'Watch')
         let catAccesorios = productos.filter( prodAccesorios => prodAccesorios.categoria == 'Accesorios')
 
-        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios})
+        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
 
     },
     
