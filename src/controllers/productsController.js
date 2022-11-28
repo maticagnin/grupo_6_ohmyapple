@@ -15,6 +15,16 @@ const productsController = {
     creacion: (req, res) => {
         res.render('creacion')
     },
+    crear: (req, res) => {
+        let nuevoProd = {
+            id: productos[productos.length - 1 ].id + 1,
+            ...req.body,
+            recomendado1: "/images/accesorios/funda.jpg",
+            recomendado2: "/images/accesorios/cargador.jpg",
+            recomendado3: "/images/watch/watch.jpg"            
+        }
+        res.redirect('productos')
+    },
     edicion: (req, res) => {
         res.render('edicion')
     },

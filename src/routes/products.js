@@ -6,6 +6,7 @@ let router = express.Router();
 
 router.get('/', productsController.productos);
 router.get('/creacion', productsController.creacion);
+router.post('/creacion', productsController.crear);
 router.get('/edicion', productsController.edicion);
 router.get('/carrito', productsController.carrito);
 router.get('/:idProducto', productsController.detalle);

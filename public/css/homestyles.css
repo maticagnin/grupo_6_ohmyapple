@@ -14,8 +14,6 @@ Gris: 193, 199, 200 --> Fondo
 * {
     box-sizing: border-box;
     font-family: "Roboto";
-    overflow-y: scroll;
-    scroll-behavior: smooth;
 }
 
 body {
