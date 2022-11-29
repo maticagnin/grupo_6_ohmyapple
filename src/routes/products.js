@@ -11,12 +11,15 @@ router.get('/', productsController.productos);
 router.get('/creacion', productsController.creacion);
 router.post('/', productsController.crear);
 
+// *** Detalle de Productos ***
+router.get('/:idProducto', productsController.detalle);
+
+// *** Eliminación de Productos ***
+router.delete('/:idProducto/', productsController.eliminar);
+
 // *** Edición de Productos ***
 router.get('/:idProducto/editar', productsController.edicion);
 router.put('/:idProducto/editar', productsController.editar);
-
-// *** Detalle de Productos ***
-router.get('/:idProducto', productsController.detalle);
 
 // *** Carrito de Productos ***
 router.get('/carrito', productsController.carrito);

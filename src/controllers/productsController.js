@@ -57,6 +57,14 @@ const productsController = {
         res.redirect('/productos')
 
     },
+    eliminar: (req, res) => {
+        let id = req.params.id;
+        let productosFinales = productos.filter((producto) => producto.id != id);
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(productosFinales, null, ' '));
+
+        res.redirect('/productos')
+    },
     carrito: (req, res) => {
         res.render('carrito')
     },

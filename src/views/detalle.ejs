@@ -8,7 +8,7 @@
     <div class="producto1">
         <div class="imgDetalle">
         <div class="detalle-divimg">
-        <!-- <img class="iphone14" src="<%= producto.imagen %>" alt="<%= producto.nombre %>"> -->
+        <img class="iphone14" src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
         </div>
         <div class="descripcion">
                 <h2 class="detalle-nombreProd"><%= producto.nombre %></h2>
@@ -58,9 +58,20 @@
                 <li>Reconoci­miento facial mediante la cámara TrueDepth</li> -->
             </ul>
         </div>
-       
-        
+
+        <div class="divDetalleEditar">
+            <a href="/productos/<%= producto.id %>/editar">EDITAR</a>
         </div>
+        <div class="divDetalleEliminar">
+            <form action="/productos/<%= producto.id %>/?_method=DELETE" method="POST">
+                <button type="submit" class="botonEliminar">ELIMINAR</button>  
+            </form>
+        </div>
+
+
+        </div>
+
+       
         
         
     
