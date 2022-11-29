@@ -57,23 +57,19 @@
                 <li>Teleobjetivo: apertura de ƒ/2,8</li>
                 <li>Reconoci­miento facial mediante la cámara TrueDepth</li> -->
             </ul>
+            <div class="botonesEditarEliminar">
+            <div class="divDetalleEditar">
+                <a class="botonEditar"href="/productos/<%= producto.id %>/editar">EDITAR PRODUCTO</a>
+            </div>
+            <div class="divDetalleEliminar">
+                <form action="/productos/<%= producto.id %>/?_method=DELETE" method="POST">
+                    <button type="submit" class="botonEliminar">ELIMINAR PRODUCTO</button>  
+                </form>
+            </div>
+            </div> 
+        </div>
         </div>
 
-        <div class="divDetalleEditar">
-            <a class="botonEditar"href="/productos/<%= producto.id %>/editar">EDITAR</a>
-        </div>
-        <div class="divDetalleEliminar">
-            <form action="/productos/<%= producto.id %>/?_method=DELETE" method="POST">
-                <button type="submit" class="botonEliminar">ELIMINAR</button>  
-            </form>
-        </div>
-
-
-        </div>
-
-       
-        
-        
     
         <div class="recomendados">
             <div class="divreco">
@@ -90,13 +86,11 @@
             </div>
         </div>
       
-        
-        
-        
-      
-        
+
        
-    </main>    
+    </main> 
+    
+       
     <%- include ('partials/footer') %>
 </body>
 

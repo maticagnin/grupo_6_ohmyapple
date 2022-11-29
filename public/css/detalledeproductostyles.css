@@ -136,6 +136,27 @@
     padding: 5px;
     position: absolute;
 }
+.botonesEditarEliminar{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+.botonEditar{
+    background-color: black;
+    color: #ffffff;
+    border: 1px solid #009ddf;
+    padding: 3px;
+    font-size: 12px;    
+}
+.botonEliminar{
+    background-color: black;
+    color: #ffffff;
+    border: 1px solid #009ddf;
+    padding: 3px;
+    font-size: 12px; 
+}
 
 
 
@@ -195,6 +216,17 @@
         padding: 5px;
         position: absolute;
     }
+    .botonesEditarEliminar{
+        margin-bottom: 14px;
+        margin-top: 20px;
+    }
+    .botonEditar{
+        font-size: 15px;    
+    }
+    .botonEliminar{
+        font-size: 15px; 
+    }
+   
 }
 
 @media (min-width: 1200px ){
@@ -245,5 +277,13 @@
 .detalle-especific{
     font-size: 18px;
     margin-left: 57px;
+}
+.divDetalleEditar{
+    text-align: center;
+    width: 50%;
+}
+.divDetalleEliminar{
+    text-align: center;
+    width: 50%;
 }
 }
