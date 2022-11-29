@@ -58,8 +58,9 @@ const productsController = {
 
     },
     eliminar: (req, res) => {
-        let id = req.params.id;
+        let id = req.params.idProducto;
         let productosFinales = productos.filter((producto) => producto.id != id);
+        console.log(productosFinales)
 
         fs.writeFileSync(productsFilePath, JSON.stringify(productosFinales, null, ' '));
 
