@@ -19,14 +19,43 @@ const productsController = {
         let nuevoProd = {
             id: productos[productos.length - 1 ].id + 1,
             ...req.body,
+            imagen: "/images/productos/Accesorios/Apple Pencil.jpg",
             recomendado1: "/images/accesorios/funda.jpg",
             recomendado2: "/images/accesorios/cargador.jpg",
             recomendado3: "/images/watch/watch.jpg"            
         }
-        res.redirect('productos')
+        productos.push(nuevoProd);
+        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '));
+        res.redirect('/productos')
     },
     edicion: (req, res) => {
-        res.render('edicion')
+        let id = req.params.idProducto
+        let productoAEditar = productos.find( producto => producto.id == id)
+        res.render('edicion', {productoAEditar, toThousand})
+    },
+    editar: (req, res) => {
+        let id = req.params.idProducto;
+        let productoAEditar = productos.find( (producto) => producto.id == id);
+
+        productoAEditar = {
+            id: productoAEditar.id,
+            ...req.body,
+            imagen: "/images/productos/Accesorios/Apple Pencil.jpg",
+            recomendado1: "/images/accesorios/funda.jpg",
+            recomendado2: "/images/accesorios/cargador.jpg",
+            recomendado3: "/images/watch/watch.jpg"  
+        };
+
+        let nuevoProducto = productos.map( (producto) => {
+            if(producto.id == productoAEditar.id) {
+                return (producto = {...productoAEditar});
+            }
+            return producto
+        });
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(nuevoProducto, null, ' '));
+        res.redirect('/productos')
+
     },
     carrito: (req, res) => {
         res.render('carrito')
@@ -40,8 +69,8 @@ const productsController = {
         let catAccesorios = productos.filter( prodAccesorios => prodAccesorios.categoria == 'Accesorios')
 
         res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
-
     },
+
     
 };
 

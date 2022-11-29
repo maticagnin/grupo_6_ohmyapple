@@ -7,80 +7,13 @@
         <%- include ('partials/sideBar') %>
 
         <div class="creacion-div-formulario">
-            <form class="creacion-formulario" action="/" method="POST">
+            <form class="creacion-formulario" action="/productos/<%= productoAEditar.id %>/editar?_method=PUT" method="POST">
                 <div class="creacion-container">
                     <div class="creacion-width25">
-                        <label for="nombre"> Nombre del producto:</label>
+                        <label for="nombre"> Nombre del producto:</label> 
                     </div>
                     <div class="creacion-width75">
                         <input id="nombre" type="text" name="nombre" placeholder="Ej.: Macbook">
-                    </div>
-                </div>
-                
-                <div class="creacion-container">
-                    <div class="creacion-width25">
-                        <label for="imagen"> Imagen:</label>
-                    </div>
-                    <div class="creacion-width75">
-                        <input id="imagen" type="file" name="imagen">
-                    </div>
-                </div>
-                
-                <div class="creacion-container">
-                    <div class="creacion-width25">
-                        <label for="categoria"> Categoría:</label>
-                    </div>
-                    <div class="creacion-width75">
-                        <select class="creacion-categoria">
-                            <option value="iphone">iPhone</option>
-                            <option value="mac">Mac</option>
-                            <option value="airpods">AirPods</option>
-                            <option value="ipad">iPad</option>
-                            <option value="watch">Watch</option>
-                            <option value="tv">TV</option>
-                            <option value="accesorios">Accesorios</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="creacion-container">
-                    <div class="creacion-width25">
-                        <label for="modelo"> Modelo:</label>
-                    </div>
-                    <div class="creacion-width75">
-                        <select class="creacion-modelo">
-                            <option value="pro">PRO</option>
-                            <option value="max">PRO MAX</option>
-                            <option value="no">-</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="creacion-container">
-                    <div class="creacion-width25">
-                        <label for="color"> Color:</label>
-                    </div>
-                    <div class="creacion-width75">
-                        <select class="creacion-color">
-                            <option value="P">Purple</option>
-                            <option value="M">Midnight</option>
-                            <option value="S">Starlight</option>
-                            <option value="B">Blue</option>
-                            <option value="R">Red</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="creacion-container">
-                    <div class="creacion-width25">
-                        <label for="capacidad"> Capacidad:</label>
-                    </div>
-                    <div class="creacion-width75">
-                        <select class="creacion-gb">
-                            <option value="125">128 GB</option>
-                            <option value="256">256 GB</option>
-                            <option value="512">512 GB</option>
-                        </select>
                     </div>
                 </div>
 
@@ -92,15 +25,90 @@
                         <input id="precio" type="number" name="precio" placeholder="Ej.: 200000">
                     </div>
                 </div>
+
+                <div class="creacion-container">
+                    <div class="creacion-width25">
+                        <label for="modelo"> Modelo:</label>
+                    </div>
+                    <div class="creacion-width75">
+                        <select class="creacion-modelo" name="modelo">
+                            <option name="modelo" value="PRO">PRO</option>
+                            <option name="modelo" value="PRO MAX">PRO MAX</option>
+                            <option name="modelo" value="-">-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="creacion-container">
+                    <div class="creacion-width25">
+                        <label for="capacidad"> Capacidad:</label>
+                    </div>
+                    <div class="creacion-width75">
+                        <select class="creacion-gb" name="capacidad">
+                            <option name="capacidad" value="128 GB">128 GB</option>
+                            <option name="capacidad" value="256 GB">256 GB</option>
+                            <option name="capacidad" value="512 GB">512 GB</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="creacion-container">
+                    <div class="creacion-width25">
+                        <label for="color"> Color:</label>
+                    </div>
+                    <div class="creacion-width75">
+                        <select class="creacion-color" name="color">
+                            <option name="color" value="Purple">Purple</option>
+                            <option name="color" value="Midnight">Midnight</option>
+                            <option name="color" value="Starlight">Starlight</option>
+                            <option name="color" value="Blue">Blue</option>
+                            <option name="color" value="Red">Red</option>
+                        </select>
+                    </div>
+                </div>
                 
+                <div class="creacion-container">
+                    <div class="creacion-width25">
+                        <label for="categoria"> Categoría:</label>
+                    </div>
+                    <div class="creacion-width75">
+                        <select class="creacion-categoria" name="categoria">
+                            <option name="categoria" value="iPhone">iPhone</option>
+                            <option name="categoria" value="Mac">Mac</option>
+                            <option name="categoria" value="AirPods">AirPods</option>
+                            <option name="categoria" value="iPad">iPad</option>
+                            <option name="categoria" value="Watch">Watch</option>
+                            <option name="categoria" value="Accesorios">Accesorios</option>
+                        </select>
+                    </div>
+                </div>
+                            
                 <div class="creacion-container">
                     <div class="creacion-width25">
                         <label for="descripcion"> Descripción:</label>
                     </div>
                     <div class="creacion-width75">
-                        <textarea name="descripcion" id="descripcion" cols="30" rows="2" placeholder="Agrega la descripción de tu producto..."></textarea>
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="2" placeholder="Agrega la descripción de tu producto..."><%= productoAEditar.descripcion %></textarea>
                     </div>
                 </div>
+                <div class="creacion-container">
+                    <div class="creacion-width25">
+                        <label for="caracteristicas"> Características:</label>
+                    </div>
+                    <div class="creacion-width75">
+                        <textarea name="caracteristicas" id="caracteristicas" cols="30" rows="2" placeholder="Agrega las características de tu producto..."><%= productoAEditar.caracteristicas %></textarea>
+                    </div>
+                </div>
+                
+                <!-- <div class="creacion-container">
+                    <div class="creacion-width25">
+                        <label for="imagen"> Imagen:</label>
+                    </div>
+                    <div class="creacion-width75">
+                        <input id="imagen" type="file" name="imagen">
+                    </div>
+                </div> -->
+
                 <div class="creacion-div-button-crear">
                     <button class="creacion-button-crear">Editar</button>
                 </div>
