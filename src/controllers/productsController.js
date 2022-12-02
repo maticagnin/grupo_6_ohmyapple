@@ -19,7 +19,6 @@ const productsController = {
         let nuevoProd = {
             id: productos[productos.length - 1 ].id + 1,
             ...req.body,
-            imagen: "/images/productos/Accesorios/Apple Pencil.jpg",
             recomendado1: "/images/accesorios/funda.jpg",
             recomendado2: "/images/accesorios/cargador.jpg",
             recomendado3: "/images/watch/watch.jpg"            
@@ -27,6 +26,7 @@ const productsController = {
         productos.push(nuevoProd);
         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '));
         res.redirect('/productos')
+        
     },
     edicion: (req, res) => {
         let id = req.params.idProducto
@@ -60,7 +60,6 @@ const productsController = {
     eliminar: (req, res) => {
         let id = req.params.idProducto;
         let productosFinales = productos.filter((producto) => producto.id != id);
-        console.log(productosFinales)
 
         fs.writeFileSync(productsFilePath, JSON.stringify(productosFinales, null, ' '));
 
@@ -80,7 +79,6 @@ const productsController = {
         res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
     },
 
-    
 };
 
 module.exports = productsController
