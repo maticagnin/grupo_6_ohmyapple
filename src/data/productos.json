@@ -1,15 +1,15 @@
 [
  {
   "id": 1,
-  "nombre": "",
-  "precio": "",
+  "nombre": "iPhone 14",
+  "precio": 380000,
   "modelo": "PRO",
   "capacidad": "128 GB",
   "color": "Purple",
   "categoria": "iPhone",
   "descripcion": "El chip A15 Bionic, con un GPU de 5 núcleos, brinda la potencia necesaria para las funcionalidades más recientes y hace que los juegos con gráficos sofisticados y las apps de realidad aumentada funcionen con total fluidez. Y un nuevo diseño interno ofrece una mayor eficiencia térmica, para que puedas disfrutar la acción por más tiempo.",
   "caracteristicas": "Dimensiones y peso: Ancho: 7,15 cm, Alto: 14,67 cm, Grosor: 0,76 cm, Peso: 203 g. Pantalla Super Retina XDR con ProMotion. Resolución de 2.532 por 1.170 píxeles a 460 p/p. Pantalla HDR. Sistema de cámaras Pro de 12 Mpx con teleobjetivo, gran angular y ultra gran angular. Teleobjetivo: apertura de ƒ/2,8. Reconoci­miento facial mediante la cámara TrueDepth",
-  "imagen": "/images/productos/Accesorios/Apple Pencil.jpg",
+  "imagen": "/images/productos/iPhone/iphone 14.jpg",
   "recomendado1": "/images/accesorios/funda.jpg",
   "recomendado2": "/images/accesorios/cargador.jpg",
   "recomendado3": "/images/watch/watch.jpg"
