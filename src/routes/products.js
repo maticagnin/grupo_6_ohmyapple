@@ -16,6 +16,9 @@ const productsController = require('../controllers/productsController.js');
 
 let router = express.Router();
 
+// *** Carrito de Productos ***
+router.get('/carrito', productsController.carrito);
+
 // *** Creación de Productos ***
 router.get('/creacion', productsController.creacion);
 router.post('/creacion', productsController.crear);
@@ -33,8 +36,7 @@ router.delete('/:idProducto/', productsController.eliminar);
 // *** Categorías de Productos ***
 router.get('/', productsController.productos);
 
-// *** Carrito de Productos ***
-router.get('/carrito', productsController.carrito);
+
 
 
 module.exports = router;
