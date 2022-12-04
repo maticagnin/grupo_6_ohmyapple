@@ -7,7 +7,7 @@
         <%- include ('partials/sideBar') %>
 
         <div class="creacion-div-formulario">
-            <form class="creacion-formulario" action="/productos/creacion" method="POST">
+            <form class="creacion-formulario" action="/productos/creacion" method="POST" enctype="multipart/form-data">
                 <div class="creacion-container">
                     <div class="creacion-width25">
                         <label for="nombre"> Nombre del producto:</label>
@@ -100,14 +100,14 @@
                     </div>
                 </div>
                 
-                <!-- <div class="creacion-container">
+                <div class="creacion-container">
                     <div class="creacion-width25">
                         <label for="imagen"> Imagen:</label>
                     </div>
                     <div class="creacion-width75">
                         <input id="imagen" type="file" name="imagen">
                     </div>
-                </div> -->
+                </div>
 
                 <div class="creacion-div-button-crear">
                     <button class="creacion-button-crear">Crear</button>
