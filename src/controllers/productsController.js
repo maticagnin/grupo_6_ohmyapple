@@ -19,7 +19,7 @@ const productsController = {
         let nuevoProd = {
             id: productos[productos.length - 1 ].id + 1,
             ...req.body,
-             
+            imagen: "/images/productos/" + req.file.filename, 
             recomendado1: "/images/accesorios/funda.jpg",
             recomendado2: "/images/accesorios/cargador.jpg",
             recomendado3: "/images/watch/watch.jpg"            

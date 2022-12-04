@@ -19,7 +19,7 @@ const path = require("path");
           cb(null, './public/images/productos');
       },
       filename: (req, file, cb) => {
-          const newFileName = "prod-" + Date.now() + path.extname(file.originalname);
+          const newFileName = "prod - " + req.body.categoria + " - " + Date.now() + path.extname(file.originalname);
           cb(null, newFileName);
       }
   });
