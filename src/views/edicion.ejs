@@ -13,7 +13,7 @@
                         <label for="nombre"> Nombre del producto:</label> 
                     </div>
                     <div class="creacion-width75">
-                        <input id="nombre" type="text" name="nombre" placeholder="Ej.: Macbook">
+                        <input id="nombre" type="text" name="nombre" placeholder="Ej.: Macbook" value="<%= productoAEditar.nombre%>">
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@
                         <label for="precio"> Precio:</label>
                     </div>
                     <div class="creacion-width75">
-                        <input id="precio" type="number" name="precio" placeholder="Ej.: 200000">
+                        <input id="precio" type="number" name="precio" placeholder="Ej.: 200000" value="<%= productoAEditar.precio%>">
                     </div>
                 </div>
 
@@ -32,9 +32,21 @@
                     </div>
                     <div class="creacion-width75">
                         <select class="creacion-modelo" name="modelo">
-                            <option name="modelo" value="PRO">PRO</option>
-                            <option name="modelo" value="PRO MAX">PRO MAX</option>
-                            <option name="modelo" value="-">-</option>
+                            <option name="modelo" value="2da Gen" <%= productoAEditar.modelo == "2da Gen" ? "selected" : "" %>>2da Gen</option>
+                            <option name="modelo" value="Air" <%= productoAEditar.modelo == "Air" ? "selected" : "" %>>Air</option>
+                            <option name="modelo" value="Cargador" <%= productoAEditar.modelo == "Cargador" ? "selected" : "" %>>Cargador</option>
+                            <option name="modelo" value="Funda" <%= productoAEditar.modelo == "Funda" ? "selected" : "" %>>Funda</option>
+                            <option name="modelo" value="iPad" <%= productoAEditar.modelo == "iPad" ? "selected" : "" %>>iPad</option>
+                            <option name="modelo" value="Lapiz" <%= productoAEditar.modelo == "Lapiz" ? "selected" : "" %>>Lapiz</option>
+                            <option name="modelo" value="Max" <%= productoAEditar.modelo == "Max" ? "selected" : "" %>>Max</option>
+                            <option name="modelo" value="Mini" <%= productoAEditar.modelo == "Mini" ? "selected" : "" %>>Mini</option>
+                            <option name="modelo" value="Plus" <%= productoAEditar.modelo == "Plus" ? "selected" : "" %>>Plus</option>
+                            <option name="modelo" value="Pro" <%= productoAEditar.modelo == "Pro" ? "selected" : "" %>>Pro</option>
+                            <option name="modelo" value="Pro 2da Gen" <%= productoAEditar.modelo == "Pro 2da Gen" ? "selected" : "" %>>Pro 2da Gen</option>
+                            <option name="modelo" value="Pro Max" <%= productoAEditar.modelo == "Pro Max" ? "selected" : "" %>>Pro Max</option>
+                            <option name="modelo" value="SE" <%= productoAEditar.modelo == "SE" ? "selected" : "" %>>SE</option>
+                            <option name="modelo" value="Series 8" <%= productoAEditar.modelo == "Series 8" ? "selected" : "" %>>Series 8</option>
+                            <option name="modelo" value="Teclado" <%= productoAEditar.modelo == "Teclado" ? "selected" : "" %>>Teclado</option>
                         </select>
                     </div>
                 </div>
@@ -45,9 +57,11 @@
                     </div>
                     <div class="creacion-width75">
                         <select class="creacion-gb" name="capacidad">
-                            <option name="capacidad" value="128 GB">128 GB</option>
-                            <option name="capacidad" value="256 GB">256 GB</option>
-                            <option name="capacidad" value="512 GB">512 GB</option>
+                            <option name="capacidad" value="N/A" <%= productoAEditar.capacidad == "N/A" ? "selected" : "" %>>N/A</option>
+                            <option name="capacidad" value="64 GB" <%= productoAEditar.capacidad == "64 GB" ? "selected" : "" %>>64 GB</option>
+                            <option name="capacidad" value="128 GB" <%= productoAEditar.capacidad == "128 GB" ? "selected" : "" %>>128 GB</option>
+                            <option name="capacidad" value="256 GB" <%= productoAEditar.capacidad == "256 GB" ? "selected" : "" %>>256 GB</option>
+                            <option name="capacidad" value="512 GB" <%= productoAEditar.capacidad == "512 GB" ? "selected" : "" %>>512 GB</option>
                         </select>
                     </div>
                 </div>
@@ -58,11 +72,17 @@
                     </div>
                     <div class="creacion-width75">
                         <select class="creacion-color" name="color">
-                            <option name="color" value="Purple">Purple</option>
-                            <option name="color" value="Midnight">Midnight</option>
-                            <option name="color" value="Starlight">Starlight</option>
-                            <option name="color" value="Blue">Blue</option>
-                            <option name="color" value="Red">Red</option>
+                            <option name="color" value="Azul" <%= productoAEditar.color == "Azul" ? "selected" : "" %>>Azul</option>
+                            <option name="color" value="Blanco" <%= productoAEditar.color == "Blanco" ? "selected" : "" %>>Blanco</option>
+                            <option name="color" value="Dorado" <%= productoAEditar.color == "Dorado" ? "selected" : "" %>>Dorado</option>
+                            <option name="color" value="Gris espacial" <%= productoAEditar.color == "Gris espacial" ? "selected" : "" %>>Gris espacial</option>
+                            <option name="color" value="Medianoche" <%= productoAEditar.color == "Medianoche" ? "selected" : "" %>>Medianoche</option>
+                            <option name="color" value="Morado" <%= productoAEditar.color == "Morado" ? "selected" : "" %>>Morado</option>
+                            <option name="color" value="Negro" <%= productoAEditar.color == "Negro" ? "selected" : "" %>>Negro</option>
+                            <option name="color" value="Plata" <%= productoAEditar.color == "Plata" ? "selected" : "" %>>Plata</option>
+                            <option name="color" value="Purple" <%= productoAEditar.color == "Purple" ? "selected" : "" %>>Purple</option>
+                            <option name="color" value="Rosa" <%= productoAEditar.color == "Rosa" ? "selected" : "" %>>Rosa</option>
+                            <option name="color" value="Silver" <%= productoAEditar.color == "Silver" ? "selected" : "" %>>Silver</option>
                         </select>
                     </div>
                 </div>
@@ -73,13 +93,12 @@
                     </div>
                     <div class="creacion-width75">
                         <select class="creacion-categoria" name="categoria">
-
-                            <option name="categoria" value="iPhone">iPhone</option>
-                            <option name="categoria" value="Mac">Mac</option>
-                            <option name="categoria" value="AirPods">AirPods</option>
-                            <option name="categoria" value="iPad">iPad</option>
-                            <option name="categoria" value="Watch">Watch</option>
-                            <option name="categoria" value="Accesorios">Accesorios</option>
+                            <option name="categoria" value="iPhone" <%= productoAEditar.categoria == "iPhone" ? "selected" : "" %>>iPhone</option>
+                            <option name="categoria" value="Mac" <%= productoAEditar.categoria == "Mac" ? "selected" : "" %>>Mac</option>
+                            <option name="categoria" value="AirPods" <%= productoAEditar.categoria == "AirPods" ? "selected" : "" %>>AirPods</option>
+                            <option name="categoria" value="iPad" <%= productoAEditar.categoria == "iPad" ? "selected" : "" %>>iPad</option>
+                            <option name="categoria" value="Watch" <%= productoAEditar.categoria == "Watch" ? "selected" : "" %>>Watch</option>
+                            <option name="categoria" value="Accesorios" <%= productoAEditar.categoria == "Accesorios" ? "selected" : "" %>>Accesorios</option>
                         </select>
                     </div>
                 </div>
