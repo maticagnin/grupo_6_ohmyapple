@@ -60,6 +60,9 @@
         padding: 10px 0;
         font-size: 20px;
     }
+    .productos{
+        width: 50%;
+    }
 }
 
 @media (min-width: 1200px ){
@@ -69,7 +72,6 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-        display: block;
         margin-left: 0;
         margin-right: 0;
     }
