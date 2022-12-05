@@ -6,9 +6,10 @@
     <main class="detalle-main">
         <%- include ('partials/sideBar') %>
         <div class="productoSections">
+        <% if (catIphone.length != 0) {  %>
         <section class="seciphone" id="iphone">
-            
             <p class="productoCategoria">iPhone</p>
+        <% } %>           
 
             <div class="productosListaIphone">
                 <% for (let i = 0 ; i < catIphone.length ; i++) { %>
@@ -24,10 +25,10 @@
             </div>
 
         </section>
-
-        <section class="seciphone" id="mac">
-            
+        <% if (catMac.length != 0) {  %>
+        <section class="seciphone" id="mac"> 
             <p class="productoCategoria">Mac</p>
+        <% } %>           
 
             <div class="productosListaIphone">
                 <% for (let i = 0 ; i < catMac.length ; i++) { %>
@@ -43,10 +44,10 @@
             </div>
 
         </section>
-
-        <section class="seciphone" id="airpods">
-            
+        <% if (catAirpods.length != 0) {  %>
+        <section class="seciphone" id="airpods">            
             <p class="productoCategoria">AirPods</p>
+        <% } %>           
 
             <div class="productosListaIphone">
                 <% for (let i = 0 ; i < catAirpods.length ; i++) { %>
@@ -62,10 +63,10 @@
             </div>
 
         </section>
-
-        <section class="seciphone" id="ipad">
-            
+        <% if (catIpad.length != 0) {  %>
+        <section class="seciphone" id="ipad">         
             <p class="productoCategoria">iPad</p>
+        <% } %>           
 
             <div class="productosListaIphone">
                 <% for (let i = 0 ; i < catIpad.length ; i++) { %>
@@ -82,10 +83,10 @@
             </div>
 
         </section>
-
-        <section class="seciphone" id="watch">
-            
+        <% if (catWatch.length != 0) {  %>
+        <section class="seciphone" id="watch">          
             <p class="productoCategoria">Watch</p>
+        <% } %>           
 
             <div class="productosListaIphone">
                 <% for (let i = 0 ; i < catWatch.length ; i++) { %>
@@ -101,10 +102,10 @@
             </div>
 
         </section>
-
-        <section class="seciphone" id="accesorios">
-            
+        <% if (catAccesorios.length != 0) {  %>
+        <section class="seciphone" id="accesorios">           
             <p class="productoCategoria">Accesorios</p>
+        <% } %>           
 
             <div class="productosListaIphone">
                 <% for (let i = 0 ; i < catAccesorios.length ; i++) { %>

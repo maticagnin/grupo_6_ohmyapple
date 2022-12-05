@@ -27,7 +27,6 @@ const mainController = {
         let catIpad = productosFiltrados.filter( prodIpad => prodIpad.categoria == 'iPad')
         let catWatch = productosFiltrados.filter( prodWatch => prodWatch.categoria == 'Watch')
         let catAccesorios = productosFiltrados.filter( prodAccesorios => prodAccesorios.categoria == 'Accesorios')
-    
         res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
     
     }
