@@ -28,11 +28,15 @@ a, .fas {
 }
 /* Header Styles  */
 
-.home-mainHeader{
+.home-mainHeader {
     margin: 10px 0 5px;
     background-color: black;
 }
 
+.home-boton-lupa {
+    border: none;
+    background: none;
+}
 /* Barra Superior Uno */
 
 h3 {

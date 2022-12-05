@@ -4,10 +4,12 @@
             <div class="home-logo">
                 <a href="/"><img src="/images/logos/OhMyApple.png" alt="LogoOhMyApple"></a>
             </div>
-            <div class="home-navBarHidden">
-                <input class="home-busqueda" type="text" placeholder="Buscar productos...">
-                <i class="fas fa-search"></i>
-            </div>
+            
+            <form class="home-navBarHidden" action="/buscar" method="GET">
+                <input class="home-busqueda" type="text" name="consulta" placeholder="Buscar productos...">
+                <button class="home-boton-lupa"><i class="fas fa-search"></i></button>
+            </form>
+            
             <div class="home-userBar">   
 <!-- Agregar nombre al carrito y al perfil -->
                 <a href="/productos/carrito"><i class="fa-solid fa-cart-arrow-down"></i></a>
@@ -18,10 +20,11 @@
             <div class="home-burger">
                 <i class="fas fa-bars"></i>
             </div>
-            <div class="home-navBar">
-                    <input class="home-busqueda" type="text" placeholder="Buscar productos...">
-                    <i class="fas fa-search"></i>
-            </div>
+            
+            <form class="home-navBar" action="/buscar" method="GET">
+                <input class="home-busqueda" type="text" name="consulta" placeholder="Buscar productos...">
+                <button class="home-boton-lupa"><i class="fas fa-search"></i></button>
+            </form>
         </div>
     </nav>
 
