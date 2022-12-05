@@ -20,9 +20,9 @@ const productsController = {
             id: productos[productos.length - 1 ].id + 1,
             ...req.body,
             imagen: "/images/productos/" + req.file.filename, 
-            recomendado1: "/images/accesorios/funda.jpg",
-            recomendado2: "/images/accesorios/cargador.jpg",
-            recomendado3: "/images/watch/watch.jpg"            
+            recomendado1: "/images/productos/Accesorios/Apple Funda.jpg",
+            recomendado2: "/images/productos/Accesorios/Apple Magsafe Charger.jpg",
+            recomendado3: "/images/productos/Watch/Apple Watch Series 8.jpg"
         }
         productos.push(nuevoProd);
         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '));
@@ -42,9 +42,9 @@ const productsController = {
             id: productoAEditar.id,
             ...req.body,
             imagen: "/images/productos/Accesorios/Apple Pencil.jpg",
-            recomendado1: "/images/accesorios/funda.jpg",
-            recomendado2: "/images/accesorios/cargador.jpg",
-            recomendado3: "/images/watch/watch.jpg"  
+            recomendado1: "/images/productos/Accesorios/Apple Funda.jpg",
+            recomendado2: "/images/productos/Accesorios/Apple Magsafe Charger.jpg",
+            recomendado3: "/images/productos/Watch/Apple Watch Series 8.jpg"
         };
 
         let nuevoProducto = productos.map( (producto) => {
