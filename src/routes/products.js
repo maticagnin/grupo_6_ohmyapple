@@ -35,6 +35,15 @@ router.get('/carrito', productsController.carrito);
 router.get('/creacion', productsController.creacion);
 router.post('/creacion', uploadFile.single("imagen"), productsController.crear);
 
+// *** Categorías de Productos ***
+router.get('/', productsController.productos);
+router.get('/iphone', productsController.iphone);
+router.get('/mac', productsController.mac);
+router.get('/airpods', productsController.airpods);
+router.get('/ipad', productsController.ipad);
+router.get('/watch', productsController.watch);
+router.get('/accesorios', productsController.accesorios);
+
 // *** Detalle de Productos ***
 router.get('/:idProducto', productsController.detalle);
 
@@ -44,10 +53,6 @@ router.put('/:idProducto/editar', productsController.editar);
 
 // *** Eliminación de Productos ***
 router.delete('/:idProducto/', productsController.eliminar);
-
-// *** Categorías de Productos ***
-router.get('/', productsController.productos);
-
 
 
 

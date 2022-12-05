@@ -79,6 +79,66 @@ const productsController = {
 
         res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
     },
+    iphone: (req, res) => {
+        let catIphone = productos.filter( prodIphone => prodIphone.categoria == 'iPhone')
+        let catMac = []
+        let catAirpods = []
+        let catIpad = []
+        let catWatch = []
+        let catAccesorios = []
+
+        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+    },
+    mac: (req, res) => {
+        let catIphone = []
+        let catMac = productos.filter( prodMac => prodMac.categoria == 'Mac')
+        let catAirpods = []
+        let catIpad = []
+        let catWatch = []
+        let catAccesorios = []
+
+        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+    },
+    airpods: (req, res) => {
+        let catIphone = []
+        let catMac = []
+        let catAirpods = productos.filter( prodAirpods => prodAirpods.categoria == 'AirPods')
+        let catIpad = []
+        let catWatch = []
+        let catAccesorios = []
+
+        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+    },
+    ipad: (req, res) => {
+        let catIphone = []
+        let catMac = []
+        let catAirpods = []
+        let catIpad = productos.filter( prodIpad => prodIpad.categoria == 'iPad')
+        let catWatch = []
+        let catAccesorios = []
+
+        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+    },
+    watch: (req, res) => {
+        let catIphone = []
+        let catMac = []
+        let catAirpods = []
+        let catIpad = []
+        let catWatch = productos.filter( prodWatch => prodWatch.categoria == 'Watch')
+        let catAccesorios =[]
+
+        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+    },
+    accesorios: (req, res) => {
+        let catIphone = []
+        let catMac = []
+        let catAirpods = []
+        let catIpad = []
+        let catWatch = []
+        let catAccesorios = productos.filter( prodAccesorios => prodAccesorios.categoria == 'Accesorios')
+
+        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+    }
 
 };
 
