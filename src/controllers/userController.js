@@ -6,6 +6,9 @@ const userController = {
     },
     register: (req, res) => {
         res.render('register')
+    },
+    perfil: (req, res) => {
+        res.render('perfil')
     }
 
 };
