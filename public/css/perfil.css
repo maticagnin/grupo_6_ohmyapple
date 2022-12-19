@@ -1,0 +1,109 @@
+.tituloPerfil{
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 5px 0;
+}
+
+.imgUser{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+.infoUser{
+    padding: 10px;
+    background-color: darkgrey;
+}
+
+.datosUser{
+    text-align: center;
+}
+
+.botones{
+    text-align: center;
+    background-color: darkgrey;
+    padding-bottom: 10px;
+}
+
+/* ESTILOS DATOS PERFÍL */
+
+.seccionDatos{
+    align-self: center;
+}
+.datosPerfil{
+    margin: 10px 0;
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+}
+
+.datos{
+    padding: 10px;
+    box-shadow: 0px 0px 30px black;
+    border-radius: 5px;
+}
+
+
+.contenerdorPerfilFormulario{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.contenedorPerfilLabel{
+    display: inline;
+    width: 30%;
+}
+
+.ContenedorPerfilInput{
+    width: 70%;
+    
+}
+
+.perfilDato{
+    width: 100%;
+}
+
+
+@media (min-width: 1200px ){
+    .perfilSection{
+        width: 80%;
+        margin: 0 5px;
+    }
+    .perfilMain{
+        display: flex;
+    }
+    .imgUser{
+        width: 40%;
+    }
+    .infoUser{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        display: flex;
+    }
+    .divImgUser{
+        width: 50%;
+    }
+    .divDatosUser{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        
+    }
+    .datosUser{
+        font-size: 20px;
+        text-align: left;
+    }
+    .datosPerfil{
+        margin-bottom: 0;
+    }    
+   
+}

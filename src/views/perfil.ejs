@@ -3,9 +3,143 @@
     <%- include ('partials/head') %>
 <body>
     <%- include ('partials/header') %>
-    <main class="detalle-main">
+    <main class="perfilMain">
         <%- include ('partials/sideBar') %>
         
+        <section class="perfilSection">
+
+            <p class="tituloPerfil">Perfíl</p>
+
+        <div class="infoUser">
+            <div class="divImgUser">
+                <img src="/images/usuarios/img servicio.jpeg" class="imgUser">
+            </div>
+            <div class="divDatosUser">
+                <p class="datosUser">
+                    User: mcagnin<br><br>
+                    Mail: matiascagnin95@gmail.com
+                </p>
+            </div>
+        </div>
+
+        <div class="botones">
+        
+            <form action="/" method="GET">
+
+                <button type="submit" class="botonContraseña">Cambiar contraseña</button>
+                <button type="submit" class="botonFoto">Cambiar foto de perfíl</button>    
+
+            </form>
+        
+        </div>
+
+        <section class="seccionDatos">
+
+            <p class="tituloPerfil">Datos</p>
+
+            <div class="datosPerfil">
+               
+                    <form action="#" method="#"></form>
+                    <div class="datos">
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="nombres">Nombres:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="text" name="nombres" id="nombres" placeholder="Ej: Pablo Pablo">
+                            </div>
+                        </div>
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="apellidos">Apellidos:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="text" name="apellidos" id="apellidos" placeholder="Ej: García Suarez">
+                            </div>
+                        </div>
+
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="dni">N° Doc.:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
+                            </div>
+                        </div>
+
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="nacimiento">Fecha de nac.:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="date" name="nacimiento" id="nacimiento">
+                            </div>
+                        </div>
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="provincia">Provincia:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="text" name="provincia" id="provincia" placeholder="Ej: Buenos Aires">
+                            </div>
+                        </div>
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="localidad">Localidad:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="text" name="localidad" id="localidad" placeholder="Ej: Mar del Plata">
+                            </div>
+                        </div>
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="domicilio">Domicilio:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número">
+                            </div>
+                        </div>
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="cp">Cod. postal</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="number" name="cp" id="cp" placeholder="Ej: 7600">
+                            </div>
+                        </div>
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="email">E-mail:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="email" name="email" id="email" placeholder="nombre@dominio.com.ar">
+                            </div>
+                        </div>
+                        
+                        <div class="contenerdorPerfilFormulario">
+                            <div class="contenedorPerfilLabel">
+                                <label for="telefono">Teléfono:</label>
+                            </div>
+                            <div class="ContenedorPerfilInput">
+                                <input class="perfilDato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330">
+                            </div>
+                        </div>
+                        
+                  
+                    </div>
+            </div>
+        </section>
+
+
+    </section>
+
     </main>    
     <%- include ('partials/footer') %>
 </body>
