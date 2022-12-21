@@ -14,13 +14,20 @@
   border-radius: 20px;
 }
 
-.form-tittle {
+.form-title {
   color: #ffff;
   text-transform: uppercase;
-  font-family: Helvetica;
   font-size: 25px;
   margin-bottom: 10%;
   text-decoration: dotted;
+}
+.login-recordar {
+  font-size: 15px;
+}
+.login-linkCreaTuCuenta {
+  color: black;
+  text-decoration:underline
+
 }
 
 .form-box input[type="text"],

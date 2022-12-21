@@ -7,13 +7,24 @@
       <%- include ('partials/sideBar') %>      
       <div class="master-form">
         <form action="login.html" class="form-box" animated animate__backInLeft>
-          <p class="form-tittle">Login</p>
+          <p class="form-title">Login</p>
 
           <input type="text" placeholder="Usuario" />
           <input type="password" placeholder="Contraseña" />
+          <label for="recordar" class="login-recordar">
+            Recordarme
+          </label>
+          <input type="checkbox" id="recordar" name="recordar">
           <button type="submit">Login</button>
+        
           <a href="" class="form-remember">¿Olvidaste tu contraseña?</a>
-        </form>
+        
+        <p class="login-creaTuCuenta">
+          ¿Aún no estás registrado?
+          <br>
+          <a href="/user/register" class="login-linkCreaTuCuenta">Creá tu cuenta</a>
+        </p>
+      </form>
       </div>
     </main>
     <%- include ('partials/footer') %>

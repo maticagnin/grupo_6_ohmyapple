@@ -36,6 +36,7 @@ a, .fas {
 .home-boton-lupa {
     border: none;
     background: none;
+    cursor: pointer;
 }
 /* Barra Superior Uno */
 
