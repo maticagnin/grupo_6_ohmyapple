@@ -5,9 +5,30 @@ const fs = require('fs');
 const usuariosFilePath = path.resolve(__dirname + '/../data/usuarios.json');
 const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
+const { validationResult } = require("express-validator");
+
+
 const userController = {
     login: (req, res) => {
         res.render('login')
+    },
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+        if (errors.isEmpty()){
+        let emailBuscado = usuarios.find(function(usuario) {
+            if (usuario.email == req.body.email){
+                let contraseñaUsuario = usuario.password;
+                if (contraseñaUsuario == req.body.password){
+                    res.redirect('/user/perfil')
+                }else{
+                    res.redirect('/')
+                }
+            }else{
+                res.redirect('/')
+            }
+        })}else{
+            res.render("login", {errors: errors.mapped()})
+        }
     },
     register: (req, res) => {
         res.render('register')

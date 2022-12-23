@@ -6,10 +6,15 @@
     <main class="login-main">
       <%- include ('partials/sideBar') %>      
       <div class="master-form">
-        <form action="/login" class="form-box" method="POST" animated animate__backInLeft>
+        <form action="/user/login" class="form-box" method="POST" animated animate__backInLeft>
           <p class="form-title">Login</p>
 
+          
+
           <input type="text" name = "email" placeholder="Email" />
+          <% if (locals.errors && errors.email) { %>
+            <div class="error"><%= errors.email.msg %></div>
+            <% } %>
           <input type="password" name = "password" placeholder="Contraseña" />
           <label for="recordar" class="login-recordar">
             Recordarme
