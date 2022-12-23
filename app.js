@@ -4,13 +4,17 @@ const path = require ('path');
 
 const app = express();
 
+const session = require('express-session');
+
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
+
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(session({secret: "Secreto"}));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.set('views', path.join('src/views'));

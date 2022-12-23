@@ -1,26 +1,30 @@
 [
-    {   
-    "id": 1,
-    "usuario": "Rociocabeza",
-    "password": "marioeselmejor123",
-    "categoria": "admin"
-    },
-    {   
-    "id": 2,
-    "usuario": "Matiascagnin",
-    "password": "marioeselmejor123",
-    "categoria": "user"
-    },
-    {   
-    "id": 3,
-    "usuario": "Marcelodupuy",
-    "password": "marioeselmejor123",
-    "categoria": "admin"
-    },
-    {   
-    "id": 4,
-    "usuario": "Mariobastit",
-    "password": "marioeselmejor123",
-    "categoria": "user"
-    }
+ {
+  "id": 1,
+  "email": "rocio.cabezai@gmail.com",
+  "usuario": "rociocabeza",
+  "password": "marioeselmejor123",
+  "categoria": "admin"
+ },
+ {
+  "id": 2,
+  "email": "matiascagnin@gmail.com",
+  "usuario": "matiascagnin",
+  "password": "marioeselmejor123",
+  "categoria": "user"
+ },
+ {
+  "id": 3,
+  "email": "marcelodupuy@gmail.com",
+  "usuario": "marcelodupuy",
+  "password": "marioeselmejor123",
+  "categoria": "admin"
+ },
+ {
+  "id": 4,
+  "email": "mario.bastit@gmail.com",
+  "usuario": "mariobastit",
+  "password": "marioeselmejor123",
+  "categoria": "user"
+ }
 ]

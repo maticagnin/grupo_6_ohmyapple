@@ -27,7 +27,6 @@ const productsController = {
         productos.push(nuevoProd);
         fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '));
         res.redirect('/productos')
-        
     },
     edicion: (req, res) => {
         let id = req.params.idProducto
