@@ -29,6 +29,7 @@
 
    
 }
+.register-form-box input[type="file"],
 .register-form-box input[type="email"],
 .register-form-box input[type="text"],
 .register-form-box input[type="password"],
@@ -46,6 +47,9 @@
   border-radius: 24px;
   transition: 0.1s;
 }
+
+
+
 
 .register-form-box input[type="email"]:focus,
 .register-form-box input[type="text"]:focus,

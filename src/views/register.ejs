@@ -12,12 +12,15 @@
           class="register-form-box"
           animated
           animate__backInLeft
+          enctype="multipart/form-data"
         >
           <p class="register-form-tittle">Registro</p>
           <input type="email" name="email" placeholder="Email" />
           <input type="text" name="usuario" placeholder="Usuario" />
           <input type="password" name="password" placeholder="Contraseña" />
           <input type="password" name="password2" placeholder="Repetir contraseña" />
+          <input id="imagenreg" type="file" name="imagenreg">
+          
           <button type="submit">Registro</button>
         </form>
       </div>
