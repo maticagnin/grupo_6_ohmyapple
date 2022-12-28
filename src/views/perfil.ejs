@@ -16,8 +16,17 @@
             </div>
             <div class="divDatosUser">
                 <p class="datosUser">
-                    User: mcagnin<br><br>
-                    Mail: matiascagnin95@gmail.com
+                    Usuario: <%= usuario.usuario%><br>
+                    Email: <%= usuario.email%><br>
+                    Nombres: <%= usuario.nombres%><br>
+                    Apellidos: <%= usuario.apellidos%><br>
+                    DNI: <%= usuario.dni%><br>
+                    Fecha de Nacimiento: <%= usuario.nacimiento%><br>
+                    Provincia: <%= usuario.provincia%><br>
+                    Localidad: <%= usuario.localidad%><br>
+                    Domicilio: <%= usuario.domicilio%><br>
+                    Código Postal: <%= usuario.cp%><br>
+                    Teléfono: <%= usuario.telefono%><br>
                 </p>
             </div>
         </div>
@@ -47,7 +56,7 @@
                                 <label for="nombres">Nombres:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="nombres" id="nombres" placeholder="Ej: Pablo Pablo">
+                                <input class="perfilDato" type="text" name="nombres" id="nombres" placeholder="Ej: Pablo Pablo" value="<%= usuarioAEditar.nombres%>">
                             </div>
                         </div>
                         
@@ -56,7 +65,7 @@
                                 <label for="apellidos">Apellidos:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="apellidos" id="apellidos" placeholder="Ej: García Suarez">
+                                <input class="perfilDato" type="text" name="apellidos" id="apellidos" placeholder="Ej: García Suarez" value="<%= usuarioAEditar.apellidos%>">
                             </div>
                         </div>
 
@@ -65,7 +74,7 @@
                                 <label for="dni">N° Doc.:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos">
+                                <input class="perfilDato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos" value="<%= usuarioAEditar.dni%>">
                             </div>
                         </div>
 
@@ -74,7 +83,7 @@
                                 <label for="nacimiento">Fecha de nac.:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="date" name="nacimiento" id="nacimiento">
+                                <input class="perfilDato" type="date" name="nacimiento" id="nacimiento" value="<%= usuarioAEditar.nacimiento%>">
                             </div>
                         </div>
                         
@@ -83,7 +92,7 @@
                                 <label for="provincia">Provincia:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="provincia" id="provincia" placeholder="Ej: Buenos Aires">
+                                <input class="perfilDato" type="text" name="provincia" id="provincia" placeholder="Ej: Buenos Aires" value="<%= usuarioAEditar.provincia%>">
                             </div>
                         </div>
                         
@@ -92,7 +101,7 @@
                                 <label for="localidad">Localidad:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="localidad" id="localidad" placeholder="Ej: Mar del Plata">
+                                <input class="perfilDato" type="text" name="localidad" id="localidad" placeholder="Ej: Mar del Plata" value="<%= usuarioAEditar.localidad%>">
                             </div>
                         </div>
                         
@@ -101,7 +110,7 @@
                                 <label for="domicilio">Domicilio:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número">
+                                <input class="perfilDato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número" value="<%= usuarioAEditar.domicilio%>">
                             </div>
                         </div>
                         
@@ -110,7 +119,7 @@
                                 <label for="cp">Cod. postal</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="number" name="cp" id="cp" placeholder="Ej: 7600">
+                                <input class="perfilDato" type="number" name="cp" id="cp" placeholder="Ej: 7600" value="<%= usuarioAEditar.cp%>">
                             </div>
                         </div>
                                                 
@@ -119,7 +128,7 @@
                                 <label for="telefono">Teléfono:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330">
+                                <input class="perfilDato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330" value="<%= usuarioAEditar.telefono%>">
                             </div>
                         </div>
                         

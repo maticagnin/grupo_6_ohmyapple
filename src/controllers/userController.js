@@ -37,25 +37,50 @@ const userController = {
         let nuevoUsuario = {
             id: usuarios[usuarios.length - 1 ].id + 1,
             ...req.body,
-            categoria:'user'
+            categoria:'user',
+            nombres: '',
+            apellidos: '',
+            dni: '',
+            nacimiento: '',
+            provincia: '',
+            localidad: '',
+            domicilio: '',
+            cp: '',
+            telefono: ''
+
         }
         usuarios.push(nuevoUsuario);
         fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, ' '));
-        res.redirect('/user/perfil')
+        res.redirect('/user/perfil/:idUsuario')
     },
     perfil: (req, res) => {
-        res.render('perfil')
+        let id = req.params.idUsuario
+        let usuario = usuarios.find( usuario => usuario.id == id)
+        res.render('perfil', {usuario})
     },
-    processPerfil: (req,res) => {
+    processPerfil: (req, res) => {
+        let id = req.params.idUsuario
+        let usuarioAEditar = usuarios.find( usuario => usuario.id == id)
+        res.render('perfil', {usuarioAEditar})
+
         let nuevoUsuario = {
-            id: usuarios[usuarios.length - 1 ].id + 1,
             ...req.body,
-            categoria:'user'
+            categoria:'user',
+            nombres: '',
+            apellidos: '',
+            dni: '',
+            nacimiento: '',
+            provincia: '',
+            localidad: '',
+            domicilio: '',
+            cp: '',
+            telefono: ''
+
         }
         usuarios.push(nuevoUsuario);
         fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, ' '));
-        res.redirect('/user/perfil')
-    }
+        res.redirect('/user/perfil/:idUsuario')
+    },
 };
 
 module.exports = userController

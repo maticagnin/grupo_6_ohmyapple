@@ -22,7 +22,7 @@ router.get('/login', userController.login);
 router.post('/login', userValidator, userController.processLogin);
 router.get('/register', userController.register);
 router.post('/register', userController.processRegister);
-router.get('/perfil', userController.perfil);
+router.get('/perfil/:idUsuario', userController.perfil);
 router.post('/perfil', userController.processPerfil);
 
 

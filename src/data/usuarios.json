@@ -26,5 +26,39 @@
   "usuario": "mariobastit",
   "password": "marioeselmejor123",
   "categoria": "user"
+ },
+ {
+  "id": 5,
+  "email": "aa@aa.com",
+  "usuario": "aa",
+  "password": "123",
+  "password2": "123",
+  "categoria": "user",
+  "nombres": "",
+  "apellidos": "",
+  "dni": "",
+  "nacimiento": "",
+  "provincia": "",
+  "localidad": "",
+  "domicilio": "",
+  "cp": "",
+  "telefono": ""
+ },
+ {
+  "id": 6,
+  "email": "aa@aa.com",
+  "usuario": "aa",
+  "password": "123",
+  "password2": "123",
+  "categoria": "user",
+  "nombres": "",
+  "apellidos": "",
+  "dni": "",
+  "nacimiento": "",
+  "provincia": "",
+  "localidad": "",
+  "domicilio": "",
+  "cp": "",
+  "telefono": ""
  }
 ]
