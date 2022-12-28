@@ -12,21 +12,21 @@
 
         <div class="infoUser">
             <div class="divImgUser">
-                <img src="/images/usuarios/img servicio.jpeg" class="imgUser">
+                <img src="/images/usuarios/<%= usuarioAEditar.imagen%>" class="imgUser">
             </div>
             <div class="divDatosUser">
                 <p class="datosUser">
-                    Usuario: <%= usuario.usuario%><br>
-                    Email: <%= usuario.email%><br>
-                    Nombres: <%= usuario.nombres%><br>
-                    Apellidos: <%= usuario.apellidos%><br>
-                    DNI: <%= usuario.dni%><br>
-                    Fecha de Nacimiento: <%= usuario.nacimiento%><br>
-                    Provincia: <%= usuario.provincia%><br>
-                    Localidad: <%= usuario.localidad%><br>
-                    Domicilio: <%= usuario.domicilio%><br>
-                    Código Postal: <%= usuario.cp%><br>
-                    Teléfono: <%= usuario.telefono%><br>
+                    Usuario: <%= usuarioAEditar.usuario%><br>
+                    Email: <%= usuarioAEditar.email%><br>
+                    Nombres: <%= usuarioAEditar.nombres%><br>
+                    Apellidos: <%= usuarioAEditar.apellidos%><br>
+                    DNI: <%= usuarioAEditar.dni%><br>
+                    Fecha de Nacimiento: <%= usuarioAEditar.nacimiento%><br>
+                    Provincia: <%= usuarioAEditar.provincia%><br>
+                    Localidad: <%= usuarioAEditar.localidad%><br>
+                    Domicilio: <%= usuarioAEditar.domicilio%><br>
+                    Código Postal: <%= usuarioAEditar.cp%><br>
+                    Teléfono: <%= usuarioAEditar.telefono%><br>
                 </p>
             </div>
         </div>
@@ -48,95 +48,96 @@
 
             <div class="datosPerfil">
                
-                    <form action="#" method="#"></form>
-                    <div class="datos">
-                        
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="nombres">Nombres:</label>
+                    <form action="/user/perfil/<%= usuarioAEditar.id %>?_method=PUT" method="POST"></form>
+                        <div class="datos">
+                            
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="nombres">Nombres:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="text" name="nombres" id="nombres" value="<%= usuarioAEditar.nombres%>" placeholder="Ej: Pablo Pablo" >
+                                </div>
                             </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="nombres" id="nombres" value="<%= usuario.nombres%>" placeholder="Ej: Pablo Pablo" >
+                            
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="apellidos">Apellidos:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="text" name="apellidos" id="apellidos" value="<%= usuarioAEditar.apellidos%>" placeholder="Ej: García Suarez">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="apellidos">Apellidos:</label>
-                            </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="apellidos" id="apellidos" value="<%= usuario.apellidos%>" placeholder="Ej: García Suarez">
-                            </div>
-                        </div>
 
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="dni">N° Doc.:</label>
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="dni">N° Doc.:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="number" name="dni" id="dni" minlength="7" value="<%= usuarioAEditar.dni%>" placeholder="Ingresar DNI sin puntos">
+                                </div>
                             </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="number" name="dni" id="dni" minlength="7" value="<%= usuario.dni%>" placeholder="Ingresar DNI sin puntos">
-                            </div>
-                        </div>
 
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="nacimiento">Fecha de nac.:</label>
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="nacimiento">Fecha de nac.:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="date" name="nacimiento" id="nacimiento" value="<%= usuarioAEditar.nacimiento%>">
+                                </div>
                             </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="date" name="nacimiento" id="nacimiento" value="<%= usuario.nacimiento%>">
+                            
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="provincia">Provincia:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="text" name="provincia" id="provincia" value="<%= usuarioAEditar.provincia%>" placeholder="Ej: Buenos Aires">
+                                </div>
                             </div>
+                            
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="localidad">Localidad:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="text" name="localidad" id="localidad" value="<%= usuarioAEditar.localidad%>" placeholder="Ej: Mar del Plata">
+                                </div>
+                            </div>
+                            
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="domicilio">Domicilio:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="text" name="domicilio" id="domicilio" value="<%= usuarioAEditar.domicilio%>" placeholder="Calle y Número">
+                                </div>
+                            </div>
+                            
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="cp">Cod. postal</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="number" name="cp" id="cp" value="<%= usuarioAEditar.cp%>" placeholder="Ej: 7600">
+                                </div>
+                            </div>
+                                                    
+                            <div class="contenerdorPerfilFormulario">
+                                <div class="contenedorPerfilLabel">
+                                    <label for="telefono">Teléfono:</label>
+                                </div>
+                                <div class="ContenedorPerfilInput">
+                                    <input class="perfilDato" type="tel" name="telefono" id="telefono" minlength="10" value="<%= usuarioAEditar.telefono%>" placeholder="Ej: 2235333330">
+                                </div>
+                            </div>
+                            
+                    
                         </div>
-                        
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="provincia">Provincia:</label>
-                            </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="provincia" id="provincia" value="<%= usuario.provincia%>" placeholder="Ej: Buenos Aires">
-                            </div>
+                        <div>
+                            <button class="perfil-botonEditar" type="submit">Editar</button>
                         </div>
-                        
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="localidad">Localidad:</label>
-                            </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="localidad" id="localidad" value="<%= usuario.localidad%>" placeholder="Ej: Mar del Plata">
-                            </div>
-                        </div>
-                        
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="domicilio">Domicilio:</label>
-                            </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="domicilio" id="domicilio" value="<%= usuario.domicilio%>" placeholder="Calle y Número">
-                            </div>
-                        </div>
-                        
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="cp">Cod. postal</label>
-                            </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="number" name="cp" id="cp" value="<%= usuario.cp%>" placeholder="Ej: 7600">
-                            </div>
-                        </div>
-                                                
-                        <div class="contenerdorPerfilFormulario">
-                            <div class="contenedorPerfilLabel">
-                                <label for="telefono">Teléfono:</label>
-                            </div>
-                            <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="tel" name="telefono" id="telefono" minlength="10" value="<%= usuario.telefono%>" placeholder="Ej: 2235333330">
-                            </div>
-                        </div>
-                        
-                  
-                    </div>
-                    <div>
-                        <input class="perfil-botonEditar" type="submit">
-                    </div>
+                    </form>
             </div>
         </section>
 
