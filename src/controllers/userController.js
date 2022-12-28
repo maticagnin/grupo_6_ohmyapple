@@ -60,26 +60,33 @@ const userController = {
     },
     processPerfil: (req, res) => {
         let id = req.params.idUsuario
-        let usuarioAEditar = usuarios.find( usuario => usuario.id == id)
-        res.render('perfil', {usuarioAEditar})
+        let usuario = usuarios.find( usuario => usuario.id == id)
+        res.render('perfil', {usuario})
 
-        let nuevoUsuario = {
+        usuario = {
+            id: usuarioAEditar.id,
             ...req.body,
             categoria:'user',
-            nombres: '',
-            apellidos: '',
-            dni: '',
-            nacimiento: '',
-            provincia: '',
-            localidad: '',
-            domicilio: '',
-            cp: '',
-            telefono: ''
+            nombres: req.body.nombres,
+            apellidos: req.body.apellidos,
+            dni: req.body.dni,
+            nacimiento: req.body.nacimiento,
+            provincia: req.body.provincia,
+            localidad: req.body.localidad,
+            domicilio: req.body.domicilio,
+            cp: req.body.cp,
+            telefono: req.body.telefono
+        };
 
-        }
-        usuarios.push(nuevoUsuario);
-        fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, ' '));
-        res.redirect('/user/perfil/:idUsuario')
+        let nuevoUsuario = usuarios.map( usuario => {
+            if(usuario.id == usuario.id) {
+                return (usuario = {...usuario});
+            }
+            return usuario
+        });
+
+        fs.writeFileSync(usuariosFilePath, JSON.stringify(nuevoUsuario, null, ' '));
+        res.redirect('/perfil/:idUsuario')
     },
 };
 

@@ -56,7 +56,7 @@
                                 <label for="nombres">Nombres:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="nombres" id="nombres" placeholder="Ej: Pablo Pablo" value="<%= usuarioAEditar.nombres%>">
+                                <input class="perfilDato" type="text" name="nombres" id="nombres" value="<%= usuario.nombres%>" placeholder="Ej: Pablo Pablo" >
                             </div>
                         </div>
                         
@@ -65,7 +65,7 @@
                                 <label for="apellidos">Apellidos:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="apellidos" id="apellidos" placeholder="Ej: García Suarez" value="<%= usuarioAEditar.apellidos%>">
+                                <input class="perfilDato" type="text" name="apellidos" id="apellidos" value="<%= usuario.apellidos%>" placeholder="Ej: García Suarez">
                             </div>
                         </div>
 
@@ -74,7 +74,7 @@
                                 <label for="dni">N° Doc.:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="number" name="dni" id="dni" minlength="7" placeholder="Ingresar DNI sin puntos" value="<%= usuarioAEditar.dni%>">
+                                <input class="perfilDato" type="number" name="dni" id="dni" minlength="7" value="<%= usuario.dni%>" placeholder="Ingresar DNI sin puntos">
                             </div>
                         </div>
 
@@ -83,7 +83,7 @@
                                 <label for="nacimiento">Fecha de nac.:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="date" name="nacimiento" id="nacimiento" value="<%= usuarioAEditar.nacimiento%>">
+                                <input class="perfilDato" type="date" name="nacimiento" id="nacimiento" value="<%= usuario.nacimiento%>">
                             </div>
                         </div>
                         
@@ -92,7 +92,7 @@
                                 <label for="provincia">Provincia:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="provincia" id="provincia" placeholder="Ej: Buenos Aires" value="<%= usuarioAEditar.provincia%>">
+                                <input class="perfilDato" type="text" name="provincia" id="provincia" value="<%= usuario.provincia%>" placeholder="Ej: Buenos Aires">
                             </div>
                         </div>
                         
@@ -101,7 +101,7 @@
                                 <label for="localidad">Localidad:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="localidad" id="localidad" placeholder="Ej: Mar del Plata" value="<%= usuarioAEditar.localidad%>">
+                                <input class="perfilDato" type="text" name="localidad" id="localidad" value="<%= usuario.localidad%>" placeholder="Ej: Mar del Plata">
                             </div>
                         </div>
                         
@@ -110,7 +110,7 @@
                                 <label for="domicilio">Domicilio:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="text" name="domicilio" id="domicilio" placeholder="Calle y Número" value="<%= usuarioAEditar.domicilio%>">
+                                <input class="perfilDato" type="text" name="domicilio" id="domicilio" value="<%= usuario.domicilio%>" placeholder="Calle y Número">
                             </div>
                         </div>
                         
@@ -119,7 +119,7 @@
                                 <label for="cp">Cod. postal</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="number" name="cp" id="cp" placeholder="Ej: 7600" value="<%= usuarioAEditar.cp%>">
+                                <input class="perfilDato" type="number" name="cp" id="cp" value="<%= usuario.cp%>" placeholder="Ej: 7600">
                             </div>
                         </div>
                                                 
@@ -128,11 +128,14 @@
                                 <label for="telefono">Teléfono:</label>
                             </div>
                             <div class="ContenedorPerfilInput">
-                                <input class="perfilDato" type="tel" name="telefono" id="telefono" minlength="10" placeholder="Ej: 2235333330" value="<%= usuarioAEditar.telefono%>">
+                                <input class="perfilDato" type="tel" name="telefono" id="telefono" minlength="10" value="<%= usuario.telefono%>" placeholder="Ej: 2235333330">
                             </div>
                         </div>
                         
                   
+                    </div>
+                    <div>
+                        <input class="perfil-botonEditar" type="submit">
                     </div>
             </div>
         </section>
