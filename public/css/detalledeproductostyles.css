@@ -245,6 +245,7 @@
 .detalle-main{
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: space-between;
 }
 .recomendados{
     display: flex;
