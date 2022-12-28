@@ -89,8 +89,14 @@ const userController = {
         let usuarioAEditar = usuarios.find( usuario => usuario.id == id)
 
         usuarioAEditar = {
-            id: usuario.id,
+            id: usuarioAEditar.id,
+            email: usuarioAEditar.email,
+            usuario: usuarioAEditar.usuario,
+            password: usuarioAEditar.password,
+            imagen: usuarioAEditar.imagen,
+            categoria: usuarioAEditar.categoria,
             ...req.body,
+
         };
 
         let nuevoUsuario = usuarios.map( usuario => {
