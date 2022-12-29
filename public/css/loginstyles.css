@@ -75,6 +75,17 @@
   justify-content: center;
   margin-bottom: 10%;
 }
+.login-error {
+  background-color: red;
+  opacity: 50%;
+  color: white;
+  margin: 0 40px;
+}
+.login-error i {
+  color: white;
+
+}
+
 
 /* medias queries form */
 

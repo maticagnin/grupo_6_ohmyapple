@@ -13,9 +13,12 @@
 
           <input type="text" name = "email" placeholder="Email" />
           <% if (locals.errors && errors.email) { %>
-            <div class="error"><%= errors.email.msg %></div>
+            <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.email.msg %></div>
             <% } %>
           <input type="password" name = "password" placeholder="Contraseña" />
+          <% if (locals.errors && errors.password) { %>
+            <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.password.msg %></div>
+            <% } %>
           <label for="recordar" class="login-recordar">
             Recordarme
           </label>

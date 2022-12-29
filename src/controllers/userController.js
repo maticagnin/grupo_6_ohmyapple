@@ -1,6 +1,7 @@
 const path = require('path');
 
 const fs = require('fs');
+const bcrypt = require('bcryptjs');
 
 const usuariosFilePath = path.resolve(__dirname + '/../data/usuarios.json');
 const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
@@ -14,20 +15,20 @@ const userController = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req)
-        if (errors.isEmpty()){
-        let emailBuscado = usuarios.find(function(usuario) {
-            if (usuario.email == req.body.email){
-                let contraseñaUsuario = usuario.password;
-                if (contraseñaUsuario == req.body.password){
-                    res.redirect('/user/perfil')
-                }else{
-                    res.redirect('/')
+        if(errors.isEmpty()){
+            let usuarioBuscado = usuarios.find( function(usuario) {
+                if (usuario.email == req.body.email){
+                    return usuario
                 }
-            }else{
-                res.redirect('/')
+            })
+            let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.password);
+            console.log(usuarioBuscado)
+            console.log(checkContrasenia)
+            if (checkContrasenia){
+                res.redirect('/user/perfil/' + usuarioBuscado.id)
             }
-        })}else{
-            res.render("login", {errors: errors.mapped()})
+        } else {
+            res.render ('login', {errors: errors.mapped()})
         }
     },
     register: (req, res) => {
@@ -37,7 +38,9 @@ const userController = {
         if(req.file){
             let nuevoUsuario = {
                 id: usuarios[usuarios.length - 1 ].id + 1,
-                ...req.body,
+                email: req.body.email,
+                usuario: req.body.usuario,
+                password: bcrypt.hashSync(password, 15),
                 imagen: req.file.filename, 
                 categoria:'user',
                 nombres: '',
@@ -58,7 +61,9 @@ const userController = {
         } else {
             let nuevoUsuario = {
                 id: usuarios[usuarios.length - 1 ].id + 1,
-                ...req.body,
+                email: req.body.email,
+                usuario: req.body.usuario,
+                password: bcrypt.hashSync(req.body.password, 15),
                 imagen: 'default.png', 
                 categoria:'user',
                 nombres: '',
