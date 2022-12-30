@@ -13,6 +13,49 @@ const userController = {
     login: (req, res) => {
         res.render('login')
     },
+    // processLogin: (req, res) => {
+    //     let errors = validationResult(req);
+
+    //     if(errors.isEmpty()){
+    //         let usersJSON = fs.readFileSync('usuarios.json', 'utf-8');
+    //         let users;
+    //         if(usersJSON == ""){
+    //             users = [];
+    //         } else{
+    //             users = JSON.parse(usersJSON);
+    //         }
+
+    //         for (let i = 0; i < users.length; i++){
+    //             if (users[i].email == req.body.email){
+    //                 if(bcrypt.compareSync(req.body.password, users[i].password)){
+    //                     let usuarioALoguearse = users[i];
+    //                     break;
+    //                 }
+    //             }
+    //         }
+
+    //         if(usuarioALoguearse == undefined){
+    //             return res.render("login", {errors: [
+    //                 {msg: "Credenciales invalidas"}
+    //             ]});
+    //         }
+
+    //         req.session.usuarioLogueado = usuarioALoguearse;
+    //         res.render("success");
+    //     } else{
+    //         return res.render("login", {errors: error.mapped()})
+    //     }
+    // },
+
+
+
+
+
+
+
+
+
+
     processLogin: (req, res) => {
         let errors = validationResult(req)
         if(errors.isEmpty()){
@@ -24,6 +67,13 @@ const userController = {
             let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.password);
             console.log(usuarioBuscado)
             console.log(checkContrasenia)
+
+            // if(req.body.recordar != undefined){
+            //     res.cookie("recordame", usuarioBuscado.email, { maxAge: 60000 })
+            // }
+            
+            req.session.usuarioLogueado = usuarioBuscado;
+
             if (checkContrasenia){
                 res.redirect('/user/perfil/' + usuarioBuscado.id)
             }
@@ -40,7 +90,7 @@ const userController = {
                 id: usuarios[usuarios.length - 1 ].id + 1,
                 email: req.body.email,
                 usuario: req.body.usuario,
-                password: bcrypt.hashSync(password, 15),
+                password: bcrypt.hashSync(req.body.password, 15),
                 imagen: req.file.filename, 
                 categoria:'user',
                 nombres: '',

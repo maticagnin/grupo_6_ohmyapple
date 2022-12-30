@@ -66,5 +66,22 @@
   "domicilio": "",
   "cp": "",
   "telefono": ""
+ },
+ {
+  "id": 6,
+  "email": "mati@mati.com",
+  "usuario": "mati",
+  "password": "$2a$15$bUOQAHUmM5OJYDl9Rc7uoubjYAaBvStZz8ON7TDc90Se8lqcqBh0e",
+  "imagen": "user - mati - 1672357952628.jpeg",
+  "categoria": "user",
+  "nombres": "",
+  "apellidos": "",
+  "dni": "",
+  "nacimiento": "",
+  "provincia": "",
+  "localidad": "",
+  "domicilio": "",
+  "cp": "",
+  "telefono": ""
  }
 ]

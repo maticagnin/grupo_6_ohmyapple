@@ -8,6 +8,7 @@ const session = require('express-session');
 
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
+// const recordameMiddleware = require("./src/middlewares/recordameMiddleware")
 
 
 
@@ -18,6 +19,7 @@ app.use(session({secret: "Secreto"}));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.set('views', path.join('src/views'));
+// app.use(recordameMiddleware);
 
 app.set('view engine', 'ejs');
 

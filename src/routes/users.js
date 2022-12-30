@@ -1,14 +1,11 @@
 const express = require('express');
-
 const path = require('path');
-
 const userController = require('../controllers/userController.js');
-
 const loginMiddleware = require('../middlewares/loginMiddleware')
-
 const { body } = require('express-validator')
-
 const multer = require('multer');
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const userValidator = [
     body('email')
@@ -36,10 +33,18 @@ let router = express.Router();
 
 router.get('/login', userController.login);
 router.post('/login', userValidator, userController.processLogin);
-router.get('/register', userController.register);
+router.get('/register', guestMiddleware, userController.register);
 router.post('/register',uploadFile.single("imagenreg"), userController.processRegister);
-router.get('/perfil/:idUsuario', userController.perfil);
+router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
 router.put('/perfil/:idUsuario', userController.processPerfil);
+
+router.get("/check", function (req, res){
+    if(req.session.usuarioLogueado == undefined){
+        res.send("No estas logueado");
+    }else{
+        res. send("El usuario logueado es " + req.session.usuarioLogueado.email);
+    }
+})
 
 
 module.exports = router;
