@@ -89,7 +89,6 @@ const userController = {
             let nuevoUsuario = {
                 id: usuarios[usuarios.length - 1 ].id + 1,
                 email: req.body.email,
-                usuario: req.body.usuario,
                 password: bcrypt.hashSync(req.body.password, 15),
                 imagen: req.file.filename, 
                 categoria:'user',
@@ -112,7 +111,6 @@ const userController = {
             let nuevoUsuario = {
                 id: usuarios[usuarios.length - 1 ].id + 1,
                 email: req.body.email,
-                usuario: req.body.usuario,
                 password: bcrypt.hashSync(req.body.password, 15),
                 imagen: 'default.png', 
                 categoria:'user',
