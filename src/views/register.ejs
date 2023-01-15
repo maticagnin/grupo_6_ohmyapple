@@ -16,7 +16,10 @@
         >
           <p class="register-form-tittle">Registro</p>
           <input type="email" name="email" placeholder="Email" />
-          <input type="password" name="password" placeholder="Contraseña" />
+          <input type="password" name="password" class="inputpass" placeholder="Contraseña" />
+          <div class="error">
+            <ul></ul>
+          </div>
           <input id="imagenreg" type="file" name="imagenreg">
           
           <button type="submit">Registro</button>
@@ -24,5 +27,6 @@
       </div>
     </main>
     <%- include ('partials/footer') %>
+    <script src="/js/script.js"></script>
   </body>
 </html>
