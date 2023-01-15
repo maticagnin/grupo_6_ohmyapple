@@ -63,5 +63,5 @@ module.exports = (sequelize, dataTypes) => {
     const usuario = sequelize.define(alias, cols, config)
 
 
-}
+};
 
