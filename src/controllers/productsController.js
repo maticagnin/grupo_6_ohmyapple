@@ -71,19 +71,55 @@ const productsController = {
         res.render('carrito')
     },
     productos: (req, res) => {
-        db.Producto.findAll()
-            .then(function(productos){
-            res.render('productos', {productos: productos, toThousand});
-    })
+    //     db.Producto.findAll()
+    //         .then(function(productos){
+    //             res.render('productos', {productos: productos, toThousand});
+    // })
 
-        // let catIphone = productos.filter( prodIphone => prodIphone.categoria == 'iPhone')
-        // let catMac = productos.filter( prodMac => prodMac.categoria == 'Mac')
-        // let catAirpods = productos.filter( prodAirpods => prodAirpods.categoria == 'AirPods')
-        // let catIpad = productos.filter( prodIpad => prodIpad.categoria == 'iPad')
-        // let catWatch = productos.filter( prodWatch => prodWatch.categoria == 'Watch')
-        // let catAccesorios = productos.filter( prodAccesorios => prodAccesorios.categoria == 'Accesorios')
+        let catIphone = db.Producto.findAll({
+            where: {
+                categoriaprod_id: 1
+            }
+        }).then((resultado) => {
+            res.render('productos', {catIphone: catIphone})
+        });
+        console.log(catIphone)
+        let catMac = db.Producto.findAll({
+            where:{
+                categoriaprod_id: 'Mac'
+            }
+        }).then((resultado) => {
+            res.render('productos', {catMac: catMac})
+        });
+        let catAirpods = db.Producto.findAll({
+            where:{
+                categoriaprod_id: 'AirPods'
+            }
+        }).then((resultado) => {
+            res.render('productos', {catAirpods: catAirpods})
+        });
+        let catIpad = db.Producto.findAll({
+            where:{
+                categoriaprod_id: 'iPad'
+            }
+        }).then((resultado) => {
+            res.render('productos', {catIpad: catIpad})
+        });
+        let catWatch = db.Producto.findAll({
+            where:{
+                categoriaprod_id: 'Watch'
+            }
+        }).then((resultado) => {
+            res.render('productos', {catWatch: catWatch})
+        });
+        let catAccesorios = db.Producto.findAll({
+            where:{
+                categoriaprod_id: 'Accesorios'
+            }
+        }).then((resultado) => {
+            res.render('productos', {catAccesorios: catAccesorios, toThousand})
+        });
 
-        // res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
     },
     iphone: (req, res) => {
         let catIphone = productos.filter( prodIphone => prodIphone.categoria == 'iPhone')

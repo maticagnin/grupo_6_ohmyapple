@@ -15,7 +15,10 @@ const cookieParser = require('cookie-parser');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(session({secret: "Secreto"}));
+app.use(session({
+    secret: "Secreto",
+    resave: true,
+    saveUninitialized: true}));
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.set('views', path.join('src/views'));

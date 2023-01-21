@@ -49,10 +49,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         categoriauser_id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            references: {
-                model: CategoriaUsuario,
-                key: "id"
-            }
         }
     }
     let config = {
@@ -60,8 +56,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false 
     }
 
-    const usuario = sequelize.define(alias, cols, config)
-
-
-};
+    const Usuario = sequelize.define(alias, cols, config);
+    Usuario.associate = function(modelos) {
+        Usuario.belongsTo(modelos.CategoriaUsuario, {
+            as: "CategoriaUsuario",
+            foreignKey: "categoriauser_id"
+        })
+    };
+    return Usuario
+}
 

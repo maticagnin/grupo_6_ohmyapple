@@ -18,6 +18,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false 
     }
 
-    const usuario = sequelize.define(alias, cols, config)
-
+    const Capacidad = sequelize.define(alias, cols, config);
+    Capacidad.associate = function(modelos) {
+        Capacidad.hasMany(modelos.Producto, {
+            as: "Producto",
+            foreignKey: "capacidad_id"
+        })
+       
+    };
+    return Capacidad
 };
