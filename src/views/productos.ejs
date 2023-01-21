@@ -12,14 +12,16 @@
         <% } %>           
 
             <div class="productosListaIphone">
-                <% for (let i = 0 ; i < catIphone.length ; i++) { %>
-                        <a class="productos" href="/productos/<%= catIphone[i].id %>">
+                <% for (let i = 0 ; i < productos.length ; i++) { %>
+                    <% if (productos[i].categoria == "iPhone") { %>
+
+                        <a class="productos" href="/productos/<%= productos[i].id %>">
                             <div class="divproducto">
-                                <img class="productoimg" src="<%= catIphone[i].imagen %>">
+                                <img class="productoimg" src="<%= productos[i].imagen %>">
                             </div>
-                                <h2 class="productonombre"><%= catIphone[i].nombre %></h2>
-                                <h3 class="productoprecio">$ <%= toThousand(catIphone[i].precio) %></h3>
-                                <p class="productodescripcion"><%= catIphone[i].descripcion %></p>
+                                <h2 class="productonombre"><%= productos[i].nombre %></h2>
+                                <h3 class="productoprecio">$ <%= toThousand(productos[i].precio) %></h3>
+                                <p class="productodescripcion"><%= productos[i].descripcion %></p>
                         </a>
                 <% } %>           
             </div>
