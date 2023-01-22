@@ -71,45 +71,45 @@ const productsController = {
         res.render('carrito')
     },
     productos: (req, res) => {
-    //     db.Producto.findAll()
-    //         .then(function(productos){
-    //             res.render('productos', {productos: productos, toThousand});
-    // })
+         db.Producto.findAll()
+             .then(function(productos){
+                 res.render('productos', {productos: productos, toThousand});
+    })
 
-        let catIphone = db.Producto.findAll({
-            where: {
-                categoriaprod_id: 1
-            }
-        })
-        let catMac = db.Producto.findAll({
-            where:{
-                categoriaprod_id: 'Mac'
-            }
-        })
-        let catAirpods = db.Producto.findAll({
-            where:{
-                categoriaprod_id: 'AirPods'
-            }
-        })
-        let catIpad = db.Producto.findAll({
-            where:{
-                categoriaprod_id: 'iPad'
-            }
-        })
-        let catWatch = db.Producto.findAll({
-            where:{
-                categoriaprod_id: 'Watch'
-            }
-        })
-        let catAccesorios = db.Producto.findAll({
-            where:{
-                categoriaprod_id: 'Accesorios'
-            }
-        })
-        .then(function(categorias){
-            return res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
-        })
-        console.log(catIphone)
+        // let catIphone = db.Producto.findAll({
+        //     where: {
+        //         categoriaprod_id: 1
+        //     }
+        // })
+        // let catMac = db.Producto.findAll({
+        //     where:{
+        //         categoriaprod_id: 'Mac'
+        //     }
+        // })
+        // let catAirpods = db.Producto.findAll({
+        //     where:{
+        //         categoriaprod_id: 'AirPods'
+        //     }
+        // })
+        // let catIpad = db.Producto.findAll({
+        //     where:{
+        //         categoriaprod_id: 'iPad'
+        //     }
+        // })
+        // let catWatch = db.Producto.findAll({
+        //     where:{
+        //         categoriaprod_id: 'Watch'
+        //     }
+        // })
+        // let catAccesorios = db.Producto.findAll({
+        //     where:{
+        //         categoriaprod_id: 'Accesorios'
+        //     }
+        // })
+        // .then(function(categorias){
+        //     return res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+        // })
+        // console.log(catIphone)
         
 
     },

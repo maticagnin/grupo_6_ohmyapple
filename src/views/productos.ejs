@@ -6,121 +6,44 @@
     <main class="detalle-main">
         <%- include ('partials/sideBar') %>
         <div class="productoSections">
-        <% if (catIphone.length != 0) {  %>
-        <section class="seciphone" id="iphone">
-            <p class="productoCategoria">iPhone</p>
-        <% } %>           
 
-            <div class="productosListaIphone">
-                <% for (let i = 0 ; i < catIphone.length ; i++) { %>
-                        <a class="productos" href="/productos/<%= catIphone[i].id %>">
-                            <div class="divproducto">
-                                <img class="productoimg" src="<%= catIphone[i].imagen %>">
-                            </div>
-                                <h2 class="productonombre"><%= catIphone[i].nombre %></h2>
-                                <h3 class="productoprecio">$ <%= toThousand(catIphone[i].precio) %></h3>
-                                <p class="productodescripcion"><%= catIphone[i].descripcion %></p>
-                        </a>
-                <% } %>           
-            </div>
+        <!-- TITULO IPHONE  -->
 
-        </section>
-        <% if (catMac.length != 0) {  %>
-        <section class="seciphone" id="mac"> 
-            <p class="productoCategoria">Mac</p>
-        <% } %>           
+        <% let catIphone = 0; %>
+        <% for (let i = 0 ; i < productos.length ; i++) { %>
+            
+            <% if (productos[i].categoriaprod_id == 1) {  %>
+                <% catIphone++ %>
+                <% } %>
+                <% if (catIphone > 0){ %>
+                    <section class="seciphone" id="iphone">
+                    <p class="productoCategoria">iPhone</p>
+                <% } %>    
+                <% } %>
 
-            <div class="productosListaIphone">
-                <% for (let i = 0 ; i < catMac.length ; i++) { %>
-                        <a class="productos" href="/productos/<%= catMac[i].id %>">
-                            <div class="divproducto">
-                                <img class="productoimg" src="<%= catMac[i].imagen %>">
-                            </div>
-                                <h2 class="productonombre"><%= catMac[i].nombre %></h2>
-                                <h3 class="productoprecio">$ <%= toThousand(catMac[i].precio) %></h3>
-                                <p class="productodescripcion"><%= catMac[i].descripcion %></p>
-                        </a>
-                <% } %>           
-            </div>
+        <!-- PRODUCTOS IPHONE -->
 
-        </section>
-        <% if (catAirpods.length != 0) {  %>
-        <section class="seciphone" id="airpods">            
-            <p class="productoCategoria">AirPods</p>
-        <% } %>           
+                <div class="productosListaIphone">
+                    <% let productosIphone = []; %>
+                    <% for (let i = 0 ; i < productos.length ; i++) { %>
+                        <% if (productos[i].categoriaprod_id == 1) {  %>
+                            <% productosIphone.push(productos[i]) %>
+                        <% } %>
+                            <a class="productos" href="/productos/<%= productosIphone[i].id %>">
+                                <div class="divproducto">
+                                    <img class="productoimg" src="<%= productosIphone[i].imagen %>">
+                                </div>
+                                    <h2 class="productonombre"><%= productosIphone[i].nombre %></h2>
+                                    <h3 class="productoprecio">$ <%= toThousand(productosIphone[i].precio) %></h3>
+                                    <p class="productodescripcion"><%= productosIphone[i].descripcion %></p>
+                            </a>
+                    <% } %>           
+                </div>
+    
+            </section>
 
-            <div class="productosListaIphone">
-                <% for (let i = 0 ; i < catAirpods.length ; i++) { %>
-                        <a class="productos" href="/productos/<%= catAirpods[i].id %>">
-                            <div class="divproducto">
-                                <img class="productoimg" src="<%= catAirpods[i].imagen %>">
-                            </div>
-                                <h2 class="productonombre"><%= catAirpods[i].nombre %></h2>
-                                <h3 class="productoprecio">$ <%= toThousand(catAirpods[i].precio) %></h3>
-                                <p class="productodescripcion"><%= catAirpods[i].descripcion %></p>
-                        </a>
-                <% } %>           
-            </div>
+        
 
-        </section>
-        <% if (catIpad.length != 0) {  %>
-        <section class="seciphone" id="ipad">         
-            <p class="productoCategoria">iPad</p>
-        <% } %>           
-
-            <div class="productosListaIphone">
-                <% for (let i = 0 ; i < catIpad.length ; i++) { %>
-                        <a class="productos" href="/productos/<%= catIpad[i].id %>">
-                            <div class="divproducto">
-                                <img class="productoimg" src="<%= catIpad[i].imagen %>">
-                            </div>
-                                <h2 class="productonombre"><%= catIpad[i].nombre %></h2>
-                                <h3 class="productoprecio">$ <%= toThousand(catIpad[i].precio) %></h3>
-                                <p class="productodescripcion"><%= catIpad[i].descripcion %></p>
-                        </a>
-                    
-                <% } %>           
-            </div>
-
-        </section>
-        <% if (catWatch.length != 0) {  %>
-        <section class="seciphone" id="watch">          
-            <p class="productoCategoria">Watch</p>
-        <% } %>           
-
-            <div class="productosListaIphone">
-                <% for (let i = 0 ; i < catWatch.length ; i++) { %>
-                        <a class="productos" href="/productos/<%= catWatch[i].id %>">
-                            <div class="divproducto">
-                                <img class="productoimg" src="<%= catWatch[i].imagen %>">
-                            </div>
-                                <h2 class="productonombre"><%= catWatch[i].nombre %></h2>
-                                <h3 class="productoprecio">$ <%= toThousand(catWatch[i].precio) %></h3>
-                                <p class="productodescripcion"><%= catWatch[i].descripcion %></p>
-                        </a>
-                <% } %>           
-            </div>
-
-        </section>
-        <% if (catAccesorios.length != 0) {  %>
-        <section class="seciphone" id="accesorios">           
-            <p class="productoCategoria">Accesorios</p>
-        <% } %>           
-
-            <div class="productosListaIphone">
-                <% for (let i = 0 ; i < catAccesorios.length ; i++) { %>
-                        <a class="productos" href="/productos/<%= catAccesorios[i].id %>">
-                            <div class="divproducto">
-                                <img class="productoimg" src="<%= catAccesorios[i].imagen %>">
-                            </div>
-                                <h2 class="productonombre"><%= catAccesorios[i].nombre %></h2>
-                                <h3 class="productoprecio">$ <%= toThousand(catAccesorios[i].precio) %></h3>
-                                <p class="productodescripcion"><%= catAccesorios[i].descripcion %></p>
-                        </a>
-                <% } %>           
-            </div>
-
-        </section>
     </div>
 
 
