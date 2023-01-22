@@ -80,45 +80,37 @@ const productsController = {
             where: {
                 categoriaprod_id: 1
             }
-        }).then((resultado) => {
-            res.render('productos', {catIphone: catIphone})
-        });
-        console.log(catIphone)
+        })
         let catMac = db.Producto.findAll({
             where:{
                 categoriaprod_id: 'Mac'
             }
-        }).then((resultado) => {
-            res.render('productos', {catMac: catMac})
-        });
+        })
         let catAirpods = db.Producto.findAll({
             where:{
                 categoriaprod_id: 'AirPods'
             }
-        }).then((resultado) => {
-            res.render('productos', {catAirpods: catAirpods})
-        });
+        })
         let catIpad = db.Producto.findAll({
             where:{
                 categoriaprod_id: 'iPad'
             }
-        }).then((resultado) => {
-            res.render('productos', {catIpad: catIpad})
-        });
+        })
         let catWatch = db.Producto.findAll({
             where:{
                 categoriaprod_id: 'Watch'
             }
-        }).then((resultado) => {
-            res.render('productos', {catWatch: catWatch})
-        });
+        })
         let catAccesorios = db.Producto.findAll({
             where:{
                 categoriaprod_id: 'Accesorios'
             }
-        }).then((resultado) => {
-            res.render('productos', {catAccesorios: catAccesorios, toThousand})
-        });
+        })
+        .then(function(categorias){
+            return res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+        })
+        console.log(catIphone)
+        
 
     },
     iphone: (req, res) => {
