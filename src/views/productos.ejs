@@ -14,11 +14,12 @@
             
             <% if (productos[i].categoriaprod_id == 1) {  %>
                 <% catIphone++ %>
-                <% } %>
-                <% if (catIphone > 0){ %>
-                    <section class="seciphone" id="iphone">
-                    <p class="productoCategoria">iPhone</p>
-                
+            <% } %>
+        <% } %>
+
+        <% if (catIphone > 0){ %>
+            <section class="seciphone" id="iphone">
+            <p class="productoCategoria">iPhone</p>   
 
         <!-- PRODUCTOS IPHONE -->
 
@@ -36,34 +37,36 @@
                                     <h3 class="productoprecio">$ <%= toThousand(productosIphone[i].precio) %></h3>
                                     <p class="productodescripcion"><%= productosIphone[i].descripcion %></p>
                             </a>
-                    <% } %>           
+                    <% } %>
+
                 </div>
-    
             </section>
-            <% } %>    
-            <% } %>
+        <% } %>           
+ 
       
             <!-- TITULO MAC  -->
 
-      <% let catMac = 0; %>
-      <% for (let i = 0 ; i < productos.length ; i++) { %>
+        <% let catMac = 0; %>
+        <% for (let i = 0 ; i < productos.length ; i++) { %>
           
-          <% if (productos[i].categoriaprod_id == 2) {  %>
-              <% catMac++ %>
-              <% } %>
-              <% if (catMac > 0){ %>
+            <% if (productos[i].categoriaprod_id == 2) {  %>
+                <% catMac++ %>
+            <% } %>
+        <% } %>
+
+            <% if (catMac > 0){ %>
                   <section class="seciphone" id="mac">
                   <p class="productoCategoria">Mac</p>
-              
+
 
       <!-- PRODUCTOS MAC -->
 
               <div class="productosListaIphone">
-                  <% let productosMac = []; %>
-                  <% for (let i = 0 ; i < productos.length ; i++) { %>
-                      <% if (productos[i].categoriaprod_id == 2) {  %>
-                          <% productosMac.push(productos[i]) %>
-                      <% } %>
+                <% let productosMac = []; %>
+                <% for (let i = 0 ; i < productos.length ; i++) { %>
+                    <% if (productos[i].categoriaprod_id == 2) {  %>
+                        <% productosMac.push(productos[i]) %>
+                    <% } %>
                           <a class="productos" href="/productos/<%= productosMac[i].id %>">
                               <div class="divproducto">
                                   <img class="productoimg" src="<%= productosMac[i].imagen %>">
@@ -74,10 +77,8 @@
                           </a>
                   <% } %>           
               </div>
-  
           </section>
         <% } %>    
-        <% } %>
     
         <!-- TITULO AIRPODS  -->
 
@@ -86,11 +87,12 @@
         
         <% if (productos[i].categoriaprod_id == 3) {  %>
             <% catAirpods++ %>
-            <% } %>
-            <% if (catAirpods > 0){ %>
-                <section class="seciphone" id="airpods">
-                <p class="productoCategoria">AirPods</p>
-            
+        <% } %>
+    <% } %>
+
+    <% if (catAirpods > 0){ %>
+        <section class="seciphone" id="airpods">
+        <p class="productoCategoria">AirPods</p>
 
     <!-- PRODUCTOS AIRPODS -->
 
@@ -110,10 +112,8 @@
                         </a>
                 <% } %>           
             </div>
-
-        </section>
-         <% } %>    
-         <% } %>
+        </section>  
+    <% } %>
 
          <!-- TITULO IPAD  -->
 
@@ -122,20 +122,21 @@
       
       <% if (productos[i].categoriaprod_id == 4) {  %>
           <% catIpad++ %>
-          <% } %>
-          <% if (catIpad > 0){ %>
-              <section class="seciphone" id="ipad">
-              <p class="productoCategoria">iPad</p>
-          
+        <% } %>
+    <% } %>
+
+    <% if (catIpad > 0){ %>
+        <section class="seciphone" id="ipad">
+        <p class="productoCategoria">iPad</p>
 
   <!-- PRODUCTOS IPAD -->
 
           <div class="productosListaIphone">
-              <% let productosIpad = []; %>
-              <% for (let i = 0 ; i < productos.length ; i++) { %>
-                  <% if (productos[i].categoriaprod_id == 4) {  %>
-                      <% productosIpad.push(productos[i]) %>
-                  <% } %>
+            <% let productosIpad = []; %>
+            <% for (let i = 0 ; i < productos.length ; i++) { %>
+                <% if (productos[i].categoriaprod_id == 4) {  %>
+                    <% productosIpad.push(productos[i]) %>
+                <% } %>
                       <a class="productos" href="/productos/<%= productosIpad[i].id %>">
                           <div class="divproducto">
                               <img class="productoimg" src="<%= productosIpad[i].imagen %>">
@@ -144,12 +145,10 @@
                               <h3 class="productoprecio">$ <%= toThousand(productosIpad[i].precio) %></h3>
                               <p class="productodescripcion"><%= productosIpad[i].descripcion %></p>
                       </a>
-              <% } %>           
+            <% } %>           
           </div>
-
       </section>
-        <% } %>    
-        <% } %>
+    <% } %>
 
         <!-- TITULO WATCH  -->
 
@@ -159,10 +158,11 @@
     <% if (productos[i].categoriaprod_id == 5) {  %>
         <% catWatch++ %>
         <% } %>
-        <% if (catWatch > 0){ %>
+<% } %>
+
+<% if (catWatch > 0){ %>
             <section class="seciphone" id="watch">
             <p class="productoCategoria">Watch</p>
-        
 
 <!-- PRODUCTOS WATCH -->
 
@@ -182,10 +182,8 @@
                     </a>
             <% } %>           
         </div>
-
       </section>
-        <% } %>    
-        <% } %>
+<% } %>
 
         <!-- TITULO ACCESORIOS  -->
 
@@ -194,11 +192,12 @@
     
     <% if (productos[i].categoriaprod_id == 6) {  %>
         <% catAccesorios++ %>
-        <% } %>
-        <% if (catAccesorios > 0){ %>
-            <section class="seciphone" id="accesorios">
-            <p class="productoCategoria">Accesorios</p>
-        
+    <% } %>
+<% } %>
+
+<% if (catAccesorios > 0){ %>
+    <section class="seciphone" id="accesorios">
+    <p class="productoCategoria">Accesorios</p>
 
 <!-- PRODUCTOS ACCESORIOS -->
 
@@ -218,14 +217,10 @@
                     </a>
             <% } %>           
         </div>
-
       </section>
-        <% } %>    
-        <% } %>
+<% } %>
 
-        
-
-    </div>
+        </div>
 
 
     </main>    

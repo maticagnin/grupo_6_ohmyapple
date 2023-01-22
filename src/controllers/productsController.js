@@ -18,16 +18,18 @@ const productsController = {
         res.render('creacion')
     },
     crear: (req, res) => {
-        let nuevoProd = {
-            id: productos[productos.length - 1 ].id + 1,
-            ...req.body,
-            imagen: "/images/productos/" + req.file.filename, 
-            recomendado1: "/images/productos/Accesorios/Apple Funda.jpg",
-            recomendado2: "/images/productos/Accesorios/Apple Magsafe Charger.jpg",
-            recomendado3: "/images/productos/Watch/Apple Watch Series 8.jpg"
-        }
-        productos.push(nuevoProd);
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, ' '));
+        db.Producto.create({
+            imagen: "/images/productos/" + req.file.filename,
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            descripcion: req.body.descripcion,
+            caracteristicas: req.body.caracteristicas,
+            modelo_id: req.body.modelo,
+            capacidad_id: req.body.capacidad,
+            color_id: req.body.color,
+            categoriaprod_id: req.body.categoria,
+
+    });
         res.redirect('/productos')
     },
     edicion: (req, res) => {
@@ -43,9 +45,6 @@ const productsController = {
             id: productoAEditar.id,
             ...req.body,
             imagen: "/images/productos/Accesorios/Apple Pencil.jpg",
-            recomendado1: "/images/productos/Accesorios/Apple Funda.jpg",
-            recomendado2: "/images/productos/Accesorios/Apple Magsafe Charger.jpg",
-            recomendado3: "/images/productos/Watch/Apple Watch Series 8.jpg"
         };
 
         let nuevoProducto = productos.map( (producto) => {
