@@ -8,37 +8,40 @@
     <div class="producto1">
         <div class="imgDetalle">
         <div class="detalle-divimg">
-        <img class="iphone14" src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+        <img class="iphone14" src="<%= productos.imagen %>" alt="<%= productos.nombre %>">
         </div>
         <div class="descripcion">
-                <h2 class="detalle-nombreProd"><%= producto.nombre %></h2>
-        <div class="selectores">
-            <form class="detalle-form" action="/" method="GET">            
+                <h2 class="detalle-nombreProd"><%= productos.nombre %></h2>
+            
+            <div class="selectores">
+
+              
+
+                <h3 class="tresItems"><%= modelo.nombre %></h3>
+                <h3 class="tresItems"><%= capacidad.nombre %></h3>
+                <h3 class="tresItems"><%= color.nombre %></h3>
+            
+            <!-- <form class="detalle-form" action="/" method="GET">            
                 <select class="detalle-selector" name="select">
-                    <option class="opcion" value="pro"><%= producto.modelo %></option>
-                    <!-- <option class="opcion" value="max">PRO MAX</option>
-                    <option class="opcion" value="no">-</option> -->
+                    <option class="opcion" value="pro"><%= productos.modelo %></option>
+        
                 </select>
                 <select class="detalle-selector" name="select">
-                    <option class="opcion" value="125"><%= producto.capacidad %></option>
-                    <!-- <option class="opcion" value="256">256 GB</option>
-                    <option class="opcion" value="512">512 GB</option> -->
+                    <option class="opcion" value="125"><%= productos.capacidad %></option>
+      
                 </select>
                 <select class="detalle-selector" name="select">
-                    <option class="opcion" value="P"><%= producto.color %></option>
-                    <!-- <option class="opcion" value="M">MIDNIGTH</option>
-                    <option class="opcion" value="S">STARLIGTH</option>
-                    <option class="opcion" value="B">BLUE</option>
-                    <option class="opcion" value="R">RED</option> -->
+                    <option class="opcion" value="P"><%= productos.color %></option>
                 </select>
-        </form>
+
+            </form> -->
         </div>
         <div class="precio">
-            <h3 class="detalle-valor">$<%= toThousand(producto.precio) %><i id="carrito" class="fa-solid fa-cart-arrow-down"></i></h3>
+            <h3 class="detalle-valor">$<%= productos.precio %><i id="carrito" class="fa-solid fa-cart-arrow-down"></i></h3>
         </div>
         <div class="informacion">
             <p class="info">
-                <%= producto.descripcion %>
+                <%= productos.descripcion %>
             </p>
         </div>
         </div>
@@ -48,7 +51,7 @@
                 + CARACTERÍSTICAS
             </p>
             <ul class="detalle-especific">
-                <%= producto.caracteristicas %>
+                <%= productos.caracteristicas %>
                 <!-- <li>Dimensiones y peso: Ancho: 7,15 cm, Alto: 14,67 cm, Grosor: 0,76 cm, Peso: 203 g</li>
                 <li>Pantalla Super Retina XDR con ProMotion</li>
                 <li>Resolución de 2.532 por 1.170 píxeles a 460 p/p</li>
@@ -59,10 +62,10 @@
             </ul>
             <div class="botonesEditarEliminar">
             <div class="divDetalleEditar">
-                <a class="botonEditar"href="/productos/<%= producto.id %>/editar">EDITAR PRODUCTO</a>
+                <a class="botonEditar"href="/productos/<%= productos.id %>/editar">EDITAR PRODUCTO</a>
             </div>
             <div class="divDetalleEliminar">
-                <form action="/productos/<%= producto.id %>/?_method=DELETE" method="POST">
+                <form action="/productos/<%= productos.id %>/?_method=DELETE" method="POST">
                     <button type="submit" class="botonEliminar">ELIMINAR PRODUCTO</button>  
                 </form>
             </div>

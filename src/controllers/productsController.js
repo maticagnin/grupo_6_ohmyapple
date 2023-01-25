@@ -10,10 +10,20 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
     detalle: (req, res) => {
+
         let id = req.params.idProducto
-        let producto = productos.find( producto => producto.id == id)
-        res.render('detalle', {producto, toThousand})
-    },
+        let detalleProducto = db.Producto.findOne({
+            where: {
+                id: id
+            }
+        })
+            .then(function(productos){
+                    let modelo = db.Modelo.findByPk(detalleProducto.modelo_id)
+                    let capacidad = db.Capacidad.findByPk(detalleProducto.capacidad_id)
+                    let color = db.Color.findByPk(detalleProducto.color_id)
+
+                res.render('detalle', {productos, modelo, capacidad, color, toThousand});
+   })},
     creacion: (req, res) => {
         res.render('creacion')
     },
