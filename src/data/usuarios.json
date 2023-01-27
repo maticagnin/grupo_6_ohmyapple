@@ -66,44 +66,5 @@
   "domicilio": "",
   "cp": "",
   "telefono": ""
- },
- {
-  "id": 6,
-  "email": "mati@mati.com",
-  "usuario": "mati",
-  "password": "$2a$15$bUOQAHUmM5OJYDl9Rc7uoubjYAaBvStZz8ON7TDc90Se8lqcqBh0e",
-  "imagen": "user - mati - 1672357952628.jpeg",
-  "categoria": "user",
-  "nombres": "",
-  "apellidos": "",
-  "dni": "",
-  "nacimiento": "",
-  "provincia": "",
-  "localidad": "",
-  "domicilio": "",
-  "cp": "",
-  "telefono": ""
- },
- {
-  "id": 7,
-<<<<<<< HEAD
-  "email": "holahola@hollla.com",
-  "password": "$2a$15$b.I.aPe9go/Pyf0e6unI4OSBTys5Usn8fWKXzrdVkC4g5NmkKePoC",
-  "imagen": "user - undefined - 1674836704126.jpg",
-=======
-  "email": "rocio@rocio.com",
-  "password": "$2a$15$UxggHPAU6Trce/u.d0NDruVi4c54zV.FDC2fdRDhKCE87wjBDTLfa",
-  "imagen": "user - undefined - 1674835786913.Jpg",
->>>>>>> c1c070934bd7aaed1a81e1e1ae174c6d81fd8973
-  "categoria": "user",
-  "nombres": "",
-  "apellidos": "",
-  "dni": "",
-  "nacimiento": "",
-  "provincia": "",
-  "localidad": "",
-  "domicilio": "",
-  "cp": "",
-  "telefono": ""
  }
 ]

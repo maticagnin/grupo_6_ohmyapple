@@ -38,13 +38,4 @@ router.post('/register',uploadFile.single("imagenreg"), userController.processRe
 router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
 router.put('/perfil/:idUsuario', userController.processPerfil);
 
-router.get("/check", function (req, res){
-    if(req.session.usuarioLogueado == undefined){
-        res.send("No estas logueado");
-    }else{
-        res. send("El usuario logueado es " + req.session.usuarioLogueado.email);
-    }
-})
-
-
 module.exports = router;

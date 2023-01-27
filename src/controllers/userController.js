@@ -2,6 +2,7 @@ const path = require('path');
 
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
+const db = require("../../database/models")
 
 const usuariosFilePath = path.resolve(__dirname + '/../data/usuarios.json');
 const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
@@ -13,49 +14,6 @@ const userController = {
     login: (req, res) => {
         res.render('login')
     },
-    // processLogin: (req, res) => {
-    //     let errors = validationResult(req);
-
-    //     if(errors.isEmpty()){
-    //         let usersJSON = fs.readFileSync('usuarios.json', 'utf-8');
-    //         let users;
-    //         if(usersJSON == ""){
-    //             users = [];
-    //         } else{
-    //             users = JSON.parse(usersJSON);
-    //         }
-
-    //         for (let i = 0; i < users.length; i++){
-    //             if (users[i].email == req.body.email){
-    //                 if(bcrypt.compareSync(req.body.password, users[i].password)){
-    //                     let usuarioALoguearse = users[i];
-    //                     break;
-    //                 }
-    //             }
-    //         }
-
-    //         if(usuarioALoguearse == undefined){
-    //             return res.render("login", {errors: [
-    //                 {msg: "Credenciales invalidas"}
-    //             ]});
-    //         }
-
-    //         req.session.usuarioLogueado = usuarioALoguearse;
-    //         res.render("success");
-    //     } else{
-    //         return res.render("login", {errors: error.mapped()})
-    //     }
-    // },
-
-
-
-
-
-
-
-
-
-
     processLogin: (req, res) => {
         let errors = validationResult(req)
         if(errors.isEmpty()){
@@ -86,61 +44,68 @@ const userController = {
     },
     processRegister: (req, res) => {
         if(req.file){
-            let nuevoUsuario = {
-                id: usuarios[usuarios.length - 1 ].id + 1,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 15),
-                imagen: req.file.filename, 
-                categoria:'user',
-                nombres: '',
-                apellidos: '',
-                dni: '',
-                nacimiento: '',
-                provincia: '',
-                localidad: '',
-                domicilio: '',
-                cp: '',
-                telefono: ''
-    
-            }
+            db.Usuario.create({
+                    email: req.body.email,
+                    contrasenia: bcrypt.hashSync(req.body.password, 20),
+                    imagen: "/images/usuarios/" + req.file.filename,
+                    nombre: '',
+                    apellido: '',
+                    dni: '',
+                    nacimiento: null,
+                    provincia: '',
+                    localidad: '',
+                    domicilio: '',
+                    cp: '',
+                    telefono: '',
+                    categoriauser_id: 2,        
+                
+            })
+            .then()
             
             req.session.usuarioLogueado = req.body.email;
-
-            usuarios.push(nuevoUsuario);
-            fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, ' '));
-            res.redirect('/user/perfil/' + nuevoUsuario.id)
+            db.Usuario.findOne({
+                where: {
+                    email: req.body.email
+                }
+            }).then((nuevoUsuario => {
+                res.redirect('/user/perfil/' + nuevoUsuario.id)
+            }))
         } else {
-            let nuevoUsuario = {
-                id: usuarios[usuarios.length - 1 ].id + 1,
+            db.Usuario.create({
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 15),
-                imagen: 'default.png', 
-                categoria:'user',
-                nombres: '',
-                apellidos: '',
+                contrasenia: bcrypt.hashSync(req.body.password, 10),
+                imagen: "/images/usuarios/" + 'default.png',
+                nombre: '',
+                apellido: '',
                 dni: '',
-                nacimiento: '',
+                nacimiento: null,
                 provincia: '',
                 localidad: '',
                 domicilio: '',
                 cp: '',
-                telefono: ''
-    
+                telefono: '',
+                categoriauser_id: 2,
+        })
+        req.session.usuarioLogueado = req.body.email;
+        db.Usuario.findOne({
+            where: {
+                email: req.body.email
             }
-    
-            usuarios.push(nuevoUsuario);
-            fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, ' '));
+        }).then((nuevoUsuario => {
             res.redirect('/user/perfil/' + nuevoUsuario.id)
-        }
+        }))
+    }
             
     },
     perfil: (req, res) => {
         let id = req.params.idUsuario
-        let usuarioAEditar = usuarios.find( usuario => usuario.id == id)
-        res.render('perfil', {usuarioAEditar})
-    },
+        let usuarioAEditar = db.Usuario.findByPk(id)
+            .then((usuario) => 
+                res.render('perfil', {usuarioAEditar})
+        )},
     processPerfil: (req, res) => {
         let id = req.params.idUsuario
+        db.Usuario.Update
         let usuarioAEditar = usuarios.find( usuario => usuario.id == id)
 
         usuarioAEditar = {
