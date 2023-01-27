@@ -115,96 +115,96 @@ const productsController = {
             })
     },
     iphone: (req, res) => {
-        let catMac = 1;
-        let catAirpods = [];
-        let catIpad = [];
-        let catWatch = [];
-        let catAccesorios = [];
         let catIphone = db.Producto.findAll({
             where: {
                 categoriaprod_id: "1",
             }
-        })
-        .then(function(prodIphone){
-            res.render('productos',{prodIphone: catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
-        })
-        console.log(catMac)
+        });
+        let catMac = Promise.resolve([]);
+        let catAirpods = Promise.resolve([]);
+        let catIpad = Promise.resolve([]);
+        let catWatch = Promise.resolve([]);
+        let catAccesorios = Promise.resolve([]);
 
+        Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
+            .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
+                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+            })
     },
     mac: (req, res) => {
-        let catIphone = [];
+        let catIphone = Promise.resolve([]);
         let catMac = db.Producto.findAll({
             where: {
                 categoriaprod_id: "2",
             }
         });
-        let catAirpods = [];
-        let catIpad = [];
-        let catWatch = [];
-        let catAccesorios = [];
+        let catAirpods = Promise.resolve([]);
+        let catIpad = Promise.resolve([]);
+        let catWatch = Promise.resolve([]);
+        let catAccesorios = Promise.resolve([]);
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
-        .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-            res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
-        })
+            .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
+                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+            })
     },
     airpods: (req, res) => {
-        let catIphone = [];
-        let catMac = [];
+        let catIphone = Promise.resolve([]);
+        let catMac = Promise.resolve([]);
         let catAirpods = db.Producto.findAll({
             where: {
                 categoriaprod_id: "3",
             }
         });
-        let catIpad = [];
-        let catWatch = [];
-        let catAccesorios = [];
+        let catIpad = Promise.resolve([]);
+        let catWatch = Promise.resolve([]);
+        let catAccesorios = Promise.resolve([]);
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
-        .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-            res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
-        })
+            .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
+                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+            })
     },
     ipad: (req, res) => {
-        let catIphone = [];
-        let catMac = [];
-        let catAirpods = [];
+        let catIphone = Promise.resolve([]);
+        let catMac = Promise.resolve([]);
+        let catAirpods = Promise.resolve([]);
         let catIpad = db.Producto.findAll({
             where: {
                 categoriaprod_id: "4",
             }
-        });
-        let catWatch = [];
-        let catAccesorios = [];
+        });        let catWatch = Promise.resolve([]);
+        let catAccesorios = Promise.resolve([]);
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
-        .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-            res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
-        })
+            .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
+                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+            })
     },
     watch: (req, res) => {
-        let catIphone = [];
-        let catMac = [];
-        let catAirpods = [];
-        let catIpad = [];
+        let catIphone = Promise.resolve([]);
+        let catMac = Promise.resolve([]);
+        let catAirpods = Promise.resolve([]);
+        let catIpad = Promise.resolve([]);
         let catWatch = db.Producto.findAll({
             where: {
                 categoriaprod_id: "5",
             }
         });
-        let catAccesorios = [];
+        let catAccesorios = Promise.resolve([]);
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
-        .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-            res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
-        })
+            .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
+                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+            })
     },
     accesorios: (req, res) => {
-        let catIphone = [];
-        let catMac = [];
-        let catAirpods = [];
-        let catIpad = [];
-        let catWatch = [];
+        let catIphone = Promise.resolve([]);
+
+        let catMac = Promise.resolve([]);
+        let catAirpods = Promise.resolve([]);
+        let catIpad = Promise.resolve([]);
+        let catWatch = Promise.resolve([]);
         let catAccesorios = db.Producto.findAll({
             where: {
                 categoriaprod_id: "6",
@@ -212,9 +212,9 @@ const productsController = {
         });
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
-        .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-            res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
-        })
+            .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
+                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+            })
     },
 };
 
