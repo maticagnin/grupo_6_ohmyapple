@@ -31,14 +31,19 @@
         </div>
 
         <div class="botones">
-        
-            <form action="/" method="GET">
+            
+            
+            <form class="dosBotenes" action="/" method="GET">
 
                 <button type="submit" class="botonContraseña">Cambiar contraseña</button>
                 <button type="submit" class="botonFoto">Cambiar foto de perfíl</button>    
 
             </form>
-        
+
+            <form class="dosBotenes" action="/user/perfil/<%= usuarioAEditar.id %>/?_method=DELETE" method="POST">
+                <button type="submit" >Eliminar usuario definitivamente</button>  
+            </form>
+
         </div>
 
         <section class="seccionDatos">
