@@ -102,35 +102,32 @@ const userController = {
     },
     perfil: (req, res) => {
         let id = req.params.idUsuario
-        let usuarioAEditar = db.Usuario.findByPk(id)
+        db.Usuario.findByPk(id)
             .then((usuarioAEditar) => 
                 res.render('perfil', {usuarioAEditar})
         )},
     processPerfil: (req, res) => {
-        let id = req.params.idUsuario
-        db.Usuario.Update
-        let usuarioAEditar = usuarios.find( usuario => usuario.id == id)
-
-        usuarioAEditar = {
-            id: usuarioAEditar.id,
-            email: usuarioAEditar.email,
-            usuario: usuarioAEditar.usuario,
-            password: usuarioAEditar.password,
-            imagen: usuarioAEditar.imagen,
-            categoria: usuarioAEditar.categoria,
-            ...req.body,
-
-        };
-
-        let nuevoUsuario = usuarios.map( usuario => {
-            if(usuario.id == usuarioAEditar.id) {
-                return (usuario = {...usuarioAEditar});
-            }
-            return usuario
+        db.Usuario.update({ 
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            dni: req.body.dni,
+            nacimiento: req.body.nacimiento,
+            provincia: req.body.provincia,
+            localidad: req.body.localidad,
+            domicilio: req.body.domicilio,
+            cp: req.body.cp,
+            telefono: req.body.telefono,
+        },
+        {
+        where: { id: req.params.idUsuario }
+        })
+        .then(function(usuarioAEditar){
+            let id = req.params.idUsuario
+            db.Usuario.findByPk(id)
+            .then((usuarioEditado) => {
+            res.redirect('/user/perfil/' + usuarioEditado.id)
+            });
         });
-
-        fs.writeFileSync(usuariosFilePath, JSON.stringify(nuevoUsuario, null, ' '));
-        res.redirect('/user/perfil/' + usuarioAEditar.id)
     }
 };
 

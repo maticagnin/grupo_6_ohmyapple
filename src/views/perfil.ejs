@@ -16,10 +16,9 @@
             </div>
             <div class="divDatosUser">
                 <p class="datosUser">
-                    Usuario: <%= usuarioAEditar.usuario%><br>
                     Email: <%= usuarioAEditar.email%><br>
-                    Nombres: <%= usuarioAEditar.nombres%><br>
-                    Apellidos: <%= usuarioAEditar.apellidos%><br>
+                    Nombres: <%= usuarioAEditar.nombre%><br>
+                    Apellidos: <%= usuarioAEditar.apellido%><br>
                     DNI: <%= usuarioAEditar.dni%><br>
                     Fecha de Nacimiento: <%= usuarioAEditar.nacimiento%><br>
                     Provincia: <%= usuarioAEditar.provincia%><br>
@@ -53,19 +52,19 @@
                             
                             <div class="contenerdorPerfilFormulario">
                                 <div class="contenedorPerfilLabel">
-                                    <label for="nombres">Nombres:</label>
+                                    <label for="nombre">Nombres:</label>
                                 </div>
                                 <div class="ContenedorPerfilInput">
-                                    <input class="perfilDato" type="text" name="nombres" id="nombres" value="<%= usuarioAEditar.nombres%>" placeholder="Ej: Pablo Pablo" >
+                                    <input class="perfilDato" type="text" name="nombre" id="nombre" value="<%= usuarioAEditar.nombre%>" placeholder="Ej: Pablo Pablo" >
                                 </div>
                             </div>
                             
                             <div class="contenerdorPerfilFormulario">
                                 <div class="contenedorPerfilLabel">
-                                    <label for="apellidos">Apellidos:</label>
+                                    <label for="apellido">Apellidos:</label>
                                 </div>
                                 <div class="ContenedorPerfilInput">
-                                    <input class="perfilDato" type="text" name="apellidos" id="apellidos" value="<%= usuarioAEditar.apellidos%>" placeholder="Ej: García Suarez">
+                                    <input class="perfilDato" type="text" name="apellido" id="apellido" value="<%= usuarioAEditar.apellido%>" placeholder="Ej: García Suarez">
                                 </div>
                             </div>
 
