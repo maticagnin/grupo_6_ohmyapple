@@ -72,6 +72,15 @@
     width: 100%;
 }
 
+.botones{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dosBotenes{
+    width: 50%;
+}
+
 
 @media (min-width: 1200px ){
     .perfilSection{

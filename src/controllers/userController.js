@@ -17,14 +17,15 @@ const userController = {
     processLogin: (req, res) => {
         let errors = validationResult(req)
         if(errors.isEmpty()){
-            let usuarioBuscado = usuarios.find( function(usuario) {
-                if (usuario.email == req.body.email){
-                    return usuario
+            let usuarioBuscado = db.Usuario.findOne({
+                where: {
+                    email: req.body.email
                 }
             })
-            let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.password);
+
+            
             console.log(usuarioBuscado)
-            console.log(checkContrasenia)
+            let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.contrasenia);
 
             // if(req.body.recordar != undefined){
             //     res.cookie("recordame", usuarioBuscado.email, { maxAge: 60000 })
@@ -131,7 +132,16 @@ const userController = {
 
         fs.writeFileSync(usuariosFilePath, JSON.stringify(nuevoUsuario, null, ' '));
         res.redirect('/user/perfil/' + usuarioAEditar.id)
-    }
+    },
+    eliminar: (req, res) => {
+        let id = req.params.idUsuario;
+        
+        db.Usuario.destroy({
+            where: {id: id}
+        })
+
+        res.redirect('/')
+    },
 };
 
 module.exports = userController

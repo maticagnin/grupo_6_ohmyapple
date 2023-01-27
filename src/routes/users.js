@@ -42,4 +42,6 @@ router.get('/perfil/:idUsuario', userController.perfil);
 
 router.put('/perfil/:idUsuario', userController.processPerfil);
 
+router.delete('/perfil/:idUsuario/', userController.eliminar);
+
 module.exports = router;
