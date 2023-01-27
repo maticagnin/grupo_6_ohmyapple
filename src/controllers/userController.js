@@ -103,7 +103,9 @@ const userController = {
                 telefono: ''
     
             }
-    
+            
+            req.session.usuarioLogueado = req.body.email;
+
             usuarios.push(nuevoUsuario);
             fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, ' '));
             res.redirect('/user/perfil/' + nuevoUsuario.id)

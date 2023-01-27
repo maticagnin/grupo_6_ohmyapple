@@ -83,5 +83,21 @@
   "domicilio": "",
   "cp": "",
   "telefono": ""
+ },
+ {
+  "id": 7,
+  "email": "holahola@hollla.com",
+  "password": "$2a$15$b.I.aPe9go/Pyf0e6unI4OSBTys5Usn8fWKXzrdVkC4g5NmkKePoC",
+  "imagen": "user - undefined - 1674836704126.jpg",
+  "categoria": "user",
+  "nombres": "",
+  "apellidos": "",
+  "dni": "",
+  "nacimiento": "",
+  "provincia": "",
+  "localidad": "",
+  "domicilio": "",
+  "cp": "",
+  "telefono": ""
  }
 ]
