@@ -62,14 +62,15 @@ const productsController = {
         where: { id: req.params.idProducto }
         })
         .then(function(productoEditado){
-            res.render('productos')
+            res.redirect('/productos')
         });
     },
     eliminar: (req, res) => {
         let id = req.params.idProducto;
-        let productosFinales = productos.filter((producto) => producto.id != id);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(productosFinales, null, ' '));
+        
+        db.Producto.destroy({
+            where: {id: id}
+        })
 
         res.redirect('/productos')
     },
@@ -200,7 +201,6 @@ const productsController = {
     },
     accesorios: (req, res) => {
         let catIphone = Promise.resolve([]);
-
         let catMac = Promise.resolve([]);
         let catAirpods = Promise.resolve([]);
         let catIpad = Promise.resolve([]);
