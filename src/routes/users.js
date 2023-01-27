@@ -33,9 +33,13 @@ let router = express.Router();
 
 router.get('/login', userController.login);
 router.post('/login', userValidator, userController.processLogin);
-router.get('/register', guestMiddleware, userController.register);
+router.get('/register', userController.register);
+// router.get('/register', guestMiddleware, userController.register);
+
 router.post('/register',uploadFile.single("imagenreg"), userController.processRegister);
-router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
+router.get('/perfil/:idUsuario', userController.perfil);
+// router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
+
 router.put('/perfil/:idUsuario', userController.processPerfil);
 
 module.exports = router;

@@ -46,61 +46,64 @@ const userController = {
         if(req.file){
             db.Usuario.create({
                     email: req.body.email,
-                    contrasenia: bcrypt.hashSync(req.body.password, 20),
+                    contrasenia: bcrypt.hashSync(req.body.password, 10),
                     imagen: "/images/usuarios/" + req.file.filename,
-                    nombre: '',
-                    apellido: '',
-                    dni: '',
+                    nombre: null,
+                    apellido: null,
+                    dni: null,
                     nacimiento: null,
-                    provincia: '',
-                    localidad: '',
-                    domicilio: '',
-                    cp: '',
-                    telefono: '',
-                    categoriauser_id: 2,        
-                
+                    provincia: null,
+                    localidad: null,
+                    domicilio: null,
+                    cp: null,
+                    telefono: null,
+                    categoriauser_id: 2,
+            })          
+            .then(nuevoUsuario => {
+                req.session.usuarioLogueado = req.body.email;
+                db.Usuario.findOne({
+                    where: {
+                        email: req.body.email
+                    }
+                }).then((nuevoUsuario => {
+                    res.redirect('/user/perfil/' + nuevoUsuario.id)
+                }))
             })
-            .then()
             
-            req.session.usuarioLogueado = req.body.email;
-            db.Usuario.findOne({
-                where: {
-                    email: req.body.email
-                }
-            }).then((nuevoUsuario => {
-                res.redirect('/user/perfil/' + nuevoUsuario.id)
-            }))
         } else {
             db.Usuario.create({
                 email: req.body.email,
                 contrasenia: bcrypt.hashSync(req.body.password, 10),
                 imagen: "/images/usuarios/" + 'default.png',
-                nombre: '',
-                apellido: '',
-                dni: '',
+                nombre: null,
+                apellido: null,
+                dni: null,
                 nacimiento: null,
-                provincia: '',
-                localidad: '',
-                domicilio: '',
-                cp: '',
-                telefono: '',
+                provincia: null,
+                localidad: null,
+                domicilio: null,
+                cp: null,
+                telefono: null,
                 categoriauser_id: 2,
         })
-        req.session.usuarioLogueado = req.body.email;
-        db.Usuario.findOne({
-            where: {
-                email: req.body.email
-            }
-        }).then((nuevoUsuario => {
-            res.redirect('/user/perfil/' + nuevoUsuario.id)
-        }))
+        .then(nuevoUsuario => {
+            req.session.usuarioLogueado = req.body.email;
+            db.Usuario.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            .then((nuevoUsuario => {
+                res.redirect('/user/perfil/' + nuevoUsuario.id)
+            }))
+        })
     }
             
     },
     perfil: (req, res) => {
         let id = req.params.idUsuario
         let usuarioAEditar = db.Usuario.findByPk(id)
-            .then((usuario) => 
+            .then((usuarioAEditar) => 
                 res.render('perfil', {usuarioAEditar})
         )},
     processPerfil: (req, res) => {
