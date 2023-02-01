@@ -15,31 +15,53 @@ const userController = {
         res.render('login')
     },
     processLogin: (req, res) => {
+
         let errors = validationResult(req)
         if(errors.isEmpty()){
-            let usuarioBuscado = db.Usuario.findOne({
+
+            db.Usuario.findOne({
                 where: {
-                    email: req.body.email
-                }
-            })
+                email: req.body.email
+                    }
+                })
+                    .then((resultado) => {
+                        let usuarioBuscado = resultado;
+                        if (usuarioBuscado == null){
+                            res.render ('login', {errors: errors.mapped()})
+                        }else{
+                            
+                            let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.contrasenia);
+                            
+                            
+                            if (checkContrasenia){
+                                    req.session.usuarioLogueado = usuarioBuscado;
+                                    res.redirect('/user/perfil/' + usuarioBuscado.id)
+                        }else{
+                            res.render ('login', {errors: errors.mapped()})
+                        }
+                    
+                    }})
+                    
+                    console.log(validationResult);
+                
+                    
+                    // res.redirect('/user/perfil/' + usuarioBuscado.id)       
+        
 
+        //     const checkContrasenia = (password, hash) => {
+        //         let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.contrasenia)
+        //         return checkContrasenia
+        //        }
             
-            console.log(usuarioBuscado)
-            let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.contrasenia);
-
-            // if(req.body.recordar != undefined){
-            //     res.cookie("recordame", usuarioBuscado.email, { maxAge: 60000 })
-            // }
-            
-            req.session.usuarioLogueado = usuarioBuscado;
-
-            if (checkContrasenia){
-                res.redirect('/user/perfil/' + usuarioBuscado.id)
-            }
-        } else {
-            res.render ('login', {errors: errors.mapped()})
-        }
-    },
+        //     if (checkContrasenia){
+        //         req.session.usuarioLogueado = usuarioBuscado;
+        //         res.redirect('/user/perfil/' + usuarioBuscado.id)
+        //     }else {
+        //         res.render ('login', {errors: errors.mapped()})
+        // }}else {
+        //     res.render ('login', {errors: errors.mapped()})
+        //  } 
+    }},
     register: (req, res) => {
         res.render('register')
     },
