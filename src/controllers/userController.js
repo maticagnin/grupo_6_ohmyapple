@@ -42,26 +42,11 @@ const userController = {
                     
                     }})
                     
-                    console.log(validationResult);
-                
-                    
-                    // res.redirect('/user/perfil/' + usuarioBuscado.id)       
-        
+    }else {
+        res.render ('login', {errors: errors.mapped()})
 
-        //     const checkContrasenia = (password, hash) => {
-        //         let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.contrasenia)
-        //         return checkContrasenia
-        //        }
-            
-        //     if (checkContrasenia){
-        //         req.session.usuarioLogueado = usuarioBuscado;
-        //         res.redirect('/user/perfil/' + usuarioBuscado.id)
-        //     }else {
-        //         res.render ('login', {errors: errors.mapped()})
-        // }}else {
-        //     res.render ('login', {errors: errors.mapped()})
-        //  } 
-    }},
+    }
+},
     register: (req, res) => {
         res.render('register')
     },
