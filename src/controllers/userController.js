@@ -26,10 +26,11 @@ const userController = {
                 })
                     .then((resultado) => {
                         let usuarioBuscado = resultado;
+
                         if (usuarioBuscado == null){
                             res.render ('login', {errors: errors.mapped()})
                         }else{
-                            
+
                             let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.contrasenia);
                             
                             
@@ -44,7 +45,6 @@ const userController = {
                     
     }else {
         res.render ('login', {errors: errors.mapped()})
-
     }
 },
     register: (req, res) => {
