@@ -15,11 +15,17 @@
           enctype="multipart/form-data"
         >
           <p class="register-form-tittle">Registro</p>
-          <input type="email" name="email" placeholder="Email" />
-          <input type="password" name="password" class="inputpass" placeholder="Contraseña" />
+          <input type="email" name="email" placeholder="Email" value="<%= locals.old && old.email%>"/>
+          <% if (locals.errors && errors.email) { %>
+          <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.email.msg %></div>
+          <% } %>
+          <input type="password" name="password" class="inputpass" placeholder="Contraseña" value="<%= locals.old && old.password%>"/>
           <div class="error">
             <ul></ul>
           </div>
+          <% if (locals.errors && errors.password) { %>
+            <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.password.msg %></div>
+            <% } %>
           <input id="imagenreg" type="file" name="imagenreg">
           
           <button type="submit">Registro</button>

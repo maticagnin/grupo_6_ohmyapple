@@ -11,8 +11,8 @@ const db = require("../../database/models")
 
 const userValidator = [
     body('email')
-        .notEmpty().withMessage('Debes completar el Email')
         .isEmail().withMessage('No es un Email válido')
+        .notEmpty().withMessage('Debes completar el Email'),
         // .custom((value, { req }) => {
           
         //     let usuarioBuscado = db.Usuario.findOne({
@@ -27,12 +27,11 @@ const userValidator = [
         //         throw new Error ('El email no se encuentra registrado.')
         //      }
         //      return true
-             
-    ,
 
     body('password')
-        .notEmpty().withMessage('Debes completar la contraseña').bail()
-        .isLength({min: 8}).withMessage('La contraseña debe contener al menos 8 caracteres'),
+        .isLength({min: 8}).withMessage('La contraseña debe contener al menos 8 caracteres')
+        .notEmpty().withMessage('Debes completar la contraseña')
+
 ]
 
 const storage = multer.diskStorage({
