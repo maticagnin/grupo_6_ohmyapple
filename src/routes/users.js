@@ -11,26 +11,12 @@ const db = require("../../database/models")
 
 const userValidator = [
     body('email')
-        .isEmail().withMessage('No es un Email válido')
-        .notEmpty().withMessage('Debes completar el Email'),
-        // .custom((value, { req }) => {
-          
-        //     let usuarioBuscado = db.Usuario.findOne({
-        //         where: {
-        //         email: req.body.email
-        //             }
-        //         })
-        //     .then((usuarioBuscado) => {
-        //         return usuarioBuscado
-        //      })
-        //      if(usuarioBuscado == null){
-        //         throw new Error ('El email no se encuentra registrado.')
-        //      }
-        //      return true
+        .notEmpty().withMessage('Debes completar el Email').bail()
+        .isEmail().withMessage('No es un Email válido'),
 
     body('password')
+        .notEmpty().withMessage('Debes completar la contraseña').bail()
         .isLength({min: 8}).withMessage('La contraseña debe contener al menos 8 caracteres')
-        .notEmpty().withMessage('Debes completar la contraseña')
 
 ]
 
@@ -53,7 +39,7 @@ router.post('/login', userController.processLogin);
 router.get('/register', userController.register);
 // router.get('/register', guestMiddleware, userController.register);
 
-router.post('/register',userValidator, uploadFile.single("imagenreg"), userController.processRegister);
+router.post('/register', uploadFile.single("imagenreg"), userValidator, userController.processRegister);
 router.get('/perfil/:idUsuario', userController.perfil);
 // router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
 

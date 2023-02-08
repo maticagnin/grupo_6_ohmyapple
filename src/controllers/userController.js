@@ -16,9 +16,6 @@ const userController = {
     },
     processLogin: (req, res) => {
 
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
-
             db.Usuario.findOne({
                 where: {
                 email: req.body.email
@@ -42,17 +39,17 @@ const userController = {
                         }
                     
                     }})
-                    
-    }else {
-        res.render ('login', {errors: errors.mapped()})
-    }
+    
 },
     register: (req, res) => {
         res.render('register')
     },
     processRegister: (req, res) => {
-        let errors = validationResult(req)
-        if(errors.isEmpty()){
+        let resultValidation = validationResult(req)
+
+        if(resultValidation.errors.length > 0){
+            return res.render ('register', {errors: resultValidation.mapped(), old: req.body} )
+        } else {
             if(req.file){
                 db.Usuario.create({
                         email: req.body.email,
@@ -108,8 +105,6 @@ const userController = {
                 }))
             })
         }
-    }else {
-        res.render ('register', {errors: errors.mapped(), old: req.body} )
     }
     },
     perfil: (req, res) => {
