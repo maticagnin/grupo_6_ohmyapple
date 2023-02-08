@@ -1,18 +1,21 @@
-// function recordameMiddleware(req, res, next){
-//     next();
+function recordameMiddleware(req, res, next){
+    next();
 
-//     if(req.cookies.recordame != undefined && req.session.usuarioBuscado == undefined){
-//         let usuarioBuscado = usuarios.find( function(usuario) {
-//             if (usuario.email == req.cookies.recordame){
-//                 return usuario
-//             }
-//         })
+    if(req.cookies.recordame != undefined && req.session.usuarioLogueado == undefined){
         
+        db.Usuario.findOne({
+            where: {
+                email: req.cookie.recordame
+            }
+        })
+        .then((resultado) => {
+                let userToLogin = resultado;
 
-      
-//             res.redirect('/user/perfil/' + usuarioBuscado.id)
+                req.session.usuarioLogueado = userToLogin;
+        })
+
+        }
         
-//     }
-// }
+    }
 
-// module.exports = recordameMiddleware;
+module.exports = recordameMiddleware;

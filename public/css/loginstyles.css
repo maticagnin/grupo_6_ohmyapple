@@ -30,6 +30,7 @@
 
 }
 
+.form-box input[type="email"],
 .form-box input[type="text"],
 .form-box input[type="password"],
 .form-box button[type="submit"] {

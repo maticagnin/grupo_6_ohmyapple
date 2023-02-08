@@ -40,8 +40,7 @@ router.get('/register', userController.register);
 // router.get('/register', guestMiddleware, userController.register);
 
 router.post('/register', uploadFile.single("imagenreg"), userValidator, userController.processRegister);
-router.get('/perfil/:idUsuario', userController.perfil);
-// router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
+router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
 
 router.put('/perfil/:idUsuario',userController.processPerfil);
 

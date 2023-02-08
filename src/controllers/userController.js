@@ -16,29 +16,44 @@ const userController = {
     },
     processLogin: (req, res) => {
 
-            db.Usuario.findOne({
-                where: {
+        db.Usuario.findOne({
+            where: {
                 email: req.body.email
+            }
+        })
+
+        .then((resultado) => {
+            let userToLogin = resultado
+            console.log(userToLogin)
+            if(userToLogin != null){
+                let okPass = bcrypt.compareSync(req.body.password, userToLogin.contrasenia);
+                if(okPass){
+                    req.session.usuarioLogueado = userToLogin;
+
+                    if(req.body.recordame != undefined){
+                        res.cookie('recordame', userToLogin.email, {maxAge: 60000})
                     }
-                })
-                    .then((resultado) => {
-                        let usuarioBuscado = resultado;
 
-                        if (usuarioBuscado == null){
-                            res.render ('login', {errors: errors.mapped()})
-                        }else{
-
-                            let checkContrasenia = bcrypt.compareSync(req.body.password, usuarioBuscado.contrasenia);
-                            
-                            
-                            if (checkContrasenia){
-                                    req.session.usuarioLogueado = usuarioBuscado;
-                                    res.redirect('/user/perfil/' + usuarioBuscado.id)
-                        }else{
-                            res.render ('login', {errors: errors.mapped()})
+                    return res.redirect("/user/perfil/" + userToLogin.id);
+                }return res.render("login", {
+                    errors: {
+                        password: {
+                            msg: " La contraseña es incorrecta"
                         }
-                    
-                    }})
+                    }
+                });
+                
+            }return res.render("login", {
+                errors: {
+                    email: {
+                        msg: " El Email no se encuentra registrado"
+                        }
+                    },
+                    old: req.body
+                });
+        })
+
+        
     
 },
     register: (req, res) => {
