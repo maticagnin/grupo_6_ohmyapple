@@ -4,9 +4,6 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const db = require("../../database/models")
 
-const usuariosFilePath = path.resolve(__dirname + '/../data/usuarios.json');
-const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
-
 const { validationResult } = require("express-validator");
 
 
@@ -24,7 +21,6 @@ const userController = {
 
         .then((resultado) => {
             let userToLogin = resultado
-            console.log(userToLogin)
             if(userToLogin != null){
                 let okPass = bcrypt.compareSync(req.body.password, userToLogin.contrasenia);
                 if(okPass){
@@ -33,6 +29,7 @@ const userController = {
                     if(req.body.recordame != undefined){
                         res.cookie('recordame', userToLogin.email, {maxAge: 60000})
                     }
+                    console.log(res.cookie.recordame)
 
                     return res.redirect("/user/perfil/" + userToLogin.id);
                 }return res.render("login", {
@@ -79,7 +76,7 @@ const userController = {
                         domicilio: null,
                         cp: null,
                         telefono: null,
-                        categoriauser_id: 2,
+                        categoriauser_id: req.body.categoriauser_id,
                 })          
                 .then(nuevoUsuario => {
                     req.session.usuarioLogueado = req.body.email;
@@ -106,8 +103,8 @@ const userController = {
                     domicilio: null,
                     cp: null,
                     telefono: null,
-                    categoriauser_id: 2,
-            })
+                    categoriauser_id: req.body.categoriauser_id,
+                })
             .then(nuevoUsuario => {
                 req.session.usuarioLogueado = req.body.email;
                 db.Usuario.findOne({

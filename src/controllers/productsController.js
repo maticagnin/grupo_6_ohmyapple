@@ -2,12 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const db = require("../../database/models")
 const { DataTypes, INTEGER } = require("sequelize");
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 
 const productsController = {
     detalle: (req, res) => {
-
+        let userToLogin = req.session.usuarioLogueado;
+        console.log(userToLogin)
         let id = req.params.idProducto
         let detalleProducto = db.Producto.findOne({
             where: {
@@ -19,7 +20,7 @@ const productsController = {
                     let capacidad = db.Capacidad.findByPk(detalleProducto.capacidad_id)
                     let color = db.Color.findByPk(detalleProducto.color_id)
 
-                res.render('detalle', {productos, modelo, capacidad, color, toThousand});
+                res.render('detalle', {userToLogin, productos, modelo, capacidad, color, toThousand});
    })},
     creacion: (req, res) => {
         res.render('creacion')

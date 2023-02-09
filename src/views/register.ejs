@@ -27,6 +27,12 @@
             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.password.msg %></div>
             <% } %>
           <input id="imagenreg" type="file" name="imagenreg">
+          <label>Tipo de Perfil
+            <br>
+            <input class="Comprador" type="radio" name="categoriauser_id" value="2" checked>Comprador
+            <br>
+            <input class="Administrador" type="radio" name="categoriauser_id" value="1">Administrador
+          </label>
           
           <button type="submit">Registro</button>
         </form>

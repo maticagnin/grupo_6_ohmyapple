@@ -1,3 +1,5 @@
+const db = require("../../database/models")
+
 function recordameMiddleware(req, res, next){
     next();
 
