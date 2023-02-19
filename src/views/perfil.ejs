@@ -17,8 +17,7 @@
             <div class="divDatosUser">
                 <p class="datosUser">
                     Email: <%= usuarioAEditar.email%><br>
-                    Nombres: <%= usuarioAEditar.nombre%><br>
-                    Apellidos: <%= usuarioAEditar.apellido%><br>
+                    Nombre y Apellido: <%= usuarioAEditar.nombre_apellido%><br>
                     DNI: <%= usuarioAEditar.dni%><br>
                     Fecha de Nacimiento: <%= usuarioAEditar.nacimiento%><br>
                     Provincia: <%= usuarioAEditar.provincia%><br>
@@ -57,19 +56,10 @@
                             
                             <div class="contenerdorPerfilFormulario">
                                 <div class="contenedorPerfilLabel">
-                                    <label for="nombre">Nombres:</label>
+                                    <label for="nombre_apellido">Nombre y Apellido:</label>
                                 </div>
                                 <div class="ContenedorPerfilInput">
-                                    <input class="perfilDato" type="text" name="nombre" id="nombre" value="<%= usuarioAEditar.nombre%>" placeholder="Ej: Pablo Pablo" >
-                                </div>
-                            </div>
-                            
-                            <div class="contenerdorPerfilFormulario">
-                                <div class="contenedorPerfilLabel">
-                                    <label for="apellido">Apellidos:</label>
-                                </div>
-                                <div class="ContenedorPerfilInput">
-                                    <input class="perfilDato" type="text" name="apellido" id="apellido" value="<%= usuarioAEditar.apellido%>" placeholder="Ej: García Suarez">
+                                    <input class="perfilDato" type="text" name="nombre_apellido" id="nombre_apellido" value="<%= usuarioAEditar.nombre_apellido%>" placeholder="Ej: Pablo Suárez" >
                                 </div>
                             </div>
 

@@ -4,7 +4,9 @@ const productsController = require('../controllers/productsController.js');
 const multer = require('multer');
 const path = require("path");
 
-  const storage = multer.diskStorage({
+const { body } = require('express-validator')
+
+const storage = multer.diskStorage({
       destination: (req, file, cb) => {
           cb(null, './public/images/productos');
       },
@@ -14,7 +16,20 @@ const path = require("path");
       }
   });
 
-  const uploadFile = multer({ storage });
+const uploadFile = multer({ storage });
+
+const productValidator = [
+    body('nombre')
+        .notEmpty().withMessage('Debes completar con el nombre.').bail()    
+        .isLength({min: 5}).withMessage('El nombre debe contener al menos 5 caracteres'),
+    body('descripcion')
+        .notEmpty().withMessage('Debes completar con la descripción.').bail()    
+        .isLength({min: 20}).withMessage('La descripción debe contener al menos 20 caracteres'),
+    body('imagen')
+        .notEmpty().withMessage('Debes cargar una imagen.').bail()
+        
+]
+
 
 let router = express.Router();
 
@@ -23,7 +38,7 @@ router.get('/carrito', productsController.carrito);
 
 // *** Creación de Productos ***
 router.get('/creacion', productsController.creacion);
-router.post('/creacion', uploadFile.single("imagen"), productsController.crear);
+router.post('/creacion', productValidator, uploadFile.single("imagen"), productsController.crear);
 
 // *** Categorías de Productos ***
 router.get('/', productsController.productos);

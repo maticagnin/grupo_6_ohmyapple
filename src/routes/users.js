@@ -10,6 +10,10 @@ const db = require("../../database/models")
 
 
 const userValidator = [
+    body('nombre_apellido')
+        .notEmpty().withMessage('Debes completar el nombre y apellido.').bail()    
+        .isLength({min: 2}).withMessage('El nombre y apellido debe contener al menos 2 caracteres'),
+
     body('email')
         .notEmpty().withMessage('Debes completar el Email').bail()
         .isEmail().withMessage('No es un Email válido'),
@@ -17,7 +21,6 @@ const userValidator = [
     body('password')
         .notEmpty().withMessage('Debes completar la contraseña').bail()
         .isLength({min: 8}).withMessage('La contraseña debe contener al menos 8 caracteres')
-
 ]
 
 const storage = multer.diskStorage({
@@ -35,7 +38,7 @@ const uploadFile = multer({ storage });
 let router = express.Router();
 
 router.get('/login', userController.login);
-router.post('/login', userController.processLogin);
+router.post('/login', userValidator, userController.processLogin);
 router.get('/register', userController.register);
 // router.get('/register', guestMiddleware, userController.register);
 

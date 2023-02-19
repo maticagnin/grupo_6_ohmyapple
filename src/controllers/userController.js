@@ -35,7 +35,7 @@ const userController = {
                 }return res.render("login", {
                     errors: {
                         password: {
-                            msg: " La contraseña es incorrecta"
+                            msg: "La contraseña es incorrecta."
                         }
                     }
                 });
@@ -43,7 +43,7 @@ const userController = {
             }return res.render("login", {
                 errors: {
                     email: {
-                        msg: " El Email no se encuentra registrado"
+                        msg: "El Email no se encuentra registrado."
                         }
                     },
                     old: req.body
@@ -62,62 +62,81 @@ const userController = {
         if(resultValidation.errors.length > 0){
             return res.render ('register', {errors: resultValidation.mapped(), old: req.body} )
         } else {
-            if(req.file){
-                db.Usuario.create({
-                        email: req.body.email,
-                        contrasenia: bcrypt.hashSync(req.body.password, 10),
-                        imagen: "/images/usuarios/" + req.file.filename,
-                        nombre: null,
-                        apellido: null,
-                        dni: null,
-                        nacimiento: null,
-                        provincia: null,
-                        localidad: null,
-                        domicilio: null,
-                        cp: null,
-                        telefono: null,
-                        categoriauser_id: req.body.categoriauser_id,
-                })          
-                .then(nuevoUsuario => {
-                    req.session.usuarioLogueado = req.body.email;
-                    db.Usuario.findOne({
-                        where: {
-                            email: req.body.email
-                        }
-                    }).then((nuevoUsuario => {
-                        res.redirect('/user/perfil/' + nuevoUsuario.id)
-                    }))
-                })
-                
-            } else {
-                db.Usuario.create({
-                    email: req.body.email,
-                    contrasenia: bcrypt.hashSync(req.body.password, 10),
-                    imagen: "/images/usuarios/" + 'default.png',
-                    nombre: null,
-                    apellido: null,
-                    dni: null,
-                    nacimiento: null,
-                    provincia: null,
-                    localidad: null,
-                    domicilio: null,
-                    cp: null,
-                    telefono: null,
-                    categoriauser_id: req.body.categoriauser_id,
-                })
-            .then(nuevoUsuario => {
-                req.session.usuarioLogueado = req.body.email;
-                db.Usuario.findOne({
-                    where: {
-                        email: req.body.email
-                    }
-                })
-                .then((nuevoUsuario => {
-                    res.redirect('/user/perfil/' + nuevoUsuario.id)
-                }))
+            let emailARegistrar = req.body.email
+
+            db.Usuario.findOne({
+                where: {
+                    email: emailARegistrar
+                }
             })
-        }
+            .then((resultado) => {
+                if(resultado == undefined){
+                    if(req.file){
+                        db.Usuario.create({
+                                email: req.body.email,
+                                contrasenia: bcrypt.hashSync(req.body.password, 10),
+                                imagen: "/images/usuarios/" + req.file.filename,
+                                nombre_apellido: req.body.nombre_apellido,
+                                dni: null,
+                                nacimiento: null,
+                                provincia: null,
+                                localidad: null,
+                                domicilio: null,
+                                cp: null,
+                                telefono: null,
+                                categoriauser_id: 2,
+                        })          
+                        .then(nuevoUsuario => {
+                            req.session.usuarioLogueado = req.body.email;
+                            db.Usuario.findOne({
+                                where: {
+                                    email: req.body.email
+                                }
+                            }).then((nuevoUsuario => {
+                                res.redirect('/user/perfil/' + nuevoUsuario.id)
+                            }))
+                        })
+                        
+                    } else {
+                        db.Usuario.create({
+                            email: req.body.email,
+                            contrasenia: bcrypt.hashSync(req.body.password, 10),
+                            imagen: "/images/usuarios/" + 'default.png',
+                            nombre_apellido: req.body.nombre_apellido,
+                            dni: null,
+                            nacimiento: null,
+                            provincia: null,
+                            localidad: null,
+                            domicilio: null,
+                            cp: null,
+                            telefono: null,
+                            categoriauser_id: 2,
+                        })
+                    .then(nuevoUsuario => {
+                        req.session.usuarioLogueado = req.body.email;
+                        db.Usuario.findOne({
+                            where: {
+                                email: req.body.email
+                            }
+                        })
+                        .then((nuevoUsuario => {
+                            res.redirect('/user/perfil/' + nuevoUsuario.id)
+                        }))
+                    })
+                    }
+                } else {
+                    return res.render("register", {
+                        errors: {
+                            email: {
+                                msg: "El email ya se encuentra registrado."
+                            }
+                        }
+                    });
+                }
+        
+        })
     }
+
     },
     perfil: (req, res) => {
         let id = req.params.idUsuario
@@ -127,8 +146,7 @@ const userController = {
         )},
     processPerfil: (req, res) => {
         db.Usuario.update({ 
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
+            nombre_apellido: req.body.nombre_apellido,
             dni: req.body.dni,
             nacimiento: req.body.nacimiento,
             provincia: req.body.provincia,

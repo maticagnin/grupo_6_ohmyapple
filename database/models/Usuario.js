@@ -20,10 +20,7 @@ module.exports = (sequelize, dataTypes) => {
         imagen: {
             type: dataTypes.TEXT
         },
-        nombre: {
-            type: dataTypes.STRING(40)
-        },
-        apellido: {
+        nombre_apellido: {
             type: dataTypes.STRING(40)
         },
         dni: {

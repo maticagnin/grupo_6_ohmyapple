@@ -60,20 +60,22 @@
                 <li>Teleobjetivo: apertura de ƒ/2,8</li>
                 <li>Reconoci­miento facial mediante la cámara TrueDepth</li> -->
             </ul>
-        <% if ( userToLogin.categoriauser_id == 1 ){ %>
-            <div class="botonesEditarEliminar">
-                <div class="divDetalleEditar">
-                    <a class="botonEditar"href="/productos/<%= productos.id %>/editar">EDITAR PRODUCTO</a>
-                </div>
+            <% if ( userToLogin != undefined){ %>
 
-                <div class="divDetalleEliminar">
-                    <form action="/productos/<%= productos.id %>/?_method=DELETE" method="POST">
-                        <button type="submit" class="botonEliminar">ELIMINAR PRODUCTO</button>  
-                    </form>
-                </div>
+                <% if ( userToLogin.categoriauser_id == 1){ %>
+                <div class="botonesEditarEliminar">
+                    <div class="divDetalleEditar">
+                        <a class="botonEditar"href="/productos/<%= productos.id %>/editar">EDITAR PRODUCTO</a>
+                    </div>
+
+                    <div class="divDetalleEliminar">
+                        <form action="/productos/<%= productos.id %>/?_method=DELETE" method="POST">
+                            <button type="submit" class="botonEliminar">ELIMINAR PRODUCTO</button>  
+                        </form>
+                    </div>
             </div> 
+                <% } %>
             <% } %>
-
         </div>
         </div>
 

@@ -13,7 +13,10 @@
                         <label for="nombre"> Nombre del producto:</label>
                     </div>
                     <div class="creacion-width75">
-                        <input id="nombre" type="text" name="nombre" placeholder="Ej.: Macbook">
+                        <input id="nombre" type="text" name="nombre" placeholder="Ej.: Macbook" >
+                    <% if (locals.errors && errors.nombre) { %>
+                        <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.nombre.msg %></div>
+                    <% } %>
                     </div>
                 </div>
 
@@ -109,7 +112,11 @@
                     </div>
                     <div class="creacion-width75">
                         <textarea name="descripcion" id="descripcion" cols="30" rows="2" placeholder="Agrega la descripción de tu producto..."></textarea>
+                        <% if (locals.errors && errors.descripcion) { %>
+                            <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.descripcion.msg %></div>
+                        <% } %>
                     </div>
+                    
                 </div>
                 <div class="creacion-container">
                     <div class="creacion-width25">
@@ -125,7 +132,10 @@
                         <label for="imagen"> Imagen:</label>
                     </div>
                     <div class="creacion-width75">
-                        <input id="imagen" type="file" name="imagen">
+                        <input id="imagen" type="file" accept=".png,.jpg,.jpeg,.gif" name="imagen">
+                        <% if (locals.errors && errors.imagen) { %>
+                            <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.imagen.msg %></div>
+                        <% } %>
                     </div>
                 </div>
 

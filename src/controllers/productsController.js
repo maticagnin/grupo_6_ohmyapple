@@ -3,12 +3,13 @@ const path = require('path');
 const db = require("../../database/models")
 const { DataTypes, INTEGER } = require("sequelize");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { validationResult } = require("express-validator");
+
 
 
 const productsController = {
     detalle: (req, res) => {
         let userToLogin = req.session.usuarioLogueado;
-        console.log(userToLogin)
         let id = req.params.idProducto
         let detalleProducto = db.Producto.findOne({
             where: {
@@ -26,6 +27,11 @@ const productsController = {
         res.render('creacion')
     },
     crear: (req, res) => {
+        let resultValidation = validationResult(req)
+
+        if(resultValidation.errors.length > 0){
+            return res.render ('creacion', {errors: resultValidation.mapped(), old: req.body} )
+        } else {
         db.Producto.create({
             imagen: "/images/productos/" + req.file.filename,
             nombre: req.body.nombre,
@@ -37,8 +43,9 @@ const productsController = {
             color_id: req.body.color,
             categoriaprod_id: req.body.categoria,
 
-    });
+        })
         res.redirect('/productos')
+        }
     },
     edicion: (req, res) => {
         let id = req.params.idProducto
