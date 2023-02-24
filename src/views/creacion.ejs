@@ -8,12 +8,15 @@
 
         <div class="creacion-div-formulario">
             <form class="creacion-formulario" action="/productos/creacion" method="POST" enctype="multipart/form-data">
+                <div class="errores">
+                    <ul></ul>
+                </div>
                 <div class="creacion-container">
                     <div class="creacion-width25">
                         <label for="nombre"> Nombre del producto:</label>
                     </div>
                     <div class="creacion-width75">
-                        <input id="nombre" type="text" name="nombre" placeholder="Ej.: Macbook" >
+                        <input id="nombre" class="nombre" type="text" name="nombre" placeholder="Ej.: Macbook" >
                     <% if (locals.errors && errors.nombre) { %>
                         <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.nombre.msg %></div>
                     <% } %>
@@ -111,7 +114,7 @@
                         <label for="descripcion"> Descripción:</label>
                     </div>
                     <div class="creacion-width75">
-                        <textarea name="descripcion" id="descripcion" cols="30" rows="2" placeholder="Agrega la descripción de tu producto..."></textarea>
+                        <textarea name="descripcion" class="descripcion" id="descripcion" cols="30" rows="2" placeholder="Agrega la descripción de tu producto..."></textarea>
                         <% if (locals.errors && errors.descripcion) { %>
                             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.descripcion.msg %></div>
                         <% } %>
@@ -146,6 +149,7 @@
         </div>
     </main>
     <%- include ('partials/footer') %>
+    <script src="/js/script.js"></script>
 </body>
 
 </html> 

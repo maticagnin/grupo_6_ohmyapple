@@ -15,19 +15,18 @@
           enctype="multipart/form-data"
         >
           <p class="register-form-tittle">Registro</p>
-          <input type="text" name="nombre_apellido" placeholder="Nombre y apellido" value="<%= locals.old && old.nombre_apellido%>"/>
+          <div class="errores">
+            <ul></ul>
+          </div>
+          <input type="text" name="nombre_apellido" class="nombre_apellido" placeholder="Nombre y apellido" value="<%= locals.old && old.nombre_apellido%>"/>
           <% if (locals.errors && errors.nombre_apellido) { %>
           <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.nombre_apellido.msg %></div>
           <% } %>
-
-          <input type="email" name="email" placeholder="Email" value="<%= locals.old && old.email%>"/>
+          <input type="email" name="email" class="email" placeholder="Email" value="<%= locals.old && old.email%>"/>
           <% if (locals.errors && errors.email) { %>
           <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.email.msg %></div>
           <% } %>
           <input type="password" name="password" class="inputpass" placeholder="Contraseña" value="<%= locals.old && old.password%>"/>
-          <div class="error">
-            <ul></ul>
-          </div>
           <% if (locals.errors && errors.password) { %>
             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.password.msg %></div>
             <% } %>

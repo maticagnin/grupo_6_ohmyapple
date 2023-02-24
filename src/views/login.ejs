@@ -8,14 +8,13 @@
       <div class="master-form">
         <form action="/user/login" class="form-box" method="POST" animated animate__backInLeft>
           <p class="form-title">Login</p>
+        
 
-          
-
-          <input type="email" name = "email" placeholder="Email" value="<%= locals.old && old.email%>" />
+          <input type="email" name ="email" class ="email" placeholder="Email" value="<%= locals.old && old.email%>" />
           <% if (locals.errors && errors.email) { %>
             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.email.msg %></div>
             <% } %>
-          <input type="password" name = "password" placeholder="Contraseña" />
+          <input type="password" name = "password" class="inputpass" placeholder="Contraseña" />
           <% if (locals.errors && errors.password) { %>
             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.password.msg %></div>
             <% } %>
