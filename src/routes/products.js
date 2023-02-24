@@ -26,7 +26,7 @@ const productValidator = [
         .notEmpty().withMessage('Debes completar con la descripción.').bail()    
         .isLength({min: 20}).withMessage('La descripción debe contener al menos 20 caracteres'),
     body('imagen')
-        .notEmpty().withMessage('Debes cargar una imagen.').bail()
+        .notEmpty().withMessage('Debes cargar una imagen.')
         
 ]
 

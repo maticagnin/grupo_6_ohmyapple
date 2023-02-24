@@ -22,7 +22,7 @@
           <% if (locals.errors && errors.nombre_apellido) { %>
           <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.nombre_apellido.msg %></div>
           <% } %>
-          <input type="email" name="email" class="email" placeholder="Email" value="<%= locals.old && old.email%>"/>
+          <input type="text" name="email" class="email" placeholder="Email" value="<%= locals.old && old.email%>"/>
           <% if (locals.errors && errors.email) { %>
           <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.email.msg %></div>
           <% } %>
@@ -30,7 +30,7 @@
           <% if (locals.errors && errors.password) { %>
             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.password.msg %></div>
             <% } %>
-          <input id="imagenreg" type="file" accept=".png,.jpeg,.jpg,.gif" name="imagenreg">
+          <input id="imagenreg" type="file" name="imagenreg">
           
           <button type="submit">Registro</button>
         </form>
