@@ -15,7 +15,11 @@
                 <a href="/productos/carrito"><i class="fa-solid fa-cart-arrow-down"></i></a>
                 <div class="home-logueo">
                     <a href="/user/login"><i class="fa-solid fa-user"></i></a>
+                    <% if ( userToLogin != undefined){ %>
+                       
                     <a href="#" class="home-cerrarSesion">Cerrar Sesión</a>
+                        
+                    <% } %>
                 </div>
             </div>
         </div>

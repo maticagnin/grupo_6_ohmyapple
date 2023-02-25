@@ -10,10 +10,11 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const mainController = {
     index: (req, res) => {
-        res.render('home')
+        let userToLogin = req.session.usuarioLogueado;
+        res.render('home', {userToLogin})
     },
     buscar: (req, res) => {
-
+        let userToLogin = req.session.usuarioLogueado;
         // let productosFiltrados = []
 
         // for (let i = 0; i < db.Producto.length; i++){
@@ -64,12 +65,12 @@ const mainController = {
         let catIpad = filtro.filter( prodIpad => prodIpad.categoriaprod_id == 4)
         let catWatch = filtro.filter( prodWatch => prodWatch.categoriaprod_id == 5)
         let catAccesorios = filtro.filter( prodAccesorios => prodAccesorios.categoriaprod_id == 6)
-        res.render('productos', {catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
+        res.render('productos', {userToLogin, catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
     
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     }
 

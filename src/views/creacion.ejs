@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include ('partials/head') %>
 <body>
-    <%- include ('partials/header') %>
+    <%- include ('partials/header', {userToLogin}) %>
     <main class="detalle-main">
         <%- include ('partials/sideBar') %>
 
@@ -135,7 +135,7 @@
                         <label for="imagen"> Imagen:</label>
                     </div>
                     <div class="creacion-width75">
-                        <input id="imagen" type="file" accept=".png,.jpg,.jpeg,.gif" name="imagen">
+                        <input id="imagen" type="file" name="imagen">
                         <% if (locals.errors && errors.imagen) { %>
                             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.imagen.msg %></div>
                         <% } %>

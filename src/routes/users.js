@@ -20,7 +20,23 @@ const userValidator = [
 
     body('password')
         .notEmpty().withMessage('Debes completar la contraseña').bail()
-        .isLength({min: 8}).withMessage('La contraseña debe contener al menos 8 caracteres')
+        .isLength({min: 8}).withMessage('La contraseña debe contener al menos 8 caracteres'),
+
+    body('imagenreg').custom((value, { req }) => {
+            let file = req.file;
+            let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    
+            if (!file) {
+                throw new Error('Tienes que subir una imagen');
+            } else {
+                let fileExtension = path.extname(file.originalname);
+                if (!acceptedExtensions.includes(fileExtension)) {
+                    throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                }
+            }
+    
+            return true;
+        })
 ]
 
 const storage = multer.diskStorage({

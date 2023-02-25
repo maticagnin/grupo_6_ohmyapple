@@ -2,7 +2,7 @@
 <html lang="en">
   <%- include ('partials/head') %>
   <body>
-    <%- include ('partials/header') %>
+    <%- include ('partials/header', {userToLogin}) %>
     <main class="register-main">
       <%- include ('partials/sideBar') %>      
       <div class="register-master-form">
@@ -31,6 +31,9 @@
             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.password.msg %></div>
             <% } %>
           <input id="imagenreg" type="file" name="imagenreg">
+          <% if (locals.errors && errors.imagenreg) { %>
+            <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.imagenreg.msg %></div>
+          <% } %>
           
           <button type="submit">Registro</button>
         </form>

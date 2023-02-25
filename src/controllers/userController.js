@@ -9,10 +9,11 @@ const { validationResult } = require("express-validator");
 
 const userController = {
     login: (req, res) => {
-        res.render('login')
+        let userToLogin = req.session.usuarioLogueado;
+        res.render('login', {userToLogin})
     },
     processLogin: (req, res) => {
-
+        let userToLogin = req.session.usuarioLogueado;
         db.Usuario.findOne({
             where: {
                 email: req.body.email
@@ -29,18 +30,19 @@ const userController = {
                     if(req.body.recordame != undefined){
                         res.cookie('recordame', userToLogin.email, {maxAge: 60000})
                     }
-                    console.log(res.cookie.recordame)
+                    
 
                     return res.redirect("/user/perfil/" + userToLogin.id);
-                }return res.render("login", {
+                }return res.render("login", {userToLogin,
                     errors: {
                         password: {
                             msg: "La contraseña es incorrecta."
                         }
-                    }
+                    },
+                    old: req.body
                 });
                 
-            }return res.render("login", {
+            }return res.render("login", {userToLogin,
                 errors: {
                     email: {
                         msg: "El Email no se encuentra registrado."
@@ -54,13 +56,14 @@ const userController = {
     
 },
     register: (req, res) => {
-        res.render('register')
+        let userToLogin = req.session.usuarioLogueado;
+        res.render('register', {userToLogin})
     },
     processRegister: (req, res) => {
         let resultValidation = validationResult(req)
-
+        let userToLogin = req.session.usuarioLogueado;
         if(resultValidation.errors.length > 0){
-            return res.render ('register', {errors: resultValidation.mapped(), old: req.body} )
+            return res.render ('register', {userToLogin, errors: resultValidation.mapped(), old: req.body} )
         } else {
             let emailARegistrar = req.body.email
 
@@ -125,7 +128,7 @@ const userController = {
                     })
                     }
                 } else {
-                    return res.render("register", {
+                    return res.render("register", {userToLogin,
                         errors: {
                             email: {
                                 msg: "El email ya se encuentra registrado."
@@ -139,10 +142,11 @@ const userController = {
 
     },
     perfil: (req, res) => {
+        let userToLogin = req.session.usuarioLogueado;
         let id = req.params.idUsuario
         db.Usuario.findByPk(id)
             .then((usuarioAEditar) => 
-                res.render('perfil', {usuarioAEditar})
+                res.render('perfil', {userToLogin, usuarioAEditar})
         )},
     processPerfil: (req, res) => {
         db.Usuario.update({ 

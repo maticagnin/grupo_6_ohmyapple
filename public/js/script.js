@@ -18,7 +18,7 @@ window.addEventListener("load", function(){
     let formulario = document.querySelector(".register-form-box")
 
     formulario.addEventListener("submit", function (e) {
-        e.preventDefault();
+        
         let errores = [];
 
         let campoNombre_apellido = document.querySelector("input.nombre_apellido");

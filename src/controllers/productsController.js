@@ -24,14 +24,15 @@ const productsController = {
                 res.render('detalle', {userToLogin, productos, modelo, capacidad, color, toThousand});
    })},
     creacion: (req, res) => {
-        res.render('creacion')
+        let userToLogin = req.session.usuarioLogueado;
+        res.render('creacion', {userToLogin})
     },
     crear: (req, res) => {
         let resultValidation = validationResult(req)
-
+        let userToLogin = req.session.usuarioLogueado;
         if(resultValidation.errors.length > 0){
             console.log(resultValidation)
-            return res.render ('creacion', {errors: resultValidation.mapped(), old: req.body} )
+            return res.render ('creacion', {errors: resultValidation.mapped(), old: req.body, userToLogin} )
         } else {
         db.Producto.create({
             imagen: "/images/productos/" + req.file.filename,
@@ -50,9 +51,10 @@ const productsController = {
     },
     edicion: (req, res) => {
         let id = req.params.idProducto
+        let userToLogin = req.session.usuarioLogueado;
         let productoAEditar = db.Producto.findByPk(id)
         .then(function(productoAEditar){
-            res.render('edicion', {productoAEditar, toThousand})
+            res.render('edicion', {userToLogin, productoAEditar, toThousand})
         })
 
     },
@@ -84,10 +86,11 @@ const productsController = {
         res.redirect('/productos')
     },
     carrito: (req, res) => {
-        res.render('carrito')
+        let userToLogin = req.session.usuarioLogueado;
+        res.render('carrito', {userToLogin})
     },
     productos: (req, res) => {
-        
+        let userToLogin = req.session.usuarioLogueado;
         let catIphone = db.Producto.findAll({
             where: {
                 categoriaprod_id: "1",
@@ -121,10 +124,11 @@ const productsController = {
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     },
     iphone: (req, res) => {
+        let userToLogin = req.session.usuarioLogueado;
         let catIphone = db.Producto.findAll({
             where: {
                 categoriaprod_id: "1",
@@ -138,10 +142,11 @@ const productsController = {
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     },
     mac: (req, res) => {
+        let userToLogin = req.session.usuarioLogueado;
         let catIphone = Promise.resolve([]);
         let catMac = db.Producto.findAll({
             where: {
@@ -155,10 +160,11 @@ const productsController = {
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     },
     airpods: (req, res) => {
+        let userToLogin = req.session.usuarioLogueado;
         let catIphone = Promise.resolve([]);
         let catMac = Promise.resolve([]);
         let catAirpods = db.Producto.findAll({
@@ -172,10 +178,11 @@ const productsController = {
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     },
     ipad: (req, res) => {
+        let userToLogin = req.session.usuarioLogueado;
         let catIphone = Promise.resolve([]);
         let catMac = Promise.resolve([]);
         let catAirpods = Promise.resolve([]);
@@ -188,10 +195,11 @@ const productsController = {
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     },
     watch: (req, res) => {
+        let userToLogin = req.session.usuarioLogueado;
         let catIphone = Promise.resolve([]);
         let catMac = Promise.resolve([]);
         let catAirpods = Promise.resolve([]);
@@ -205,10 +213,11 @@ const productsController = {
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     },
     accesorios: (req, res) => {
+        let userToLogin = req.session.usuarioLogueado;
         let catIphone = Promise.resolve([]);
         let catMac = Promise.resolve([]);
         let catAirpods = Promise.resolve([]);
@@ -222,7 +231,7 @@ const productsController = {
 
         Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
             .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+                res.render('productos',{userToLogin,catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
             })
     },
 };

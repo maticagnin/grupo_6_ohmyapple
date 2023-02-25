@@ -25,8 +25,21 @@ const productValidator = [
     body('descripcion')
         .notEmpty().withMessage('Debes completar con la descripción.').bail()    
         .isLength({min: 20}).withMessage('La descripción debe contener al menos 20 caracteres'),
-    body('imagen')
-        .notEmpty().withMessage('Debes cargar una imagen.')
+        body('imagen').custom((value, { req }) => {
+            let file = req.file;
+            let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    
+            if (!file) {
+                throw new Error('Tienes que subir una imagen');
+            } else {
+                let fileExtension = path.extname(file.originalname);
+                if (!acceptedExtensions.includes(fileExtension)) {
+                    throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                }
+            }
+    
+            return true;
+        })
         
 ]
 
@@ -38,7 +51,7 @@ router.get('/carrito', productsController.carrito);
 
 // *** Creación de Productos ***
 router.get('/creacion', productsController.creacion);
-router.post('/creacion', productValidator, uploadFile.single("imagen"), productsController.crear);
+router.post('/creacion', uploadFile.single("imagen"), productValidator, productsController.crear);
 
 // *** Categorías de Productos ***
 router.get('/', productsController.productos);
