@@ -1,6 +1,11 @@
 <nav class="home-barraLateral">   
     <ul>
         <li><a href="/productos"><i id="iconBarraLateral" class="fa-solid fa-apple-whole"></i>Nuestros Productos</a></li>
+        <% if ( userToLogin != undefined){ %>
+            <% if ( userToLogin.categoriauser_id == 1){ %>
+        <li><a href="/productos/creacion"><i id="iconBarraLateral" class="fa-solid fa-plus"></i>Crear Producto</a></li>
+            <% } %>
+        <% } %>
         <li><a href="/productos/iphone"><i id="iconBarraLateral" class="fa-solid fa-mobile-screen-button"></i>iPhone</a></li>
         <li><a href="/productos/mac"><i id="iconBarraLateral" class="fa-solid fa-laptop"></i>Mac</a> </li>
         <li><a href="/productos/airpods"><i id="iconBarraLateral" class="fa-sharp fa-solid fa-headphones-simple"></i>AirPods</a></li>
