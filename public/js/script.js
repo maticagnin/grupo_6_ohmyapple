@@ -38,7 +38,70 @@ window.addEventListener("load", function(){
             errores.push("El campo Email debe estar completo");
             campoEmail.classList.add("is-invalid");
         } else if (!regEmail.test(campoEmail.value)) {
-            errores.push("El formato de email es inválido...");
+            errores.push("El formato de email es inválido..");
+            campoEmail.classList.add("is-invalid");
+        } else {
+            campoEmail.classList.add("is-valid");
+            campoEmail.classList.remove("is-invalid");
+        }     
+
+
+        let campoPass = document.querySelector("input.inputpass");
+
+        if(campoPass.value == ""){
+            errores.push("El campo Contraseña debe estar completo");
+        }else if (campoPass.value.length < 8){
+            errores.push("El campo Contraseña debe tener mínimo 8 caracteres")
+        }
+
+        if (errores.length > 0){
+            e.preventDefault();
+
+            let ulErrores = document.querySelector("div.errores ul");
+
+            ulErrores.innerHTML = ""
+
+            for(let i = 0; i < errores.length; i++){
+                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+            }
+        }
+ 
+    })
+})
+
+window.addEventListener("load", function(){
+
+    let inputPassword = document.querySelector(".inputpass")
+
+
+        inputPassword.addEventListener("focus", function(){
+            if(inputPassword.value.length < 8){
+                inputPassword.placeholder = "8 digitos como mínimo";
+
+               
+
+                 inputPassword.addEventListener("blur", function(){
+                    inputPassword.placeholder = "Contraseña";
+                 })
+            }
+        })
+
+    let formularioLogin = document.querySelector(".form-box")
+
+    formularioLogin.addEventListener("submit", function (e) {
+        
+        let errores = [];
+
+        let campoEmail = document.querySelector("input.email");
+        let regEmail =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+        if(campoEmail.value == ""){
+            errores.push("El campo Email debe estar completo");
+            campoEmail.classList.add("is-invalid");
+        } else if (!regEmail.test(campoEmail.value)) {
+            errores.push("El formato de email es inválido.");
             campoEmail.classList.add("is-invalid");
         } else {
             campoEmail.classList.add("is-valid");

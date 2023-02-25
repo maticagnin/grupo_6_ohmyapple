@@ -50,11 +50,13 @@ const userController = {
                     },
                     old: req.body
                 });
-        })
+        })    
+    },
+    processLogout: (req, res) => {
+        req.session.usuarioLogueado = undefined;
 
-        
-    
-},
+        res.redirect('/user/login')
+    }, 
     register: (req, res) => {
         let userToLogin = req.session.usuarioLogueado;
         res.render('register', {userToLogin})

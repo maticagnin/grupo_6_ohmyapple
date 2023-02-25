@@ -8,9 +8,10 @@
       <div class="master-form">
         <form action="/user/login" class="form-box" method="POST" animated animate__backInLeft>
           <p class="form-title">Login</p>
-        
-
-          <input type="email" name ="email" class ="email" placeholder="Email" value="<%= locals.old && old.email%>" />
+          <div class="errores">
+            <ul></ul>
+          </div>
+          <input type="text" name ="email" class ="email" placeholder="Email" value="<%= locals.old && old.email%>" />
           <% if (locals.errors && errors.email) { %>
             <div class="login-error"><i class="fas fa-exclamation-triangle"></i><%= errors.email.msg %></div>
             <% } %>
@@ -36,5 +37,6 @@
       </div>
     </main>
     <%- include ('partials/footer') %>
+    <script src="/js/script.js"></script>
   </body>
 </html>

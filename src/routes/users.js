@@ -53,16 +53,21 @@ const uploadFile = multer({ storage });
 
 let router = express.Router();
 
-router.get('/login', userController.login);
+router.get('/login', loginMiddleware, userController.login);
 router.post('/login', userValidator, userController.processLogin);
-router.get('/register', userController.register);
-// router.get('/register', guestMiddleware, userController.register);
 
+router.get('/logout', userController.processLogout);
+
+
+router.get('/register', loginMiddleware, userController.register);
 router.post('/register', uploadFile.single("imagenreg"), userValidator, userController.processRegister);
+
+
 router.get('/perfil/:idUsuario', authMiddleware, userController.perfil);
 
 router.put('/perfil/:idUsuario',userController.processPerfil);
 
 router.delete('/perfil/:idUsuario/', userController.eliminar);
+
 
 module.exports = router;
