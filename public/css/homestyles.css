@@ -130,7 +130,7 @@ h3 {
 /* Barra Lateral */
 .home-main {
     display: flex;
-    flex-direction: row;
+    
     justify-content: center;
     margin: 0;
     padding: 0;
@@ -170,6 +170,10 @@ h3 {
 }
 
 /* Main Styles  */
+
+.hamburguesa{
+    display: none;
+}
 
 .home-sectionBanner {
     display: flex;
@@ -395,6 +399,9 @@ h3 {
 
 /* Media Queries Desktop Styles */
 @media (min-width: 1200px ) {
+    .hamburguesa{
+        display: none;
+    }
     .home-logo {
         width: 30%;
     }
