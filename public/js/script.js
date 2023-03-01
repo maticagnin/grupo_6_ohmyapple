@@ -172,13 +172,17 @@ window.addEventListener("load", function(){
     let hamburguesa = document.querySelector(".home-barraLateral");
     let main = document.querySelector(".home-main");
 
-
     burger.addEventListener("click", function(){
         hamburguesa.style.display = "flex"
         hamburguesa.style.position = "absolute"
         hamburguesa.style.width = "70%"
         hamburguesa.style.zIndex = "1"
         main.style.justifyContent = "left"
+
+        burger.addEventListener("click", function(){
+            hamburguesa.style.display = "none"
+     
+        })
  
     })
 

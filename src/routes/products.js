@@ -6,6 +6,7 @@ const path = require("path");
 
 const { body } = require('express-validator');
 const guestMiddleware = require('../middlewares/guestMiddleware.js');
+const authMiddleware = require('../middlewares/authMiddleware.js');
 
 const storage = multer.diskStorage({
       destination: (req, file, cb) => {
@@ -48,7 +49,7 @@ const productValidator = [
 let router = express.Router();
 
 // *** Carrito de Productos ***
-router.get('/carrito', productsController.carrito);
+router.get('/carrito', authMiddleware, productsController.carrito);
 
 // *** Creación de Productos ***
 router.get('/creacion', guestMiddleware, productsController.creacion);
