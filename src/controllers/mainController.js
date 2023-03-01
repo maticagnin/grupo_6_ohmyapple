@@ -15,63 +15,26 @@ const mainController = {
     },
     buscar: (req, res) => {
         let userToLogin = req.session.usuarioLogueado;
-        // let productosFiltrados = []
 
-        // for (let i = 0; i < db.Producto.length; i++){
-        //     if(db.Producto[i].nombre.includes(consulta)){
-        //         productosFiltrados.push(db.Producto[i]);   
-        //     }
-        // }
         let consulta = req.query.consulta
 
-        let productosFiltrados = db.Producto.findAll({
+        db.Producto.findAll({
             where: {
-                $or: [ 
-                    {
-                        imagen : {
-                            [Op.contains]: '%' + consulta + '%'
-                        },
-                    },
-                    {
-                        nombre : {
-                            [Op.contains]: '%' + consulta + '%'
-                        },
-                    },
-                    {
-                        precio : {
-                            [Op.contains]: '%' + consulta + '%'
-                        },
-                    },
-                    {
-                        descripcion : {
-                            [Op.contains]: '%' + consulta + '%'
-                        },
-                    },
-                    {
-                        caracteristicas : {
-                            [Op.contains]: '%' + consulta + '%'
-                        }
-                    },
-                ]
+                nombre : {
+                    [Op.like]: '%' + consulta + '%'
+                }
             }
         })
-        .then(function(filtro){
-            return filtro
-        })
-
-        let catIphone = filtro.filter( prodIphone => prodIphone.categoriaprod_id == 1)
-        let catMac = filtro.filter( prodMac => prodMac.categoriaprod_id == 2)
-        let catAirpods = filtro.filter( prodAirpods => prodAirpods.categoriaprod_id == 3)
-        let catIpad = filtro.filter( prodIpad => prodIpad.categoriaprod_id == 4)
-        let catWatch = filtro.filter( prodWatch => prodWatch.categoriaprod_id == 5)
-        let catAccesorios = filtro.filter( prodAccesorios => prodAccesorios.categoriaprod_id == 6)
-        res.render('productos', {userToLogin, catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
-    
-
-        Promise.all([catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios])
-            .then(function([prodIphone, prodMac, prodAirpods, prodIpad, prodWatch, prodAccesorios]){
-                res.render('productos',{userToLogin, catIphone: prodIphone, catMac: prodMac, catAirpods: prodAirpods, catIpad: prodIpad, catWatch: prodWatch, catAccesorios: prodAccesorios, toThousand})
+        .then(function(filtroNombre){
+            let catIphone = filtroNombre.filter( prodIphone => prodIphone.categoriaprod_id == 1)
+            let catMac = filtroNombre.filter( prodMac => prodMac.categoriaprod_id == 2)
+            let catAirpods = filtroNombre.filter( prodAirpods => prodAirpods.categoriaprod_id == 3)
+            let catIpad = filtroNombre.filter( prodIpad => prodIpad.categoriaprod_id == 4)
+            let catWatch = filtroNombre.filter( prodWatch => prodWatch.categoriaprod_id == 5)
+            let catAccesorios = filtroNombre.filter( prodAccesorios => prodAccesorios.categoriaprod_id == 6)
+            res.render('productos', {userToLogin, catIphone, catMac, catAirpods, catIpad, catWatch, catAccesorios, toThousand})
             })
+    
     }
 
 };
