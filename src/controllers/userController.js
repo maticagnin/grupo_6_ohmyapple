@@ -178,9 +178,9 @@ const userController = {
         db.Usuario.destroy({
             where: {id: id}
         })
-
+        rec.session.usuarioLogueado = undefined;
         res.redirect('/')
-    },
+    }
 };
 
 module.exports = userController

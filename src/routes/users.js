@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const userController = require('../controllers/userController.js');
+const apiUserController = require('../controllers/api/userController.js');
 const loginMiddleware = require('../middlewares/loginMiddleware')
 const { body } = require('express-validator')
 const multer = require('multer');
@@ -69,5 +70,7 @@ router.put('/perfil/:idUsuario',userController.processPerfil);
 
 router.delete('/perfil/:idUsuario/', userController.eliminar);
 
+router.get('/lista', apiUserController.userList)
+router.get('/detalle/:idUsuario', apiUserController.userDetail)
 
 module.exports = router;
