@@ -14,15 +14,12 @@
 <!-- Agregar nombre al carrito y al perfil -->
                 <a href="/productos/carrito"><i class="fa-solid fa-cart-arrow-down"></i></a>
                 <div class="home-logueo">
-                    <!-- <option name="modelo" value="1" <%= productoAEditar.modelo_id == "1" ? "selected" : "" %>>2da Gen</option> -->
-<!-- 
-                    <% userToLogin != undefined ? %><a href="<%=/user/perfil/%>" + userToLogin.id ><i class="fa-solid fa-user"></i></a> -->
-                    <% if ( userToLogin != undefined){ %>
-                    <a href="/user/perfil/" + userToLogin.id ><i class="fa-solid fa-user"></i></a>
-                    <% } else if %>
-                    <% { %>
-                        <a href="/user/login"><i class="fa-solid fa-user"></i></a>
+                    <% if ( userToLogin != undefined) { %>
+                    <a href="/user/perfil/<%= userToLogin.id %>"><i class="fa-solid fa-user"></i></a>
                     <% } %>
+                    <% if ( userToLogin == undefined){ %>
+                        <a href="/user/login"><i class="fa-solid fa-user"></i></a>
+                        <% } %>
                     <% if ( userToLogin != undefined){ %>
                        
                     <a href="/user/logout" class="home-cerrarSesion">Cerrar Sesión</a>
