@@ -1,6 +1,8 @@
 const express = require('express');
 
 const productsController = require('../controllers/productsController.js');
+const apiProductsController = require('../controllers/api/productsController');
+
 const multer = require('multer');
 const path = require("path");
 
@@ -64,6 +66,10 @@ router.get('/ipad', productsController.ipad);
 router.get('/watch', productsController.watch);
 router.get('/accesorios', productsController.accesorios);
 
+// *** Api de Productos ***
+router.get('/lista', apiProductsController.productList)
+router.get('/detalle/:idProducto', apiProductsController.productDetail)
+
 // *** Detalle de Productos ***
 router.get('/:idProducto', productsController.detalle);
 
@@ -74,6 +80,9 @@ router.put('/:idProducto/editar', productsController.editar);
 // *** Eliminación de Productos ***
 router.delete('/:idProducto/', productsController.eliminar);
 
+// *** Api de Productos ***
+router.get('/lista', apiProductsController.productList)
+router.get('/detalle/:idProducto', apiProductsController.productDetail)
 
 
 module.exports = router;
