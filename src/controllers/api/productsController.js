@@ -2,14 +2,16 @@ const db = require("../../../database/models")
 
 module.exports = {
     productList: (req, res) => {
-        db.Producto. findAll()
+        db.Producto. findAll({
+            include: [{ association: "CategoriaProd"}]
+        })
         .then(productos => {
             let listado = productos.map((producto) => {
                 return {
                     id: producto.idProducto,
                     name: producto.nombre,
                     description: producto.descripcion,
-                    categoria: producto.categoriaprod_id,
+                    categoria: producto.CategoriaProd.nombre,  
                     detail: "/productos/detalle/" + producto.id
                 };
             });
@@ -65,9 +67,33 @@ console.log(iPhone)
           })
         })
         },
-    productDetail: (req, res) => {
-        
-    }
+        productDetail: (req, res) => {
+            db.Producto.findByPk(req.params.idProducto, {include: [{ association: "CategoriaProd"}, { association: "Color"}, { association: "Modelo"},{ association: "Capacidad"}]})
+            .then((producto) => {
+                if (producto) {
+                  res.status(200).json({
+                    producto: {
+                        id: producto.idProducto,
+                        imagen: producto.imagen,
+                        name: producto.nombre,
+                        precio: producto.precio,
+                        description: producto.descripcion,
+                        caracteristicas: producto.caracteristicas,
+                        modelo: producto.Modelo.nombre,
+                        capacidad: producto.Capacidad.nombre,
+                        color: producto.Color.nombre,
+                        categoria: producto.CategoriaProd.nombre   
+                    },
+                    status: 200,
+                  });
+                } else {
+                  res.status(404).json({
+                    status: 404,
+                    message: "Error!!! No se encontró el producto buscado",
+                  });
+                }
+              })
+        }
 }
 
 
