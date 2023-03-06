@@ -9,32 +9,30 @@ module.exports = {
                     id: producto.idProducto,
                     name: producto.nombre,
                     description: producto.descripcion,
-                    modelo: producto.modelo_id,
-                    capacidad: producto.capacidad_id,
-                    color: producto.color_id,
                     categoria: producto.categoriaprod_id,
                     detail: "/productos/detalle/" + producto.id
                 };
             });
+    
             let iPhone = productos.filter((producto) => {
-                return producto.categoriaprod_id.nombre == "iPhone"
+                return producto.categoriaprod_id == 1
             });
             let mac = productos.filter((producto) => {
-                return producto.categoriaprod_id.nombre == "Mac"
+                return producto.categoriaprod_id == 2
             });
             let airpods = productos.filter((producto) => {
-                return producto.categoriaprod_id.nombre == "AirPods"
+                return producto.categoriaprod_id == 3
             });
             let iPad = productos.filter((producto) => {
-                return producto.categoriaprod_id.nombre == "iPad"
+                return producto.categoriaprod_id == 4
             });
             let watch = productos.filter((producto) => {
-                return producto.categoriaprod_id.nombre == "Watch"
+                return producto.categoriaprod_id == 5
             });
             let accesorios = productos.filter((producto) => {
-                return producto.categoriaprod_id.nombre == "Accesorios"
+                return producto.categoriaprod_id == 6
             });
-
+console.log(iPhone)
            res.status(200).json({
             count: productos.length,
             countByCategory: [
