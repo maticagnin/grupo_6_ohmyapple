@@ -9,10 +9,10 @@ function ContentRowBottom(){
     return (
         <div className="row">
             
-            <LastProduct />
-            <LastUser />
-            <CategoryList />
-            <ProductList />
+            <LastProduct lastProduct = "35"/>
+            <LastUser lastUser = "35"/>
+            <CategoryList categoryList = "35"/>
+            <ProductList productList = "35"/>
 
         </div>
     )
