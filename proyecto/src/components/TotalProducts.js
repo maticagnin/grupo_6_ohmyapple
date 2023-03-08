@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-function TotalProducts(props){
+function TotalProducts(){
 
-    const {TotalProducts, setTotalProducts} = useState('');
+    const [total, settotal] = useState([]);
     useEffect(() => {
-        fetch('localhost:3000/productos/lista')
-          .then((result) => result.json())
-            .then((dataProducts) => {
-                setTotalProducts(dataProducts)
+        fetch('http://localhost:3000/productos/lista')
+          .then((response) => response.json())
+            .then((producto) => {
+                settotal(producto)
             })
-           
-    })
+
+    }, [])
     return (
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
@@ -24,7 +24,7 @@ function TotalProducts(props){
                     <div className="col-lg-12 mb-4">
                     <div className="card bg-primary text-white shadow">
                         <div className="card-body text-center">
-                        <p> { TotalProducts.cantidadProducts } </p>
+                        { total.cantidadProducts }
                         </div>
                     </div>
                     </div>
