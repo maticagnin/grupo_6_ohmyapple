@@ -2,6 +2,7 @@ const express = require('express');
 
 const productsController = require('../controllers/productsController.js');
 const apiProductsController = require('../controllers/api/productsController');
+const totalController = require('../controllers/api/totalController');
 
 const multer = require('multer');
 const path = require("path");
@@ -70,6 +71,10 @@ router.get('/accesorios', productsController.accesorios);
 router.get('/lista', apiProductsController.productList)
 router.get('/detalle/:idProducto', apiProductsController.productDetail)
 
+router.get('/ultimo', apiProductsController.lastProduct)
+router.get('/total', totalController.totales)
+router.get('/categoria', apiProductsController.categoria)
+
 // *** Detalle de Productos ***
 router.get('/:idProducto', productsController.detalle);
 
@@ -82,6 +87,9 @@ router.delete('/:idProducto/', productsController.eliminar);
 
 // *** Api de Productos ***
 router.get('/lista', apiProductsController.productList)
+
+
+
 router.get('/detalle/:idProducto', apiProductsController.productDetail)
 
 

@@ -93,7 +93,39 @@ console.log(iPhone)
                   });
                 }
               })
-        }
+        },
+        categoria: (req, res) => {
+            db.CategoriaProd.findAll()
+                .then((categorias) => {
+                    let promesas = categorias.map((categoria) => {
+                        return db.Producto.count({
+                            where: { categoriaprod_id: categoria.id },
+                        }).then((cantProductos) => {
+                            return {
+                                nombre_categoria: categoria.nombre,
+                                cantidad: cantProductos,
+                            };
+                        });
+                    });
+                    return Promise.all(promesas);
+                })
+                .then((respuestas) => {
+                    res.json(respuestas);
+                })
+                .catch((error) => {
+                    console.error(error);
+                    res.status(500).send("Error interno del servidor");
+                });
+        },
+        lastProduct: (req, res) => {
+            db.Producto.max("id").then((maxID) => {
+                db.Producto.findByPk(maxID).then((respuesta) => {
+                    respuesta.image =
+                        "http://localhost:3000/img/products/" + respuesta.image;
+                    res.json(respuesta);
+                });
+            });
+        },
 }
 
 
