@@ -120,8 +120,8 @@ console.log(iPhone)
         lastProduct: (req, res) => {
             db.Producto.max("id").then((maxID) => {
                 db.Producto.findByPk(maxID).then((respuesta) => {
-                    respuesta.image =
-                        "http://localhost:3000/img/products/" + respuesta.image;
+                    respuesta.imagen =
+                        "http://localhost:3000" + respuesta.imagen;
                     res.json(respuesta);
                 });
             });

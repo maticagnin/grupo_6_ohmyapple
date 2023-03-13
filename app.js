@@ -10,6 +10,13 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const recordameMiddleware = require("./src/middlewares/recordameMiddleware")
 
+const cors = require('cors');
+var corsOptions = {
+  origin: 'http://localhost:3001',
+  optionsSuccessStatus: 200 // For legacy browser support
+}
+
+app.use(cors(corsOptions));
 
 
 app.use(express.static(path.join(__dirname, 'public')));
