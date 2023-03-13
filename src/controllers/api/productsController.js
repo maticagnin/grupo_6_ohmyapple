@@ -11,6 +11,7 @@ module.exports = {
                     id: producto.idProducto,
                     name: producto.nombre,
                     description: producto.descripcion,
+                    price: producto.precio, 
                     categoria: producto.CategoriaProd.nombre,  
                     detail: "/productos/detalle/" + producto.id
                 };
